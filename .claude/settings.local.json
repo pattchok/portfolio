@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm i:*)",
+      "Bash(claude install:*)",
+      "Bash(npm root:*)",
+      "Bash(npm prefix:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/kukkukp/.local/share/claude/versions/**)",
+      "Bash(npx create-next-app@latest:*)"
+    ]
+  }
+}
