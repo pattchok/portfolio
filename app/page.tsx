@@ -26,7 +26,7 @@ export default function HomePage() {
               </FadeIn>
               <FadeIn delay={0.14}>
                 <p className="text-brown text-xl md:text-2xl mb-8 tracking-wide">
-                  curious listener · hands-on operator · amateur builder
+                  curious learner · operator · amateur builder
                 </p>
               </FadeIn>
               <FadeIn delay={0.24}>
