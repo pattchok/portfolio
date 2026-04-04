@@ -184,6 +184,19 @@ export default function OpenTyphoonPage() {
                 </span>
                 AI infrastructure
               </div>
+              <div>
+                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                  publication
+                </span>
+                <a
+                  href="https://arxiv.org/abs/2312.13951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brown hover:underline transition-colors duration-200"
+                >
+                  arxiv (70+ citations) &rarr;
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>

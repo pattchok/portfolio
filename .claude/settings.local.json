@@ -34,7 +34,8 @@
       "Bash(change the font back to the first one, i dont think lomathin looks very good on the caption)",
       "Bash(npx tsc:*)",
       "Bash(git status:*)",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "Bash(npx next:*)"
     ]
   }
 }

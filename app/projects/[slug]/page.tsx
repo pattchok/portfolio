@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { sideProjects } from "@/lib/projects";
 import WavyCTA from "@/components/WavyCTA";
-import Tag from "@/components/Tag";
 
 export function generateStaticParams() {
   return sideProjects.map((p) => ({ slug: p.slug }));
@@ -45,12 +44,22 @@ export default async function ProjectDetailPage({
         </h1>
         <p className="text-muted text-lg leading-relaxed mb-5">{project.shortDesc}</p>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          {project.tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </div>
+        {/* Links */}
+        {project.links && project.links.length > 0 && (
+          <div className="flex flex-wrap gap-4 mb-12">
+            {project.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted hover:text-brown hover:underline transition-colors duration-200"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Thumbnail placeholder */}
         <div
@@ -62,7 +71,9 @@ export default async function ProjectDetailPage({
         <p className="text-muted text-lg leading-relaxed italic mb-10">
           more details coming soon!
         </p>
-        {project.link && <WavyCTA href={project.link}>visit project</WavyCTA>}
+        {project.links && project.links.length > 0 && project.links[0].href && (
+          <WavyCTA href={project.links[0].href}>visit project</WavyCTA>
+        )}
       </div>
     </main>
   );

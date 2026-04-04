@@ -1,7 +1,4 @@
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import Tag from "@/components/Tag";
 import { sideProjects } from "@/lib/projects";
 import { CALISTOGA } from "@/lib/constants";
 
@@ -32,12 +29,12 @@ export default function ProjectsPage() {
         <div>
           {sideProjects.map((project, i) => (
             <FadeIn key={project.slug} delay={i * 0.06}>
-              <div className="group flex items-start gap-6 py-7 border-b border-border/40 hover:border-border/70 transition-colors duration-200">
-                <span className="text-muted text-sm w-10 shrink-0 pt-1">{project.year}</span>
-                <div className="flex-1 min-w-0">
-                  <Link href={`/projects/${project.slug}`}>
+              <div className="py-7 border-b border-border/40">
+                <div className="flex items-start gap-6">
+                  <span className="text-muted text-sm w-10 shrink-0 pt-1">{project.year}</span>
+                  <div className="flex-1 min-w-0">
                     <h2
-                      className="text-text group-hover:text-brown transition-colors duration-200 mb-1.5 font-light"
+                      className="text-text mb-1.5 font-light"
                       style={{
                         fontFamily: "var(--font-calistoga), Georgia, serif",
                         fontSize: "1.25rem",
@@ -45,32 +42,26 @@ export default function ProjectsPage() {
                     >
                       {project.name}
                     </h2>
-                  </Link>
-                  <p className="text-muted text-sm leading-relaxed">{project.shortDesc}</p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {project.tags.map((tag) => (
-                      <Tag key={tag}>{tag}</Tag>
-                    ))}
+                    <p className="text-muted text-sm leading-relaxed">{project.shortDesc}</p>
+                    {project.subtitle && (
+                      <p className="text-muted text-xs italic mt-1.5">{project.subtitle}</p>
+                    )}
+                    {project.links && project.links.length > 0 && (
+                      <div className="flex flex-wrap gap-4 mt-3">
+                        {project.links.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-muted hover:text-brown hover:underline transition-colors duration-200"
+                          >
+                            {link.label} →
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </div>
-                <div className="flex items-center gap-3 pt-1 shrink-0">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted hover:text-brown transition-colors duration-200"
-                      aria-label={`external link for ${project.name}`}
-                    >
-                      <ExternalLink size={14} />
-                    </a>
-                  )}
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="text-muted group-hover:text-brown transition-colors duration-200 text-lg"
-                  >
-                    →
-                  </Link>
                 </div>
               </div>
             </FadeIn>

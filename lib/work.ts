@@ -5,6 +5,7 @@ export type WorkProject = {
   year: string;
   company: string;
   thumbBg: string;
+  thumbImg?: string;
   comingSoon?: boolean;
   meta?: {
     role?: string;
@@ -15,25 +16,13 @@ export type WorkProject = {
 
 export const workProjects: WorkProject[] = [
   {
-    slug: "joe-coffee",
-    name: "Joe Coffee Mobile Ordering",
-    shortDesc: "Mobile ordering experience for a beloved specialty coffee brand — bringing the in-store warmth to a digital-first product.",
-    year: "2026",
-    company: "Joe Coffee",
-    thumbBg: "#F0C8BA",
-    meta: {
-      role: "Product Manager",
-      stack: "React Native · Figma",
-      industry: "F&B / Consumer",
-    },
-  },
-  {
     slug: "opentyphoon",
     name: "OpenTyphoon.ai",
     shortDesc: "Thailand's large language model. Built to understand and generate Thai language at scale — a foundational AI infrastructure project.",
     year: "2023–2025",
     company: "SCB 10X",
     thumbBg: "#EDD5C5",
+    thumbImg: "/work/opentyphoon/typhoon-logo.png",
     meta: {
       role: "Product Manager",
       stack: "PyTorch · Hugging Face · vLLM",
@@ -54,26 +43,13 @@ export const workProjects: WorkProject[] = [
     },
   },
   {
-    slug: "lingthai",
-    name: "LingThai — Data Annotation Platform",
-    shortDesc: "A data annotation platform for Thai language — purpose-built tooling to support NLP model development at scale.",
-    year: "2023",
-    company: "LingThai",
-    thumbBg: "#EDD5C5",
-    comingSoon: true,
-    meta: {
-      role: "Product Manager",
-      stack: "Python · React",
-      industry: "AI / NLP",
-    },
-  },
-  {
     slug: "finnomena",
     name: "Finnomena",
     shortDesc: "Investment platform for Thai retail investors — making wealth management more accessible and understandable.",
     year: "2022",
     company: "Finnomena",
     thumbBg: "#C2D0B8",
+    thumbImg: "/work/finnomena/finnomena-logo.png",
     comingSoon: true,
     meta: {
       role: "Product Manager",
@@ -82,14 +58,15 @@ export const workProjects: WorkProject[] = [
   },
   {
     slug: "conversational-ai",
-    name: "Conversational AI in Retail & Commerce",
-    shortDesc: "Conversational AI deployed across 15,000+ stores in Thailand. One of the earliest large-scale conversational deployments in Thai retail.",
+    name: "7-Eleven Conversational AI Chatbot",
+    shortDesc: "Built the chat commerce experience inside Thailand's 7-Eleven app, serving 16M+ monthly active users across 15,000+ stores nationwide.",
     year: "2019–2021",
-    company: "DataWow",
+    company: "Sertis",
     thumbBg: "#C9A96E",
+    thumbImg: "/work/conversational-ai/7-eleven-chatbot.png",
     meta: {
       role: "Junior PM",
-      stack: "Dialogflow · Python · LINE API",
+      stack: "Dialogflow · Python · RegEx",
       industry: "Retail / Commerce",
     },
   },
