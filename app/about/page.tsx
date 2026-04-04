@@ -121,7 +121,7 @@ export default function AboutPage() {
                 className="relative rounded-2xl px-8 py-10 md:px-12 md:py-12 overflow-visible"
                 style={{
                   backgroundColor: "rgba(253,250,247,0.45)",
-                  border: "1px solid rgba(234,216,204,0.4)",
+                  boxShadow: "0 8px 40px rgba(140,94,72,0.06), 0 2px 16px rgba(140,94,72,0.04)",
                 }}
               >
                 {/* Decorative blobs — organic shapes like home hero */}
@@ -156,21 +156,6 @@ export default function AboutPage() {
                     i&apos;ve been in pm for 6+ years now (a little mix of product, project, and program manager depending on the situation).
                     i&apos;ve worked across ai, data products, mobile apps, and enterprise tools.
                   </p>
-                  <p>
-                    outside of work, i&apos;m a runner, a hiker, a big food lover, and a dog lover
-                    (i will pet your dog without asking). i also arrange flowers, read a lot, and
-                    plan my next trip whenever i can. for a while, i organized local AI meetups with{" "}
-                    <a
-                      href="https://www.aicollective.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brown underline underline-offset-2 hover:text-brown-light transition-colors duration-200"
-                    >
-                      AI Collective Seattle
-                    </a>
-                    . seattle-based, always exploring. the stuff
-                    below is a little window into that.
-                  </p>
                 </div>
               </div>
             </section>
@@ -186,13 +171,23 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-lg md:text-xl leading-relaxed text-muted mb-12">
               <p>
-                i believe in staying curious and saying yes to things that feel a little uncomfortable.
-                most of what i love doing now started because i tried something on a whim and kept going.
+                outside of work, i&apos;m a runner, a hiker, a big food lover, and a dog lover
+                (i will pet your dog without asking). i also arrange flowers, read a lot, and
+                plan my next trip whenever i can. for a while, i organized local AI meetups with{" "}
+                <a
+                  href="https://www.aicollective.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brown underline underline-offset-2 hover:text-brown-light transition-colors duration-200"
+                >
+                  AI Collective Seattle
+                </a>
+                .
               </p>
               <p>
-                i care about being present, staying active, and making space for the things that keep me grounded.
+                most of what i love doing now started because i tried something on a whim and kept going.
                 whether it&apos;s running before the sun comes up, arranging flowers on a sunday, or planning the next trip,
-                these are the things that make everything else better.
+                these are the things that keep me grounded and make everything else better.
               </p>
             </div>
             <div className="space-y-20">

@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { workProjects } from "@/lib/work";
 import WavyCTA from "@/components/WavyCTA";
-import Tag from "@/components/Tag";
 
 export function generateStaticParams() {
   return workProjects
@@ -50,13 +49,6 @@ export default async function WorkDetailPage({
           {project.name}
         </h1>
         <p className="text-muted text-lg leading-relaxed mb-5">{project.shortDesc}</p>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          {project.tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </div>
 
         {/* Thumbnail placeholder */}
         <div
