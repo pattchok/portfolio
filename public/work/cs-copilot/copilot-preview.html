@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; background: #fff; overflow: hidden; }
+
+  .chrome { background: #fff; height: 100vh; display: flex; flex-direction: column; }
+  .chrome-bar { padding: 8px 12px; border-bottom: 1px solid #e8e0e0; display: flex; align-items: center; gap: 6px; background: #faf8f8; flex-shrink: 0; }
+  .dots { display: flex; gap: 5px; }
+  .dots span { width: 8px; height: 8px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: #f09595; }
+  .dots span:nth-child(2) { background: #fac775; }
+  .dots span:nth-child(3) { background: #97c459; }
+  .chrome-title { flex: 1; text-align: center; font-size: 10px; color: #999; letter-spacing: 0.3px; }
+
+  .main { display: flex; flex: 1; min-height: 0; }
+
+  .chat-panel { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #e8e0e0; }
+  .panel-header { padding: 8px 12px; border-bottom: 1px solid #e8e0e0; font-size: 11px; font-weight: 600; color: #000; display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+  .panel-header .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #97c459; }
+  .chat-messages { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+
+  .msg { max-width: 82%; opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s; }
+  .msg.show { opacity: 1; transform: translateY(0); }
+  .msg.customer { align-self: flex-start; }
+  .msg.agent { align-self: flex-end; }
+  .msg-meta { font-size: 9px; color: #bbb; margin-bottom: 2px; }
+  .msg.agent .msg-meta { text-align: right; }
+  .msg-bubble { padding: 7px 10px; font-size: 11px; line-height: 1.45; border-radius: 10px; }
+  .msg.customer .msg-bubble { background: #f0eeea; border-bottom-left-radius: 3px; color: #333; }
+  .msg.agent .msg-bubble { background: #ede0f5; border-bottom-right-radius: 3px; color: #3a1663; }
+  .msg-en { font-size: 9px; color: #aaa; font-style: italic; margin-top: 2px; padding: 0 3px; line-height: 1.35; }
+  .msg.agent .msg-en { text-align: right; }
+
+  .right-panel { width: 240px; display: flex; flex-direction: column; }
+  .ai-header { padding: 8px 10px; border-bottom: 1px solid #e8e0e0; font-size: 10px; font-weight: 600; color: #462279; display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+  .ai-suggestions { flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 5px; overflow: hidden; }
+  .ai-chip { padding: 7px 9px; border-radius: 6px; background: #faf8fc; border: 1px solid #e8e0e0; font-size: 10px; line-height: 1.4; color: #444; opacity: 0; transform: translateX(8px); transition: all 0.3s; }
+  .ai-chip.show { opacity: 1; transform: translateX(0); }
+  .ai-chip.selected { border-color: #462279; background: #f0e6f6; }
+  .ai-chip-label { font-size: 8px; color: #462279; font-weight: 600; margin-bottom: 2px; letter-spacing: 0.3px; }
+
+  .typing { display: flex; gap: 3px; padding: 7px 10px; align-self: flex-start; opacity: 0; transition: opacity 0.3s; }
+  .typing.show { opacity: 1; }
+  .typing span { width: 5px; height: 5px; border-radius: 50%; background: #CCBBBC; animation: bounce 1.2s infinite; }
+  .typing span:nth-child(2) { animation-delay: 0.15s; }
+  .typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes bounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+</style>
+</head>
+<body>
+<div class="chrome">
+  <div class="chrome-bar">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div class="chrome-title">CS Copilot — Ticket #4821</div>
+  </div>
+  <div class="main">
+    <div class="chat-panel">
+      <div class="panel-header"><span class="status-dot"></span> Chat with customer</div>
+      <div class="chat-messages" id="chat">
+        <div class="typing" id="typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="ai-header">
+        <svg viewBox="0 0 16 16" fill="none" width="12" height="12"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5L7 10.5L11 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        AI-suggested replies
+      </div>
+      <div class="ai-suggestions">
+        <div class="ai-chip" id="c1"><div class="ai-chip-label">OPTION A</div>I've checked — TXN-7742 is still processing. Cross-bank transfers may take 1-3 business days.</div>
+        <div class="ai-chip" id="c2"><div class="ai-chip-label">OPTION B</div>Let me look into this further. Please hold — I'll coordinate with the relevant department.</div>
+        <div class="ai-chip" id="c3"><div class="ai-chip-label">OPTION C</div>Cross-bank transfers after 4 PM are processed next business day.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const chat = document.getElementById('chat');
+const typing = document.getElementById('typing');
+
+const MSGS = [
+  { who:'customer', meta:'Customer', bubble:'Hello, I transferred money but it hasn\'t arrived. It\'s been 2 days.', en:'' },
+  { who:'agent', meta:'You', bubble:'Could you provide the transaction reference number?', en:'' },
+  { who:'customer', meta:'Customer', bubble:'TXN-20231108-7742. From SCB to Krungthai Bank.', en:'' },
+];
+
+const FINAL = { who:'agent', meta:'You · AI-assisted', bubble:'I\'ve checked — TXN-7742 is still processing. Cross-bank transfers may take 1-3 business days. Transfers after 4 PM are processed next business day.', en:'' };
+
+let tid;
+function wait(ms){ return new Promise(r=> tid=setTimeout(r,ms)); }
+
+function addMsg(m){
+  const d=document.createElement('div');
+  d.className='msg '+m.who;
+  d.innerHTML=`<div class="msg-meta">${m.meta}</div><div class="msg-bubble">${m.bubble}</div>`;
+  chat.insertBefore(d,typing);
+  requestAnimationFrame(()=>d.classList.add('show'));
+}
+
+function showTyping(s){ typing.classList.toggle('show',s); }
+
+async function run(){
+  for(const m of MSGS){
+    await wait(400);
+    showTyping(true);
+    await wait(500);
+    showTyping(false);
+    addMsg(m);
+  }
+  await wait(350);
+  document.getElementById('c1').classList.add('show');
+  await wait(150);
+  document.getElementById('c2').classList.add('show');
+  await wait(150);
+  document.getElementById('c3').classList.add('show');
+  await wait(600);
+  document.getElementById('c1').classList.add('selected');
+  await wait(500);
+  addMsg(FINAL);
+  await wait(2500);
+  reset();
+  setTimeout(run,300);
+}
+
+function reset(){
+  clearTimeout(tid);
+  chat.querySelectorAll('.msg').forEach(m=>m.remove());
+  showTyping(false);
+  ['c1','c2','c3'].forEach(id=>{const e=document.getElementById(id);e.className='ai-chip';});
+}
+
+window.addEventListener('load',()=>setTimeout(run,500));
+</script>
+</body>
+</html>

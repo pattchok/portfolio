@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+  font-weight: 300;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Custom design tokens ─────────────────────────────────────── */
+@theme {
+  /* Warm palette — cream · pink · sage · brown · espresso */
+  --color-cream:       #FAF5EE;   /* warm sandy cream */
+  --color-cream-dark:  #F0E4D5;   /* deeper cream */
+  --color-cream-mid:   #F5EDE3;   /* mid cream */
+  --color-pink:        #F0C8BA;   /* warm dusty rose */
+  --color-pink-light:  #FAE8E2;   /* blush tint for bg */
+  --color-pink-dark:   #D4A090;   /* deeper rose for borders */
+  --color-brown:       #8C5E48;   /* warm medium brown */
+  --color-brown-light: #B07A64;   /* lighter warm brown */
+  --color-sage:        #B8D4BF;   /* soft sage-eucalyptus */
+  --color-sage-light:  #E2F0E6;   /* very light sage for bg */
+  --color-sage-dark:   #8FB89A;   /* deeper sage */
+  --color-gold:        #C9A96E;   /* warm gold accent */
+  --color-gold-light:  #F0E5CE;   /* pale gold tint */
+  --color-text:        #1E1108;   /* dark espresso brown */
+  --color-muted:       #7A6358;   /* muted warm brown */
+  --color-border:      #EAD8CC;   /* warm pink-beige border */
+  --color-footer-bg:   #1A0E08;   /* dark espresso */
+  --color-footer-text: #EAD8CC;
+
+  /* Typography */
+  --font-serif: var(--font-calistoga), Georgia, serif;
+  --font-sans:  ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* ─── Base styles ───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF5EE;
+  color: #2D1F0E;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─── Typography helpers ────────────────────────────────────────── */
+.font-serif {
+  font-family: var(--font-calistoga), Georgia, serif;
+}
+
+/* ─── Selection color ───────────────────────────────────────────── */
+::selection {
+  background-color: #EDD5C5;
+  color: #2D1F0E;
+}
+
+/* ─── Wavy CTA re-draw on hover ─────────────────────────────────── */
+@keyframes waveDraw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+/* pathLength="1" must be on the <path> for this to work */
+.wavy-line-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.group:hover .wavy-line-path {
+  animation: waveDraw 0.45s ease forwards;
+}
+
+/* ─── Footer marquee ─────────────────────────────────────────────── */
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marqueeScroll 24s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Hero ambient blob animations ──────────────────────────────── */
+/* Very slow drift — barely perceptible movement, feels gently alive */
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(32px, -18px); }
+}
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(-28px, 22px); }
+}
+@keyframes blobDrift3 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(18px, 16px); }
+}
+
+.hero-blob-1 { animation: blobDrift1 22s ease-in-out infinite; }
+.hero-blob-2 { animation: blobDrift2 28s ease-in-out infinite; }
+.hero-blob-3 { animation: blobDrift3 34s ease-in-out infinite; }

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Copilot — Chat Interface</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; background: transparent; margin: 0; padding: 0; overflow: hidden; }
+  .wrapper { width: 100%; height: 100vh; }
+
+  .chrome { background: #fff; border-radius: 0; box-shadow: none; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+  .chrome-bar { padding: 11px 16px; border-bottom: 1px solid #e8e0e0; display: flex; align-items: center; gap: 8px; background: #faf8f8; flex-shrink: 0; }
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 10px; height: 10px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: #f09595; }
+  .dots span:nth-child(2) { background: #fac775; }
+  .dots span:nth-child(3) { background: #97c459; }
+  .chrome-title { flex: 1; text-align: center; font-size: 12px; color: #777; letter-spacing: 0.3px; }
+
+  .main { display: flex; flex: 1; min-height: 0; overflow: hidden; }
+
+  .chat-panel { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #e8e0e0; }
+  .panel-header { padding: 12px 16px; border-bottom: 1px solid #e8e0e0; font-size: 13px; font-weight: 600; color: #000; display: flex; align-items: center; gap: 6px; }
+  .panel-header .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #97c459; }
+  .chat-messages { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; }
+
+  .msg { max-width: 80%; opacity: 0; transform: translateY(8px); transition: opacity 0.4s, transform 0.4s; }
+  .msg.show { opacity: 1; transform: translateY(0); }
+  .msg.customer { align-self: flex-start; }
+  .msg.agent { align-self: flex-end; }
+  .msg-meta { font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .msg.agent .msg-meta { text-align: right; }
+  .msg-bubble { padding: 10px 14px; font-size: 13px; line-height: 1.55; border-radius: 12px; }
+  .msg.customer .msg-bubble { background: #f0eeea; border-bottom-left-radius: 4px; color: #333; }
+  .msg.agent .msg-bubble { background: #ede0f5; border-bottom-right-radius: 4px; color: #3a1663; }
+  .msg-en { font-size: 11px; color: #999; font-style: italic; margin-top: 4px; padding: 0 4px; line-height: 1.4; }
+  .msg.agent .msg-en { text-align: right; }
+
+  .chat-input-area { border-top: 1px solid #e8e0e0; padding: 10px 12px; }
+  .textarea-wrap { position: relative; }
+  .textarea-ghost {
+    visibility: hidden; white-space: pre-wrap; word-wrap: break-word;
+    padding: 8px 12px; font-size: 13px; font-family: 'DM Sans', -apple-system, sans-serif;
+    line-height: 1.5; border: 1px solid transparent; min-height: 36px; max-height: 120px;
+  }
+  .chat-textarea {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px;
+    font-size: 13px; font-family: inherit; background: #fafaf8; outline: none;
+    resize: none; line-height: 1.5; color: #333; transition: border-color 0.2s, background 0.2s;
+    overflow-y: auto;
+  }
+  .chat-textarea.editing { border-color: #462279; background: #faf8fc; }
+  .chat-input-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .edit-hint { font-size: 11px; color: #462279; opacity: 0; transition: opacity 0.3s; font-style: italic; }
+  .edit-hint.show { opacity: 1; }
+  .send-btn { padding: 6px 18px; border: none; border-radius: 8px; background: #000; color: #fff; font-size: 13px; font-family: inherit; cursor: default; opacity: 0.4; transition: opacity 0.3s, transform 0.15s; }
+  .send-btn.active { opacity: 1; cursor: pointer; }
+  .send-btn.flash { transform: scale(0.95); }
+
+  .right-panels { width: 310px; display: flex; flex-direction: column; }
+
+  .ai-panel { flex: 1; display: flex; flex-direction: column; border-bottom: 1px solid #e8e0e0; }
+  .ai-header { padding: 10px 14px; border-bottom: 1px solid #e8e0e0; font-size: 12px; font-weight: 600; color: #462279; display: flex; align-items: center; gap: 5px; }
+  .ai-header svg { width: 14px; height: 14px; }
+  .ai-suggestions { flex: 1; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+  .ai-chip { padding: 9px 12px; border-radius: 8px; background: #faf8fc; border: 1px solid #e8e0e0; font-size: 12px; line-height: 1.5; color: #444; cursor: pointer; opacity: 0; transform: translateX(12px); transition: all 0.35s; }
+  .ai-chip.show { opacity: 1; transform: translateX(0); }
+  .ai-chip.selected { border-color: #462279; background: #f0e6f6; }
+  .ai-chip:hover { border-color: #CCBBBC; }
+  .ai-chip-label { font-size: 10px; color: #462279; font-weight: 600; margin-bottom: 3px; letter-spacing: 0.3px; }
+  .ai-chip .chip-en { font-size: 11px; color: #999; font-style: italic; margin-top: 5px; padding-top: 5px; border-top: 1px solid #e8e0e0; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding-top 0.3s; padding-top: 0; }
+  .ai-chip:hover .chip-en, .ai-chip.selected .chip-en { max-height: 80px; padding-top: 5px; }
+
+  .ticket-panel { height: 200px; display: flex; flex-direction: column; }
+  .ticket-header { padding: 10px 14px; border-bottom: 1px solid #e8e0e0; font-size: 12px; font-weight: 600; color: #000; }
+  .ticket-body { flex: 1; padding: 10px 14px; overflow-y: auto; }
+  .ticket-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 12px; }
+  .ticket-label { color: #999; }
+  .ticket-value { color: #333; font-weight: 500; }
+  .ticket-value.open { color: #d97706; }
+  .kb-section { margin-top: 10px; padding-top: 10px; border-top: 1px solid #e8e0e0; }
+  .kb-title { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .kb-item { font-size: 12px; color: #666; padding: 3px 0; display: flex; align-items: center; gap: 5px; opacity: 0; transition: opacity 0.3s; }
+  .kb-item.show { opacity: 1; }
+  .kb-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #CCBBBC; flex-shrink: 0; }
+
+  .footer-bar { padding: 10px 16px; border-top: 1px solid #e8e0e0; display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+  .replay-btn { padding: 6px 20px; border: 1px solid #ddd; border-radius: 20px; background: #fff; font-size: 12px; font-family: inherit; cursor: pointer; color: #666; transition: all 0.2s; display: flex; align-items: center; gap: 5px; }
+  .replay-btn:hover { border-color: #462279; color: #462279; }
+  .replay-btn svg { width: 13px; height: 13px; }
+  .disclaimer { font-size: 11px; color: #aaa; font-style: italic; text-align: center; line-height: 1.4; }
+
+  .typing { display: flex; gap: 4px; padding: 10px 14px; align-self: flex-start; opacity: 0; transition: opacity 0.3s; }
+  .typing.show { opacity: 1; }
+  .typing span { width: 6px; height: 6px; border-radius: 50%; background: #CCBBBC; animation: bounce 1.2s infinite; }
+  .typing span:nth-child(2) { animation-delay: 0.15s; }
+  .typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes bounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="chrome">
+    <div class="chrome-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="chrome-title">CS Copilot — Ticket #4821</div>
+    </div>
+
+    <div class="main">
+      <div class="chat-panel">
+        <div class="panel-header"><span class="status-dot"></span> Chat with customer</div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="typing" id="typing"><span></span><span></span><span></span></div>
+        </div>
+        <div class="chat-input-area">
+          <div class="textarea-wrap">
+            <div class="textarea-ghost" id="ghost">&nbsp;</div>
+            <textarea class="chat-textarea" id="chatTextarea" placeholder="Type or select a suggestion..." rows="1" disabled></textarea>
+          </div>
+          <div class="chat-input-bottom">
+            <div class="edit-hint" id="editHint"></div>
+            <button class="send-btn" id="sendBtn">Send</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panels">
+        <div class="ai-panel">
+          <div class="ai-header">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5L7 10.5L11 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            AI-suggested replies
+          </div>
+          <div class="ai-suggestions">
+            <div class="ai-chip" id="chip1">
+              <div class="ai-chip-label">OPTION A — Status update</div>
+              <div>ดิฉันตรวจสอบแล้วค่ะ รายการ TXN-20231108-7742 อยู่ระหว่างดำเนินการ การโอนข้ามธนาคารอาจใช้เวลา 1-3 วันทำการค่ะ</div>
+              <div class="chip-en">"I've checked — TXN-7742 is still processing. Cross-bank transfers may take 1-3 business days."</div>
+            </div>
+            <div class="ai-chip" id="chip2">
+              <div class="ai-chip-label">OPTION B — Escalate</div>
+              <div>ขอตรวจสอบรายการนี้เพิ่มเติมค่ะ กรุณารอสักครู่ ดิฉันจะประสานงานกับฝ่ายที่เกี่ยวข้องให้ค่ะ</div>
+              <div class="chip-en">"Let me look into this further. Please hold — I'll coordinate with the relevant department."</div>
+            </div>
+            <div class="ai-chip" id="chip3">
+              <div class="ai-chip-label">OPTION C — Explain cut-off</div>
+              <div>จากการตรวจสอบ รายการโอนข้ามธนาคารหลัง 16:00 จะถูกดำเนินการในวันทำการถัดไปค่ะ</div>
+              <div class="chip-en">"Cross-bank transfers after 4 PM are processed next business day. Funds should arrive today."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticket-panel">
+          <div class="ticket-header">Ticket info</div>
+          <div class="ticket-body">
+            <div class="ticket-row"><span class="ticket-label">Status</span><span class="ticket-value open">Open</span></div>
+            <div class="ticket-row"><span class="ticket-label">Type</span><span class="ticket-value">Transfer inquiry</span></div>
+            <div class="ticket-row"><span class="ticket-label">Priority</span><span class="ticket-value">Medium</span></div>
+            <div class="ticket-row"><span class="ticket-label">Ref</span><span class="ticket-value" id="refValue">—</span></div>
+            <div class="kb-section">
+              <div class="kb-title">Knowledge sources</div>
+              <div class="kb-item" id="kb1">Cross-bank transfer policy</div>
+              <div class="kb-item" id="kb2">Cut-off time guidelines</div>
+              <div class="kb-item" id="kb3">Transaction status codes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <button class="replay-btn" onclick="replay()">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2.5 8a5.5 5.5 0 1 1 1.3 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 4.5V8h3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Replay
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const chatMessages = document.getElementById('chatMessages');
+const typing = document.getElementById('typing');
+const textarea = document.getElementById('chatTextarea');
+const ghost = document.getElementById('ghost');
+const sendBtn = document.getElementById('sendBtn');
+const editHint = document.getElementById('editHint');
+
+const MESSAGES = [
+  { who: 'customer', meta: 'Customer — 14:32',
+    thai: 'สวัสดีค่ะ ดิฉันโอนเงินไปแล้วแต่ยอดยังไม่เข้าบัญชีปลายทาง ผ่านมา 2 วันแล้วค่ะ',
+    en: 'Hello, I transferred money but it hasn\'t arrived at the destination account. It\'s been 2 days.' },
+  { who: 'agent', meta: 'You — 14:33',
+    thai: 'สวัสดีค่ะ ขอรบกวนสอบถามเลขที่อ้างอิงการทำรายการได้ไหมคะ เพื่อจะตรวจสอบสถานะให้ค่ะ',
+    en: 'Hello! Could you provide the transaction reference number so I can check the status for you?' },
+  { who: 'customer', meta: 'Customer — 14:34',
+    thai: 'เลขอ้างอิง TXN-20231108-7742 ค่ะ โอนจากบัญชี SCB ไปกรุงไทยค่ะ',
+    en: 'Reference number TXN-20231108-7742. Transferred from SCB to Krungthai Bank.' },
+];
+
+const CHIP_A_TEXT = 'ดิฉันตรวจสอบแล้วค่ะ รายการ TXN-20231108-7742 อยู่ระหว่างดำเนินการ การโอนข้ามธนาคารอาจใช้เวลา 1-3 วันทำการค่ะ';
+const AGENT_ADDITION = ' ทั้งนี้ รายการที่โอนหลัง 16:00 จะดำเนินการในวันทำการถัดไปค่ะ';
+
+const AGENT_FINAL = {
+  who: 'agent', meta: 'You — 14:35 · AI-assisted (edited)',
+  thai: CHIP_A_TEXT + AGENT_ADDITION,
+  en: 'I\'ve checked — TXN-20231108-7742 is still processing. Cross-bank transfers may take 1-3 business days. Also, transfers made after 4 PM are processed on the next business day.'
+};
+
+let timeoutId;
+function wait(ms) { return new Promise(r => timeoutId = setTimeout(r, ms)); }
+
+function syncGhost() { ghost.textContent = textarea.value || '\u00a0'; }
+function setTextareaValue(val) { textarea.value = val; syncGhost(); }
+
+function addMessage(msg) {
+  const div = document.createElement('div');
+  div.className = `msg ${msg.who}`;
+  div.innerHTML = `
+    <div class="msg-meta">${msg.meta}</div>
+    <div class="msg-bubble">${msg.thai}</div>
+    <div class="msg-en">${msg.en}</div>`;
+  chatMessages.insertBefore(div, typing);
+  requestAnimationFrame(() => div.classList.add('show'));
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTyping(show) {
+  typing.classList.toggle('show', show);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function typeInTextarea(text, speed) {
+  for (let i = 0; i < text.length; i++) {
+    textarea.value += text[i];
+    syncGhost();
+    textarea.scrollTop = textarea.scrollHeight;
+    await wait(speed);
+  }
+}
+
+async function runSequence() {
+  for (const msg of MESSAGES) {
+    await wait(800);
+    showTyping(true);
+    await wait(900);
+    showTyping(false);
+    addMessage(msg);
+  }
+
+  await wait(600);
+  document.getElementById('refValue').textContent = 'TXN-7742';
+  document.getElementById('refValue').style.color = '#462279';
+
+  await wait(400);
+  document.getElementById('kb1').classList.add('show');
+  await wait(250);
+  document.getElementById('kb2').classList.add('show');
+  await wait(250);
+  document.getElementById('kb3').classList.add('show');
+
+  await wait(600);
+  document.getElementById('chip1').classList.add('show');
+  await wait(300);
+  document.getElementById('chip2').classList.add('show');
+  await wait(300);
+  document.getElementById('chip3').classList.add('show');
+
+  await wait(1200);
+  document.getElementById('chip1').classList.add('selected');
+
+  await wait(400);
+  setTextareaValue(CHIP_A_TEXT);
+  textarea.classList.add('editing');
+  sendBtn.classList.add('active');
+
+  await wait(600);
+  editHint.textContent = 'Agent is adding cut-off time info...';
+  editHint.classList.add('show');
+
+  await wait(800);
+  await typeInTextarea(AGENT_ADDITION, 35);
+
+  await wait(800);
+  editHint.textContent = 'Review complete';
+  await wait(600);
+
+  sendBtn.classList.add('flash');
+  await wait(150);
+  sendBtn.classList.remove('flash');
+
+  editHint.classList.remove('show');
+  setTextareaValue('');
+  textarea.classList.remove('editing');
+  sendBtn.classList.remove('active');
+  document.getElementById('chip1').classList.remove('selected');
+  addMessage(AGENT_FINAL);
+}
+
+function resetState() {
+  clearTimeout(timeoutId);
+  chatMessages.querySelectorAll('.msg').forEach(m => m.remove());
+  showTyping(false);
+  ['chip1','chip2','chip3'].forEach(id => { document.getElementById(id).className = 'ai-chip'; });
+  ['kb1','kb2','kb3'].forEach(id => document.getElementById(id).classList.remove('show'));
+  document.getElementById('refValue').textContent = '—';
+  document.getElementById('refValue').style.color = '';
+  setTextareaValue('');
+  textarea.classList.remove('editing');
+  sendBtn.className = 'send-btn';
+  editHint.classList.remove('show');
+  editHint.textContent = '';
+}
+
+function replay() { resetState(); setTimeout(runSequence, 400); }
+window.addEventListener('load', () => setTimeout(runSequence, 800));
+</script>
+</body>
+</html>

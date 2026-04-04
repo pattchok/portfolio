@@ -7,7 +7,31 @@
       "Bash(npm prefix:*)",
       "Read(//usr/local/bin/**)",
       "Read(//Users/kukkukp/.local/share/claude/versions/**)",
-      "Bash(npx create-next-app@latest:*)"
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "WebFetch(domain:www.laurachen.me)",
+      "WebFetch(domain:speedboat.studio)",
+      "Bash(ls:*)",
+      "Bash(git pull:*)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -s \"https://fonts.google.com/specimen/Gentle+Soft+Serif\" -o /dev/null -w \"%{http_code}\")",
+      "Read(//Users/kukkukp/Downloads/made-gentle/**)",
+      "Read(//Users/kukkukp/Downloads/**)",
+      "Bash(cp /Users/kukkukp/Desktop/kukkukp/website-portfolio/work/rag-copilot/rag_copilot_system_architecture.svg /Users/kukkukp/dev/portfolio/public/work/rag-copilot/)",
+      "Bash(cp /Users/kukkukp/Desktop/kukkukp/website-portfolio/work/rag-copilot/rag_copilot_user_flow.svg /Users/kukkukp/dev/portfolio/public/work/rag-copilot/)",
+      "Bash(cp /Users/kukkukp/Desktop/kukkukp/website-portfolio/work/rag-copilot/salesforce-rag-logo.png /Users/kukkukp/dev/portfolio/public/work/rag-copilot/)",
+      "Bash(curl:*)",
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "Read(//Users/kukkukp/Desktop/website-portfolio/**)",
+      "Read(//Users/kukkukp/desktop/website-portfolio/**)",
+      "WebSearch",
+      "Bash(unzip -o ~/Downloads/Bamee.zip -d /tmp/bamee)",
+      "Read(//tmp/**)",
+      "Bash(change the font back to the first one, i dont think lomathin looks very good on the caption)"
     ]
   }
 }

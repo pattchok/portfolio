@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Copilot — Ticket Summary</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; background: transparent; margin: 0; padding: 0; overflow: hidden; }
+
+  .wrapper { width: 100%; height: 100vh; }
+  .chrome { background: #fff; border-radius: 0; box-shadow: none; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+  .chrome-bar { padding: 11px 16px; border-bottom: 1px solid #e8e0e0; display: flex; align-items: center; gap: 8px; background: #faf8f8; flex-shrink: 0; }
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 10px; height: 10px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: #f09595; }
+  .dots span:nth-child(2) { background: #fac775; }
+  .dots span:nth-child(3) { background: #97c459; }
+  .chrome-title { flex: 1; text-align: center; font-size: 12px; color: #777; letter-spacing: 0.3px; }
+
+  .page { padding: 24px 32px 32px; flex: 1; overflow-y: auto; }
+
+  .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .breadcrumb { font-size: 12px; color: #999; }
+  .breadcrumb a { color: #462279; text-decoration: none; }
+  .badge { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; background: #fef3c7; color: #92400e; }
+
+  .ticket-title { font-size: 20px; font-weight: 600; color: #000; margin-bottom: 4px; }
+  .ticket-sub { font-size: 13px; color: #999; margin-bottom: 24px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+
+  .card { background: #faf8fc; border: 1px solid #e8e0e0; border-radius: 10px; padding: 16px 18px; }
+  .card-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: #999; font-weight: 600; margin-bottom: 12px; }
+  .card.full { grid-column: 1 / -1; }
+
+  .field { margin-bottom: 10px; }
+  .field:last-child { margin-bottom: 0; }
+  .field-label { font-size: 11px; color: #aaa; margin-bottom: 3px; }
+  .field-value { font-size: 13px; color: #333; font-weight: 500; min-height: 18px; }
+  .field-value.populating { color: #462279; }
+
+  .summary-text { font-size: 13px; line-height: 1.7; color: #444; min-height: 40px; }
+
+  .todo-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f0ece0; font-size: 13px; color: #444; }
+  .todo-item:last-child { border-bottom: none; }
+  .todo-check { width: 16px; height: 16px; border: 1.5px solid #CCBBBC; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+
+  .chat-preview { max-height: 140px; overflow-y: auto; }
+  .chat-line { font-size: 12px; color: #666; padding: 4px 0; line-height: 1.5; position: relative; cursor: default; }
+  .chat-line .speaker { font-weight: 600; color: #333; }
+  .chat-line .tooltip { position: absolute; bottom: calc(100% + 4px); left: 0; background: #1a1a1a; color: #f0f0f0; padding: 6px 10px; border-radius: 6px; font-size: 11px; line-height: 1.4; max-width: 300px; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 10; white-space: normal; }
+  .chat-line .tooltip::after { content: ''; position: absolute; top: 100%; left: 20px; border: 4px solid transparent; border-top-color: #1a1a1a; }
+  .chat-line:hover .tooltip { opacity: 1; }
+
+  .anim { opacity: 0; transform: translateY(6px); transition: opacity 0.5s, transform 0.5s; }
+  .anim.show { opacity: 1; transform: translateY(0); }
+
+  .cursor { display: inline-block; width: 1px; height: 14px; background: #462279; margin-left: 2px; animation: blink 0.8s infinite; vertical-align: text-bottom; }
+  @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
+
+  .footer-bar { padding: 10px 16px; border-top: 1px solid #e8e0e0; display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+  .replay-btn { padding: 6px 20px; border: 1px solid #ddd; border-radius: 20px; background: #fff; font-size: 12px; font-family: inherit; cursor: pointer; color: #666; transition: all 0.2s; display: flex; align-items: center; gap: 5px; }
+  .replay-btn:hover { border-color: #462279; color: #462279; }
+  .replay-btn svg { width: 13px; height: 13px; }
+  .disclaimer { font-size: 11px; color: #aaa; font-style: italic; text-align: center; line-height: 1.4; }
+
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; background: #f0e6f6; color: #462279; margin-right: 4px; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="chrome">
+    <div class="chrome-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="chrome-title">Salesforce — Ticket Summary</div>
+    </div>
+
+    <div class="page">
+      <div class="top-bar anim" id="a0">
+        <div class="breadcrumb"><a href="#">Tickets</a> / #4821</div>
+        <span class="badge">Open</span>
+      </div>
+
+      <div class="anim" id="a1">
+        <div class="ticket-title">Cross-bank transfer — pending resolution</div>
+        <div class="ticket-sub">Created Nov 8, 2023 · 14:32 — Last updated 14:36 · Assigned to <strong>Agent Kwan</strong></div>
+      </div>
+
+      <div class="grid">
+        <div class="card anim" id="a2">
+          <div class="card-title">Ticket details</div>
+          <div class="field"><div class="field-label">Reference</div><div class="field-value populating" id="f-ref"></div></div>
+          <div class="field"><div class="field-label">Type</div><div class="field-value" id="f-type"></div></div>
+          <div class="field"><div class="field-label">Priority</div><div class="field-value" id="f-priority"></div></div>
+          <div class="field"><div class="field-label">Channel</div><div class="field-value" id="f-channel"></div></div>
+          <div class="field"><div class="field-label">Tags</div><div class="field-value" id="f-tags"></div></div>
+        </div>
+
+        <div class="card anim" id="a3">
+          <div class="card-title">Customer info</div>
+          <div class="field"><div class="field-label">Name</div><div class="field-value" id="f-name"></div></div>
+          <div class="field"><div class="field-label">Account</div><div class="field-value" id="f-account"></div></div>
+          <div class="field"><div class="field-label">Segment</div><div class="field-value" id="f-segment"></div></div>
+          <div class="field"><div class="field-label">Contact</div><div class="field-value" id="f-contact"></div></div>
+        </div>
+
+        <div class="card full anim" id="a4">
+          <div class="card-title">AI-generated summary</div>
+          <div class="summary-text" id="f-summary"></div>
+        </div>
+
+        <div class="card anim" id="a5">
+          <div class="card-title">Next steps (auto-generated)</div>
+          <div id="todos"></div>
+        </div>
+
+        <div class="card anim" id="a6">
+          <div class="card-title">Conversation log</div>
+          <div class="chat-preview" id="chatLog"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <button class="replay-btn" onclick="replay()">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2.5 8a5.5 5.5 0 1 1 1.3 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 4.5V8h3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Replay
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const FIELDS = {
+  'f-ref': 'TXN-20231108-7742',
+  'f-type': 'Transfer inquiry',
+  'f-priority': 'Medium',
+  'f-channel': 'Live chat',
+  'f-tags': '<span class="tag">cross-bank</span><span class="tag">pending</span><span class="tag">SCB→KTB</span>',
+  'f-name': 'Somchai K. (masked)',
+  'f-account': 'SCB Savings ••••8832',
+  'f-segment': 'Retail banking',
+  'f-contact': '+66 •••• ••42',
+};
+
+const SUMMARY = 'Customer reported a pending cross-bank transfer (SCB → Krungthai Bank) initiated 2 days ago. Reference: TXN-20231108-7742. Agent verified the transaction is still in processing. Customer was informed that cross-bank transfers may take 1-3 business days. Case remains open pending confirmation of funds arrival.';
+
+const TODOS = [
+  'Follow up with customer on Nov 11 to confirm transfer completion',
+  'Escalate to operations if funds not received by Nov 10 EOD',
+  'Update ticket status once customer confirms receipt',
+];
+
+const CHAT_LINES = [
+  { s: 'Customer', thai: 'สวัสดีค่ะ ดิฉันโอนเงินไปแล้วแต่ยอดยังไม่เข้า...', en: 'Hello, I transferred money but it hasn\'t arrived...' },
+  { s: 'Agent', thai: 'ขอรบกวนสอบถามเลขที่อ้างอิงการทำรายการ...', en: 'Could you provide the transaction reference number...' },
+  { s: 'Customer', thai: 'เลขอ้างอิง TXN-20231108-7742 ค่ะ...', en: 'Reference number TXN-20231108-7742...' },
+  { s: 'Agent', thai: 'ดิฉันตรวจสอบแล้วค่ะ อยู่ระหว่างดำเนินการ...', en: 'I\'ve checked — the transaction is still processing...' },
+];
+
+let timeoutId;
+function wait(ms) { return new Promise(r => timeoutId = setTimeout(r, ms)); }
+
+async function typeText(el, text, speed = 18) {
+  el.innerHTML = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  el.appendChild(cursor);
+  for (let i = 0; i < text.length; i++) {
+    el.insertBefore(document.createTextNode(text[i]), cursor);
+    await wait(speed);
+  }
+  cursor.remove();
+}
+
+async function runSequence() {
+  for (let i = 0; i <= 6; i++) {
+    const el = document.getElementById('a' + i);
+    if (el) { await wait(200); el.classList.add('show'); }
+  }
+  await wait(400);
+
+  for (const [id, val] of Object.entries(FIELDS)) {
+    const el = document.getElementById(id);
+    if (id === 'f-tags') { el.innerHTML = val; }
+    else { await typeText(el, val, 22); }
+    await wait(150);
+  }
+
+  await wait(300);
+  await typeText(document.getElementById('f-summary'), SUMMARY, 10);
+
+  await wait(300);
+  const todosEl = document.getElementById('todos');
+  for (const todo of TODOS) {
+    const div = document.createElement('div');
+    div.className = 'todo-item anim';
+    div.innerHTML = `<div class="todo-check"></div><span>${todo}</span>`;
+    todosEl.appendChild(div);
+    await wait(100);
+    div.classList.add('show');
+    await wait(250);
+  }
+
+  await wait(200);
+  const chatEl = document.getElementById('chatLog');
+  for (const line of CHAT_LINES) {
+    const div = document.createElement('div');
+    div.className = 'chat-line anim';
+    div.innerHTML = `<span class="speaker">${line.s}:</span> ${line.thai}<div class="tooltip">${line.en}</div>`;
+    chatEl.appendChild(div);
+    await wait(80);
+    div.classList.add('show');
+    await wait(200);
+  }
+}
+
+function resetState() {
+  clearTimeout(timeoutId);
+  for (let i = 0; i <= 6; i++) {
+    const el = document.getElementById('a' + i);
+    if (el) el.classList.remove('show');
+  }
+  for (const id of Object.keys(FIELDS)) document.getElementById(id).innerHTML = '';
+  document.getElementById('f-summary').innerHTML = '';
+  document.getElementById('todos').innerHTML = '';
+  document.getElementById('chatLog').innerHTML = '';
+}
+
+function replay() { resetState(); setTimeout(runSequence, 400); }
+window.addEventListener('load', () => setTimeout(runSequence, 600));
+</script>
+</body>
+</html>
