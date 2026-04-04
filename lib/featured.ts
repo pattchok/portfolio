@@ -23,7 +23,7 @@ export type FeaturedItem = {
 };
 
 export function getFeaturedItems(): FeaturedItem[] {
-  return featuredEntries.flatMap(({ type, slug }) => {
+  return featuredEntries.flatMap<FeaturedItem>(({ type, slug }) => {
     if (type === "work") {
       const p = workProjects.find((w) => w.slug === slug);
       if (!p) return [];

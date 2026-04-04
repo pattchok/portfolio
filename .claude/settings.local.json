@@ -31,7 +31,10 @@
       "WebSearch",
       "Bash(unzip -o ~/Downloads/Bamee.zip -d /tmp/bamee)",
       "Read(//tmp/**)",
-      "Bash(change the font back to the first one, i dont think lomathin looks very good on the caption)"
+      "Bash(change the font back to the first one, i dont think lomathin looks very good on the caption)",
+      "Bash(npx tsc:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)"
     ]
   }
 }
