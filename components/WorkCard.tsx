@@ -15,7 +15,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
 
   return (
     <section className="px-6 md:px-10 lg:px-16 py-16 border-t border-border/40 -mt-px">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div
             className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
@@ -26,7 +26,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
               {slug === "cs-copilot" ? (
                 <div
                   className="rounded-2xl w-full border border-border/30 overflow-hidden"
-                  style={{ height: "360px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
+                  style={{ height: "280px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
                 >
                   <iframe
                     src="/work/cs-copilot/copilot-preview.html"
@@ -38,7 +38,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
               ) : thumbImg ? (
                 <div
                   className="rounded-2xl w-full border border-border/30 overflow-hidden"
-                  style={{ height: "360px" }}
+                  style={{ height: "280px" }}
                 >
                   <Image
                     src={thumbImg}
@@ -51,7 +51,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
               ) : (
                 <div
                   className="rounded-2xl w-full border border-border/30"
-                  style={{ height: "360px", backgroundColor: thumbBg, opacity: 0.65 }}
+                  style={{ height: "280px", backgroundColor: thumbBg, opacity: 0.65 }}
                 />
               )}
             </div>
@@ -69,7 +69,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
               >
                 {name}
               </h2>
-              <p className="text-muted leading-relaxed mb-5 text-lg md:text-xl">
+              <p className="text-muted leading-relaxed mb-5 text-base md:text-lg">
                 {shortDesc}
               </p>
 

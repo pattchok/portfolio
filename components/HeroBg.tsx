@@ -1,11 +1,5 @@
-"use client";
-
-import { useState } from "react";
-import { Pause, Play } from "lucide-react";
-
 export default function HeroBg() {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const ps = isPlaying ? "running" : "paused";
+  const ps = "running";
 
   return (
     <>
@@ -111,15 +105,6 @@ export default function HeroBg() {
         </g>
       </svg>
 
-      <button
-        onClick={() => setIsPlaying((p) => !p)}
-        aria-label={isPlaying ? "Pause cloud animation" : "Play cloud animation"}
-        className="absolute bottom-5 right-6 z-20 flex items-center gap-1.5 text-muted/60 hover:text-brown transition-colors duration-200 pointer-events-auto"
-        style={{ fontSize: "0.65rem", letterSpacing: "0.05em" }}
-      >
-        {isPlaying ? <Pause size={11} strokeWidth={1.5} /> : <Play size={11} strokeWidth={1.5} />}
-        <span>{isPlaying ? "pause" : "play"}</span>
-      </button>
     </>
   );
 }

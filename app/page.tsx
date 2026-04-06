@@ -42,7 +42,7 @@ export default function HomePage() {
                 </span>
               </h1>
               <FadeIn delay={3.5}>
-                <p className="text-muted text-xl md:text-2xl leading-relaxed max-w-xl mb-10">
+                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-xl mb-10">
                   product manager with 6+ years in AI and data, passionate about shipping solutions that address people's actual needs
                 </p>
               </FadeIn>
@@ -63,7 +63,7 @@ export default function HomePage() {
 
       {/* ── Featured work ─────────────────────────────────────── */}
       <div style={{ backgroundColor: "#F3F5F0" }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-12 pb-2">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 pt-12 pb-2">
           <FadeIn>
             <h2
               className="text-text"
@@ -101,7 +101,7 @@ export default function HomePage() {
               key={item.slug}
               className="px-6 md:px-10 lg:px-16 py-16 border-t border-border/40 -mt-px"
             >
-              <div className="max-w-7xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <FadeIn>
                   <div
                     className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
@@ -111,7 +111,7 @@ export default function HomePage() {
                     <div className={reversed ? "[direction:ltr]" : ""}>
                       <div
                         className="rounded-2xl w-full border border-border/30"
-                        style={{ height: "360px", backgroundColor: item.thumbBg, opacity: 0.65 }}
+                        style={{ height: "280px", backgroundColor: item.thumbBg, opacity: 0.65 }}
                       />
                     </div>
                     <div className={reversed ? "[direction:ltr]" : ""}>
@@ -121,7 +121,7 @@ export default function HomePage() {
                       >
                         {item.name}
                       </h3>
-                      <p className="text-muted leading-relaxed mb-8 text-lg md:text-xl">
+                      <p className="text-muted leading-relaxed mb-8 text-base md:text-lg">
                         {item.desc}
                       </p>
                       <WavyCTA href={item.href} large>view project</WavyCTA>
@@ -135,7 +135,7 @@ export default function HomePage() {
       </div>
 
       {/* ── View more CTA ─────────────────────────────────────── */}
-      <section className="px-6 md:px-10 lg:px-16 py-20 border-t border-border text-center bg-cream -mt-px">
+      <section className="px-6 md:px-10 lg:px-16 py-14 border-t border-border text-center bg-cream -mt-px">
         <FadeIn>
           <p className="font-serif font-light text-muted text-xl italic mb-6">
             there&apos;s more where that came from

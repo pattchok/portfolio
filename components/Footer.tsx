@@ -17,14 +17,14 @@ export default function Footer() {
             <p
               className="mb-2"
               style={{
-                color: "#E8D9CC",
+                color: "#FAF5EE",
                 fontSize: "1.4rem",
                 fontFamily: "var(--font-calistoga), Georgia, serif",
               }}
             >
               Patt Chokchainant
             </p>
-            <p style={{ color: "#A08878", fontSize: "0.875rem" }}>
+            <p style={{ color: "#FAF5EE", fontSize: "0.875rem" }}>
               Feel free to send a message along!
             </p>
           </div>
@@ -38,12 +38,12 @@ export default function Footer() {
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-2.5 group w-fit"
-                style={{ color: "#A08878" }}
+                style={{ color: "#FAF5EE" }}
               >
-                <span className="transition-colors duration-200 group-hover:text-[#E8D9CC]" style={{ color: "inherit" }}>
+                <span className="transition-colors duration-200 group-hover:text-[#C9A96E]" style={{ color: "inherit" }}>
                   <SocialIcon name={iconName} size={13} />
                 </span>
-                <span className="text-sm transition-colors duration-200 group-hover:text-[#E8D9CC]" style={{ color: "inherit" }}>
+                <span className="text-sm transition-colors duration-200 group-hover:text-[#C9A96E]" style={{ color: "inherit" }}>
                   {label}
                 </span>
               </a>

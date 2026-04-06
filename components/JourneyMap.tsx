@@ -12,7 +12,7 @@ const steps: JourneyStep[] = [
   {
     org: "Chulalongkorn University",
     role: "B.B.A. in Finance & Accounting",
-    period: "2014-2018",
+    period: "2015-2019",
   },
   {
     org: "Sertis",
@@ -34,7 +34,7 @@ const steps: JourneyStep[] = [
   {
     org: "University of Washington",
     role: "M.S. in Information Management",
-    period: "2025-2026",
+    period: "2024-2025",
     parallel: { name: "The AI Collective", desc: "Seattle AI community" },
   },
   {

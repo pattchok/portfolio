@@ -21,7 +21,9 @@ export const sideProjects: SideProject[] = [
     subtitle: "brewing now, coming soon :)",
     year: "2026",
     thumbBg: "#B8D4BF",
-    links: [],
+    links: [
+      { label: "github", href: "https://github.com/nckclrk/shadowclaw/tree/main" },
+    ],
   },
   {
     slug: "huggingface-design",

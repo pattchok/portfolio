@@ -51,7 +51,7 @@ function Highlighter() {
 const sectionHeading = (text: string) => (
   <div className="mb-8 flex justify-center">
     <div style={{ position: "relative", display: "inline-block", paddingBottom: "3px" }}>
-      <h3 style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", lineHeight: 1.1, position: "relative", zIndex: 1, ...GRAD_TEXT }}>
+      <h3 style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", lineHeight: 1.1, position: "relative", zIndex: 1, ...GRAD_TEXT }}>
         {text}
       </h3>
       <Highlighter />
@@ -61,14 +61,14 @@ const sectionHeading = (text: string) => (
 
 export default function PlayPage() {
   return (
-    <main className="px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#FDF5EE" }}>
+    <main className="px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#F3F5F0" }}>
       <GradDefs />
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Page heading */}
         <FadeIn>
           <h1
             className="text-text leading-tight"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(2rem, 4vw, 2.8rem)" }}
+            style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}
           >
             play
           </h1>
@@ -84,19 +84,12 @@ export default function PlayPage() {
 
         {/* Intro */}
         <FadeIn delay={0.06}>
-          <div className="space-y-5 text-lg md:text-xl leading-relaxed text-muted mt-8 mb-16">
-            <p>
-              outside of work, i&apos;m a runner, a hiker, a big food lover, and a dog lover
-              (i will pet your dog without asking). i also arrange flowers, read a lot, and
-              plan my next trip whenever i can.
-            </p>
-            <p>
-              most of what i love doing now started because i tried something on a whim and kept going.
-              i think anyone can start doing anything, no matter how old they are. it&apos;s never too late.
-              whether it&apos;s running before the sun comes up, arranging flowers on a sunday, or planning the next trip,
-              these are the things that keep me grounded and make everything else better.
-            </p>
-          </div>
+          <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-14">
+            Most of what I love doing now started because I tried something on a whim and kept going.
+            I run before the sun comes up, arrange flowers on weekends, read way too many fantasy novels,
+            and plan my next trip the moment I get back from one. I believe it&apos;s never too late to
+            pick up something new, and these are the things that keep me grounded and make everything else better.
+          </p>
         </FadeIn>
 
         <div className="space-y-20">
@@ -105,14 +98,14 @@ export default function PlayPage() {
           <div>
             <FadeIn>{sectionHeading("travels & photography")}</FadeIn>
             <FadeIn delay={0.1}>
-              <div id="map" className="rounded-xl overflow-hidden" style={{ height: "420px" }}>
+              <div id="map" className="rounded-xl overflow-hidden" style={{ height: "340px" }}>
                 <iframe
                   src="https://www.google.com/maps/d/embed?mid=15CTwe6PEXFL38-gZ0TGydJEebPXr1XM&z=2"
-                  width="100%" height="420" style={{ border: 0 }}
+                  width="100%" height="340" style={{ border: 0 }}
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <p className="text-muted text-lg text-center mt-4 mb-8">
+              <p className="text-muted text-base text-center mt-4 mb-8">
                 i&apos;ve been to <strong><em>28 countries</em></strong> so far and have been keeping track of all my favorite spots! check out some of my <strong>photos</strong> below :)
               </p>
               <div className="grid grid-cols-3 gap-2 mb-6">
@@ -143,7 +136,7 @@ export default function PlayPage() {
                 </div>
               </div>
 
-              <div className="flex items-end justify-center" style={{ paddingTop: "16px", paddingBottom: "8px" }}>
+              <div className="flex items-end justify-center max-w-2xl mx-auto" style={{ paddingTop: "16px", paddingBottom: "8px" }}>
                 <div style={{ width: "38%", flexShrink: 0, transform: "rotate(-7deg) translateY(12px)", zIndex: 1, marginRight: "-28px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 8px 28px rgba(0,0,0,0.13)" }}>
                   <Image src="/running1.png" alt="running photo 1" width={400} height={500} className="w-full h-auto" />
                 </div>
@@ -156,7 +149,7 @@ export default function PlayPage() {
               </div>
 
               <p className="text-muted text-xs text-center mt-4">📍 Seward Park, Seattle, WA</p>
-              <p className="text-muted text-lg text-center mt-4">
+              <p className="text-muted text-base text-center mt-4">
                 i started <strong>running</strong> more since i moved to Seattle. the PNW has such beautiful trails :) this was my first race ever, and i ran a <strong><em>sub-60 10k</em></strong>! pretty proud of that!
               </p>
             </FadeIn>
@@ -169,7 +162,7 @@ export default function PlayPage() {
               <div style={CARD_STYLE}>
                 <Image src="/reading.png" alt="reading tracker" width={1200} height={800} className="w-full rounded-xl object-cover" />
               </div>
-              <p className="text-muted text-lg text-center mt-4">
+              <p className="text-muted text-base text-center mt-4">
                 i love <strong>reading</strong> before bed and on trips :) my favorites are fantasy, rom-com, and a little bit of sci-fi. i recently started recording what i read and took a <em>selfie with the book</em> on the day i finish it!
               </p>
             </FadeIn>
@@ -180,7 +173,7 @@ export default function PlayPage() {
             <FadeIn>{sectionHeading("flower arrangement")}</FadeIn>
             <FadeIn delay={0.1}>
               <FlowerCarousel />
-              <p className="text-muted text-lg text-center mt-4">
+              <p className="text-muted text-base text-center mt-4">
                 i love giving people <strong>handmade gifts</strong>, and flower arrangement is one of the perfect ways to do that :) i&apos;m still pretty new but hope to learn more <em>techniques</em> in the future!
               </p>
             </FadeIn>
