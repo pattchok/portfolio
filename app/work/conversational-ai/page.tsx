@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "7-Eleven Conversational AI - Patt",
@@ -17,8 +17,9 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: CALISTOGA,
-        fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+        fontFamily: DM_SANS,
+        fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+        fontWeight: 700,
         color: accent,
         lineHeight: 1.15,
       }}
@@ -54,7 +55,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: CALISTOGA, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -138,7 +139,7 @@ export default function ConversationalAIPage() {
             <h1
               className="text-text leading-[1.08] mb-5"
               style={{
-                fontFamily: CALISTOGA,
+                fontFamily: PLAYFAIR,
                 fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
               }}
             >
@@ -211,8 +212,8 @@ export default function ConversationalAIPage() {
         {/* Context */}
         <FadeIn>
           <section>
-            <SectionLabel>context</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted">
+            <SectionLabel>Context</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted">
               <p>
                 7-Eleven Thailand isn&apos;t like 7-Eleven anywhere else. With
                 over 15,000 branches blanketing the entire country, it&apos;s less
@@ -243,8 +244,8 @@ export default function ConversationalAIPage() {
         {/* What we built */}
         <FadeIn>
           <section>
-            <SectionLabel>what we built</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-10">
+            <SectionLabel>What We Built</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-10">
               <p>
                 A conversational AI chatbot embedded in the 7-Eleven mobile app,
                 powered by NLP using Google Dialogflow for intent recognition and
@@ -260,9 +261,9 @@ export default function ConversationalAIPage() {
               >
                 <h3
                   className="text-text mb-3"
-                  style={{ fontFamily: CALISTOGA, fontSize: "1.05rem" }}
+                  style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
                 >
-                  customer support agent
+                  Customer Support Agent
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   Handled general inquiries like store locations, operating hours,
@@ -276,9 +277,9 @@ export default function ConversationalAIPage() {
               >
                 <h3
                   className="text-text mb-3"
-                  style={{ fontFamily: CALISTOGA, fontSize: "1.05rem" }}
+                  style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
                 >
-                  chat commerce assistant
+                  Chat Commerce Assistant
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   The more ambitious part. Users could browse products, see
@@ -292,7 +293,7 @@ export default function ConversationalAIPage() {
             {/* How the commerce flow worked */}
             <h3
               className="text-text mb-6"
-              style={{ fontFamily: CALISTOGA, fontSize: "1.3rem" }}
+              style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.1rem" }}
             >
               chat commerce flow
             </h3>
@@ -300,27 +301,27 @@ export default function ConversationalAIPage() {
               {[
                 {
                   n: "1",
-                  title: "Detect user location",
+                  title: "Detect User Location",
                   desc: "Map the user to their closest 7-Eleven stores automatically.",
                 },
                 {
                   n: "2",
-                  title: "Check real-time stock",
+                  title: "Check Real-Time Stock",
                   desc: "Query live inventory across 15,000+ stores to show what's actually available.",
                 },
                 {
                   n: "3",
-                  title: "Surface products in chat",
+                  title: "Surface Products in Chat",
                   desc: "Display product carousels with promotions and discounts applied automatically.",
                 },
                 {
                   n: "4",
-                  title: "Personalized recommendations",
+                  title: "Personalized Recommendations",
                   desc: "Suggest products based on purchase history and user profile, making each conversation feel relevant.",
                 },
                 {
                   n: "5",
-                  title: "Complete purchase in chat",
+                  title: "Complete Purchase in Chat",
                   desc: "The entire shopping flow, from discovery to checkout, happened inside the conversation. No app switching needed.",
                 },
               ].map((step) => (
@@ -330,13 +331,14 @@ export default function ConversationalAIPage() {
                     style={{
                       background: `linear-gradient(135deg, ${pink}, ${gold})`,
                       color: "#fff",
-                      fontFamily: CALISTOGA,
+                      fontFamily: DM_SANS,
+                      fontWeight: 700,
                     }}
                   >
                     {step.n}
                   </span>
                   <div>
-                    <p className="text-text font-medium mb-1" style={{ fontFamily: CALISTOGA }}>
+                    <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
                       {step.title}
                     </p>
                     <p className="text-muted text-base leading-relaxed">{step.desc}</p>
@@ -350,30 +352,30 @@ export default function ConversationalAIPage() {
         {/* My role */}
         <FadeIn>
           <section>
-            <SectionLabel>what i actually did</SectionLabel>
+            <SectionLabel>What I Actually Did</SectionLabel>
             <div className="space-y-8">
               {[
                 {
-                  title: "requirements & PRD",
+                  title: "Requirements & PRD",
                   body: "Gathered requirements from the 7-Eleven business team and translated them into detailed product requirements documents, defining user flows, edge cases, fallback behaviors, and success metrics.",
                 },
                 {
-                  title: "conversational design",
+                  title: "Conversational Design",
                   body: "Designed the conversational flows, mapping out intents, utterances, entities, and response trees. This is where the real product thinking lived: how should the bot respond when it doesn't understand? When should it escalate to a human? How do you make a carousel of snacks feel natural inside a chat thread?",
                 },
                 {
-                  title: "engineering coordination",
+                  title: "Engineering Coordination",
                   body: "Ran the engineering team at Sertis while integrating closely with 7-Eleven's internal dev team. Two separate engineering orgs building one product, so alignment was constant work.",
                 },
                 {
-                  title: "testing & iteration",
+                  title: "Testing & Iteration",
                   body: "Ran testing cycles and continuously gathered feedback from users to refine conversational flows, improve intent recognition accuracy, and reduce fallback rates.",
                 },
               ].map((item) => (
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>
@@ -389,26 +391,26 @@ export default function ConversationalAIPage() {
         {/* What made this interesting */}
         <FadeIn>
           <section>
-            <SectionLabel>what made this interesting</SectionLabel>
+            <SectionLabel>What Made This Interesting</SectionLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {[
                 {
-                  title: "scale",
+                  title: "Scale",
                   desc: "16 million monthly active users across a nationwide app. Even small improvements in conversion or deflection rates translated to significant business impact.",
                   bg: "rgba(240,200,186,0.15)",
                 },
                 {
-                  title: "chat commerce was still new",
+                  title: "Chat Commerce Was Still New",
                   desc: "This was before the ChatGPT era. Building a commerce experience inside a chat interface required creative conversational design without the benefit of large language models. Every flow was hand-crafted.",
                   bg: "rgba(184,212,191,0.15)",
                 },
                 {
-                  title: "real-time inventory integration",
+                  title: "Real-Time Inventory Integration",
                   desc: "The chatbot checked live stock across 15,000+ stores, matched products to the user's nearest location, and applied dynamic promotions. The technical integration was non-trivial.",
                   bg: "rgba(201,169,110,0.12)",
                 },
                 {
-                  title: "personalization at scale",
+                  title: "Personalization at Scale",
                   desc: "Product recommendations were tailored to individual users based on purchase history and profile data, making each conversation feel relevant rather than generic.",
                   bg: "rgba(240,200,186,0.12)",
                 },
@@ -420,7 +422,7 @@ export default function ConversationalAIPage() {
                 >
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.05rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
                   >
                     {c.title}
                   </h3>
@@ -434,8 +436,8 @@ export default function ConversationalAIPage() {
         {/* Why this matters */}
         <FadeIn>
           <section>
-            <SectionLabel>why this matters</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted">
+            <SectionLabel>Why This Matters</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted">
               <p>
                 This was my entry point into AI product management, and it shaped
                 how I think about building AI products to this day. Working with
@@ -463,13 +465,13 @@ export default function ConversationalAIPage() {
             }}
           >
             <p
-              className="text-muted text-lg leading-relaxed mb-2"
+              className="text-muted text-base leading-relaxed mb-2"
               style={{ fontStyle: "italic" }}
             >
-              chat commerce before the LLM era.
+              Chat commerce before the LLM era.
             </p>
-            <p className="text-text text-lg leading-relaxed font-medium">
-              every flow hand-crafted, every intent mapped, serving 16M+ users
+            <p className="text-text text-base leading-relaxed font-medium">
+              Every flow hand-crafted, every intent mapped, serving 16M+ users
               across 15,000+ stores in Thailand&apos;s largest retail app.
             </p>
           </section>

@@ -17,7 +17,7 @@ export type WorkProject = {
 export const workProjects: WorkProject[] = [
   {
     slug: "opentyphoon",
-    name: "OpenTyphoon.ai",
+    name: "Typhoon",
     shortDesc: "Thailand's large language model. Built to understand and generate Thai language at scale, a foundational AI infrastructure project.",
     year: "2023–2025",
     company: "SCB 10X",

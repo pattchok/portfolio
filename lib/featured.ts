@@ -6,9 +6,9 @@ import { sideProjects } from "./projects";
 // what order. type "work" → /work/[slug], "project" → /projects/[slug]
 // ─────────────────────────────────────────────────────────────────
 export const featuredEntries: Array<{ type: "work" | "project"; slug: string }> = [
-  { type: "work",    slug: "cs-copilot"      },
-  { type: "work",    slug: "opentyphoon"     },
-  { type: "project", slug: "shadowclaw"      },
+  { type: "work",    slug: "cs-copilot"        },
+  { type: "work",    slug: "opentyphoon"       },
+  { type: "work",    slug: "conversational-ai" },
 ];
 
 export type FeaturedItem = {

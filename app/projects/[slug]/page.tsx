@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { sideProjects } from "@/lib/projects";
 import WavyCTA from "@/components/WavyCTA";
+import { PLAYFAIR } from "@/lib/constants";
 
 export function generateStaticParams() {
   return sideProjects.map((p) => ({ slug: p.slug }));
@@ -37,12 +38,12 @@ export default async function ProjectDetailPage({
           className="font-light text-text leading-tight mb-4"
           style={{
             fontSize: "clamp(2rem, 4vw, 3rem)",
-            fontFamily: "var(--font-calistoga), Georgia, serif",
+            fontFamily: PLAYFAIR,
           }}
         >
           {project.name}
         </h1>
-        <p className="text-muted text-lg leading-relaxed mb-5">{project.shortDesc}</p>
+        <p className="text-muted text-base leading-relaxed mb-5">{project.shortDesc}</p>
 
         {/* Links */}
         {project.links && project.links.length > 0 && (
@@ -68,8 +69,8 @@ export default async function ProjectDetailPage({
         />
 
         {/* Placeholder content */}
-        <p className="text-muted text-lg leading-relaxed italic mb-10">
-          more details coming soon!
+        <p className="text-muted text-base leading-relaxed italic mb-10">
+          More details coming soon!
         </p>
         {project.links && project.links.length > 0 && project.links[0].href && (
           <WavyCTA href={project.links[0].href}>visit project</WavyCTA>

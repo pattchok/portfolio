@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
-import { QUICKSAND } from "@/lib/constants";
+import { DM_SANS } from "@/lib/constants";
 import type { WorkProject } from "@/lib/work";
 
 type WorkCardProps = {
@@ -56,44 +56,15 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
               )}
             </div>
             <div className={reversed ? "[direction:ltr]" : ""}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark">
-                  {company}
-                </span>
-                <span className="text-muted text-xs">·</span>
-                <span className="text-muted text-xs">{year}</span>
-              </div>
               <h2
                 className="text-text leading-tight mb-4"
-                style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontFamily: QUICKSAND, fontWeight: 600 }}
+                style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: DM_SANS, fontWeight: 600 }}
               >
                 {name}
               </h2>
               <p className="text-muted leading-relaxed mb-5 text-base md:text-lg">
                 {shortDesc}
               </p>
-
-              {/* Meta fields */}
-              {meta && (
-                <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted mb-6">
-                  {meta.stack && (
-                    <div>
-                      <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                        stack
-                      </span>
-                      {meta.stack}
-                    </div>
-                  )}
-                  {meta.industry && (
-                    <div>
-                      <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                        industry
-                      </span>
-                      {meta.industry}
-                    </div>
-                  )}
-                </div>
-              )}
 
               {comingSoon ? (
                 <span className="text-muted text-sm italic">coming soon</span>

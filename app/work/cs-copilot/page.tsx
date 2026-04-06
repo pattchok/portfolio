@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Customer Support Copilot - Patt",
@@ -18,8 +18,9 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: CALISTOGA,
-        fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+        fontFamily: DM_SANS,
+        fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+        fontWeight: 700,
         color: accent,
         lineHeight: 1.15,
       }}
@@ -55,7 +56,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: CALISTOGA, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -140,7 +141,7 @@ export default function RagCopilotPage() {
             <h1
               className="text-text leading-[1.08] mb-5"
               style={{
-                fontFamily: CALISTOGA,
+                fontFamily: PLAYFAIR,
                 fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
               }}
             >
@@ -214,8 +215,8 @@ export default function RagCopilotPage() {
         {/* The problem */}
         <FadeIn>
           <section>
-            <SectionLabel>the problem was human-shaped</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted">
+            <SectionLabel>The Problem Was Human-Shaped</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted">
               <p>
                 SCB 10X is the innovation arm of Siam Commercial Bank,
                 Thailand&apos;s largest financial institution. Their customer
@@ -263,8 +264,8 @@ export default function RagCopilotPage() {
         {/* What we built — merged with mockups and user flow */}
         <FadeIn>
           <section>
-            <SectionLabel>what we actually built</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-10">
+            <SectionLabel>What We Actually Built</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-10">
               <p>
                 Not a chatbot, a <strong>copilot</strong>. That distinction
                 matters. We were in banking, under heavy regulation. AI
@@ -320,35 +321,35 @@ export default function RagCopilotPage() {
             {/* How it works — numbered steps */}
             <h3
               className="text-text mb-6"
-              style={{ fontFamily: CALISTOGA, fontSize: "1.3rem" }}
+              style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.1rem" }}
             >
-              how it works
+              How It Works
             </h3>
             <div className="space-y-0">
               {[
                 {
                   n: "1",
-                  title: "Customer contacts support",
+                  title: "Customer Contacts Support",
                   desc: "Through the bank's chat channel. Business as usual.",
                 },
                 {
                   n: "2",
-                  title: "Agent opens the copilot",
+                  title: "Agent Opens the Copilot",
                   desc: "Starts the conversation in our interface alongside the bank's existing tools.",
                 },
                 {
                   n: "3",
-                  title: "AI suggests 3 replies in real time",
+                  title: "AI Suggests 3 Replies in Real Time",
                   desc: "Pulled from the bank's Salesforce knowledge base through a RAG pipeline. Policies, troubleshooting guides, regulatory docs.",
                 },
                 {
                   n: "4",
-                  title: "Human reviews & edits",
+                  title: "Human Reviews & Edits",
                   desc: "The agent picks a suggestion, tweaks it if needed, and sends. Human-in-the-loop, always.",
                 },
                 {
                   n: "5",
-                  title: "Auto-generated summary & to-dos",
+                  title: "Auto-Generated Summary & To-Dos",
                   desc: "After the conversation, the system creates a ticket summary and next-step list, stored in Salesforce. No more forgotten tickets.",
                 },
               ].map((step) => (
@@ -358,13 +359,14 @@ export default function RagCopilotPage() {
                     style={{
                       background: `linear-gradient(135deg, ${pink}, ${gold})`,
                       color: "#fff",
-                      fontFamily: CALISTOGA,
+                      fontFamily: DM_SANS,
+                      fontWeight: 700,
                     }}
                   >
                     {step.n}
                   </span>
                   <div>
-                    <p className="text-text font-medium mb-1" style={{ fontFamily: CALISTOGA }}>
+                    <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
                       {step.title}
                     </p>
                     <p className="text-muted text-base leading-relaxed">{step.desc}</p>
@@ -378,8 +380,8 @@ export default function RagCopilotPage() {
         {/* Under the hood — with PII callout */}
         <FadeIn>
           <section>
-            <SectionLabel>under the hood</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-8">
+            <SectionLabel>Under the Hood</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-8">
               <p>
                 The RAG pipeline searched across the bank&apos;s entire
                 knowledge base. Everything from password reset guides to
@@ -403,7 +405,7 @@ export default function RagCopilotPage() {
                     border: "1px solid rgba(234,216,204,0.4)",
                   }}
                 >
-                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: CALISTOGA }}>
+                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: DM_SANS }}>
                     {t.name}
                   </p>
                   <p className="text-muted text-xs leading-snug">{t.desc}</p>
@@ -437,30 +439,30 @@ export default function RagCopilotPage() {
         {/* My role */}
         <FadeIn>
           <section>
-            <SectionLabel>what i actually did</SectionLabel>
+            <SectionLabel>What I Actually Did</SectionLabel>
             <div className="space-y-8">
               {[
                 {
-                  title: "went to the CS office",
+                  title: "Went to the CS Office",
                   body: "I didn't just take requirements from the project owner. I went to the CS office and sat with the agents, watched how they juggled tools, where they got stuck, how they handled weird edge cases. Then I mapped all of that out so the engineering team had something real to build from.",
                 },
                 {
-                  title: "shaped the product strategy",
+                  title: "Shaped the Product Strategy",
                   body: "The decision to build a copilot instead of a chatbot came from regulation, trust, and common sense. AI in banking needs a human in the loop. I worked with engineers on when to show suggestions, how to route queries, and when the model should just stay quiet.",
                 },
                 {
-                  title: "built the eval framework from scratch",
+                  title: "Built the Eval Framework from Scratch",
                   body: "There was no off-the-shelf way to evaluate RAG in late 2023. So we built our own. Automated retrieval tests, LLM evaluation against a golden dataset I put together with the CS leads, and a feedback survey from the agents themselves.",
                 },
                 {
-                  title: "navigated a dual trust problem",
+                  title: "Navigated a Dual Trust Problem",
                   body: "Corporate leadership wanted AI but didn't trust AI. I had to build the case for investment while being honest about limitations. The CS team was skeptical about a tool that might replace them. I had to show them it was there to help, not take their jobs.",
                 },
               ].map((item) => (
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>
@@ -476,26 +478,26 @@ export default function RagCopilotPage() {
         {/* Challenges */}
         <FadeIn>
           <section>
-            <SectionLabel>challenges</SectionLabel>
+            <SectionLabel>Challenges</SectionLabel>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {[
                 {
-                  title: "no playbook existed",
+                  title: "No Playbook Existed",
                   desc: "RAG was brand new. Chunking strategies, embedding approaches, retrieval tuning, all figured out through trial and error. Things that are standard practice now were genuinely unknown territory.",
                   bg: "rgba(240,200,186,0.15)",
                 },
                 {
-                  title: "the data wasn't ready",
+                  title: "The Data Wasn't Ready",
                   desc: "The bank's knowledge base wasn't clean or structured for RAG. We spent a lot of time just cleaning and restructuring the data before the system could find anything useful.",
                   bg: "rgba(184,212,191,0.15)",
                 },
                 {
-                  title: "Thai is brutal for LLMs",
+                  title: "Thai Is Brutal for LLMs",
                   desc: "Most models in late 2023 were optimized for English. Thai is non-whitespace-delimited with complex morphology. Getting accurate retrieval and natural-sounding Thai out of the model was way harder than an equivalent English system.",
                   bg: "rgba(201,169,110,0.12)",
                 },
                 {
-                  title: "high-stakes regulated environment",
+                  title: "High-Stakes Regulated Environment",
                   desc: "Every design choice had to factor in financial regulations, data privacy, and the fact that a bad answer could mess with someone's actual money.",
                   bg: "rgba(240,200,186,0.12)",
                 },
@@ -507,7 +509,7 @@ export default function RagCopilotPage() {
                 >
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.05rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
                   >
                     {c.title}
                   </h3>
@@ -529,13 +531,13 @@ export default function RagCopilotPage() {
             }}
           >
             <p
-              className="text-muted text-lg leading-relaxed mb-2"
+              className="text-muted text-base leading-relaxed mb-2"
               style={{ fontStyle: "italic" }}
             >
-              many internal AI tools never make it past pilot.
+              Many internal AI tools never make it past pilot.
             </p>
-            <p className="text-text text-lg leading-relaxed font-medium">
-              this one deployed to 150 agents, cut resolution time by 88%, and
+            <p className="text-text text-base leading-relaxed font-medium">
+              This one deployed to 150 agents, cut resolution time by 88%, and
               eliminated forgotten tickets entirely.
             </p>
           </section>

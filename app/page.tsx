@@ -4,7 +4,7 @@ import WavyCTA from "@/components/WavyCTA";
 import WorkCard from "@/components/WorkCard";
 import HeroBg from "@/components/HeroBg";
 import { getFeaturedItems } from "@/lib/featured";
-import { CALISTOGA, QUICKSAND, LOMA } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS, LOMA } from "@/lib/constants";
 
 const featuredProjects = getFeaturedItems();
 
@@ -21,7 +21,7 @@ export default function HomePage() {
                 <TypeWriter
                   text="สวัสดีค่ะ"
                   delay={400}
-                  speed={100}
+                  speed={60}
                 />
               </p>
               <h1 className="text-text leading-[1.05] relative mb-6" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)" }}>
@@ -35,8 +35,8 @@ export default function HomePage() {
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
-                    delay={1700}
-                    speed={80}
+                    delay={1400}
+                    speed={60}
                     hideCursorUntilStart
                   />
                 </span>
@@ -67,9 +67,9 @@ export default function HomePage() {
           <FadeIn>
             <h2
               className="text-text"
-              style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}
+              style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700 }}
             >
-              featured work
+              Featured Work
             </h2>
             <div
               style={{
@@ -117,7 +117,7 @@ export default function HomePage() {
                     <div className={reversed ? "[direction:ltr]" : ""}>
                       <h3
                         className="text-text leading-tight mb-5"
-                        style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontFamily: QUICKSAND, fontWeight: 600 }}
+                        style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: DM_SANS, fontWeight: 600 }}
                       >
                         {item.name}
                       </h3>

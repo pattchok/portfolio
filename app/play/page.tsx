@@ -2,7 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
 import FlowerCarousel from "@/components/FlowerCarousel";
-import { CALISTOGA, CARD_STYLE } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS, CARD_STYLE } from "@/lib/constants";
 
 const GRAD_TEXT: React.CSSProperties = {
   color: "#8C6050",
@@ -51,7 +51,7 @@ function Highlighter() {
 const sectionHeading = (text: string) => (
   <div className="mb-8 flex justify-center">
     <div style={{ position: "relative", display: "inline-block", paddingBottom: "3px" }}>
-      <h3 style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", lineHeight: 1.1, position: "relative", zIndex: 1, ...GRAD_TEXT }}>
+      <h3 style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700, lineHeight: 1.1, position: "relative", zIndex: 1, ...GRAD_TEXT }}>
         {text}
       </h3>
       <Highlighter />
@@ -68,9 +68,9 @@ export default function PlayPage() {
         <FadeIn>
           <h1
             className="text-text leading-tight"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}
+            style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700 }}
           >
-            play
+            Play
           </h1>
           <div
             style={{
@@ -96,7 +96,7 @@ export default function PlayPage() {
 
           {/* Travels & Photography */}
           <div>
-            <FadeIn>{sectionHeading("travels & photography")}</FadeIn>
+            <FadeIn>{sectionHeading("Travels & Photography")}</FadeIn>
             <FadeIn delay={0.1}>
               <div id="map" className="rounded-xl overflow-hidden" style={{ height: "340px" }}>
                 <iframe
@@ -121,17 +121,17 @@ export default function PlayPage() {
 
           {/* Running */}
           <div>
-            <FadeIn>{sectionHeading("running")}</FadeIn>
+            <FadeIn>{sectionHeading("Running")}</FadeIn>
             <FadeIn delay={0.1}>
               <div className="flex items-start justify-center gap-16 flex-wrap mb-10">
                 <div>
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">race</p>
-                  <p className="text-xl text-text" style={{ fontFamily: CALISTOGA }}>🏅 My Better Half Marathon</p>
+                  <p className="text-xl text-text" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>🏅 My Better Half Marathon</p>
                   <p className="text-muted text-sm mt-1">February 8, 2026</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">finish time</p>
-                  <p className="text-3xl text-brown" style={{ fontFamily: CALISTOGA }}>55:55.1</p>
+                  <p className="text-3xl text-brown" style={{ fontFamily: DM_SANS, fontWeight: 700 }}>55:55.1</p>
                   <p className="text-muted text-xs mt-1">10k &middot; chip time</p>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function PlayPage() {
 
           {/* Reading */}
           <div>
-            <FadeIn>{sectionHeading("reading")}</FadeIn>
+            <FadeIn>{sectionHeading("Reading")}</FadeIn>
             <FadeIn delay={0.1}>
               <div style={CARD_STYLE}>
                 <Image src="/reading.png" alt="reading tracker" width={1200} height={800} className="w-full rounded-xl object-cover" />
@@ -170,7 +170,7 @@ export default function PlayPage() {
 
           {/* Flower Arrangement */}
           <div>
-            <FadeIn>{sectionHeading("flower arrangement")}</FadeIn>
+            <FadeIn>{sectionHeading("Flower Arrangement")}</FadeIn>
             <FadeIn delay={0.1}>
               <FlowerCarousel />
               <p className="text-muted text-base text-center mt-4">

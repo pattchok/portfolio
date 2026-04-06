@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Calistoga, Quicksand, DynaPuff } from "next/font/google";
+import { DynaPuff, Playfair_Display, DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const calistoga = Calistoga({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-calistoga",
-  weight: ["400"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const quicksand = Quicksand({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-quicksand",
-  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${calistoga.variable} ${quicksand.variable} ${dynapuff.variable} ${lomaThin.variable} h-full`}
+      className={`${playfair.variable} ${dmSans.variable} ${dynapuff.variable} ${lomaThin.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <Nav />

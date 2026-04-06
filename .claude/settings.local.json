@@ -41,7 +41,8 @@
       "Bash(cp \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/huggingface-design-competition/hugging-face-cover.png\" /Users/kukkukp/dev/portfolio/public/projects/huggingface-cover.png)",
       "Bash(md5 \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/speedboat/speedboat-home.png\")",
       "Bash(md5 /Users/kukkukp/dev/portfolio/public/projects/speedboat-cover.png)",
-      "Bash(md5 /Users/kukkukp/Desktop/speedboat-new.png)"
+      "Bash(md5 /Users/kukkukp/Desktop/speedboat-new.png)",
+      "WebFetch(domain:www.annatsun.com)"
     ]
   }
 }

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { workProjects } from "@/lib/work";
 import WavyCTA from "@/components/WavyCTA";
+import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 export function generateStaticParams() {
   return workProjects
@@ -53,12 +54,12 @@ export default async function WorkDetailPage({
           className="font-light text-text leading-tight mb-4"
           style={{
             fontSize: "clamp(2rem, 4vw, 3rem)",
-            fontFamily: "var(--font-calistoga), Georgia, serif",
+            fontFamily: PLAYFAIR,
           }}
         >
           {project.name}
         </h1>
-        <p className="text-muted text-lg leading-relaxed mb-5">{project.shortDesc}</p>
+        <p className="text-muted text-base leading-relaxed mb-5">{project.shortDesc}</p>
 
         {/* Thumbnail placeholder */}
         <div
@@ -67,8 +68,8 @@ export default async function WorkDetailPage({
         />
 
         {/* Placeholder content */}
-        <p className="text-muted text-lg leading-relaxed italic mb-10">
-          case study coming soon. if you&apos;d like to hear about this project, feel free to reach out!
+        <p className="text-muted text-base leading-relaxed italic mb-10">
+          Case study coming soon. If you&apos;d like to hear about this project, feel free to reach out!
         </p>
         <WavyCTA href="mailto:ch.pathomporn@gmail.com">get in touch</WavyCTA>
       </div>

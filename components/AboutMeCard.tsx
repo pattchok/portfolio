@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR } from "@/lib/constants";
 
 const blobData = [
   { style: { top: "-30px", right: "-20px", width: "130px", height: "130px", background: "#F0C8BA", opacity: 0.5, borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%" }, from: { x: 30, y: -20 } },
@@ -69,9 +69,9 @@ export default function AboutMeCard() {
         >
           <h2
             className="text-text leading-tight mb-6"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}
+            style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700 }}
           >
-            about me
+            About Me
           </h2>
           <div className="space-y-4 text-base md:text-lg leading-relaxed text-muted">
             {paragraphs.map((content, i) => (

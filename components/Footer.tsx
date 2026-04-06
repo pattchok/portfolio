@@ -1,14 +1,13 @@
 import { SocialIcon } from "@/components/SocialIcons";
-import Marquee from "@/components/Marquee";
-import { socialLinks } from "@/lib/constants";
+import { PLAYFAIR, socialLinks } from "@/lib/constants";
 
 // Footer uses same order as nav
 const footerLinks = socialLinks;
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1A0E08" }}>
-      <Marquee />
+    <footer style={{ backgroundColor: "#211309" }}>
+
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
@@ -19,13 +18,13 @@ export default function Footer() {
               style={{
                 color: "#FAF5EE",
                 fontSize: "1.4rem",
-                fontFamily: "var(--font-calistoga), Georgia, serif",
+                fontFamily: PLAYFAIR,
               }}
             >
               Patt Chokchainant
             </p>
             <p style={{ color: "#FAF5EE", fontSize: "0.875rem" }}>
-              Feel free to send a message along!
+              nice to e-meet you!
             </p>
           </div>
 

@@ -2,7 +2,7 @@ import FadeIn from "@/components/FadeIn";
 import CompactWorkRow from "@/components/CompactWorkRow";
 import { workProjects } from "@/lib/work";
 import { sideProjects } from "@/lib/projects";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR } from "@/lib/constants";
 
 export default function WorkPage() {
   return (
@@ -12,9 +12,9 @@ export default function WorkPage() {
         <FadeIn>
           <h1
             className="text-text leading-tight"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}
+            style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 700 }}
           >
-            work
+            Work
           </h1>
           <div
             style={{
@@ -36,7 +36,7 @@ export default function WorkPage() {
           </p>
           <a
             href="#side-projects"
-            className="inline-flex items-center gap-1 text-sm text-brown hover:text-brown-light hover:underline transition-colors duration-200 mb-12"
+            className="inline-flex items-center gap-1 text-sm text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200 mb-12"
           >
             check out my side projects below
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -49,9 +49,9 @@ export default function WorkPage() {
         <FadeIn delay={0.1}>
           <h2
             className="text-text leading-tight mb-2"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)" }}
+            style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700 }}
           >
-            work experience
+            Work Experience
           </h2>
           <div
             style={{
@@ -86,9 +86,9 @@ export default function WorkPage() {
           <FadeIn>
             <h2
               className="text-text leading-tight mb-2"
-              style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)" }}
+              style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700 }}
             >
-              side projects
+              Side Projects
             </h2>
             <div
               style={{

@@ -1,4 +1,4 @@
-import { CALISTOGA, QUICKSAND } from "@/lib/constants";
+import { DM_SANS } from "@/lib/constants";
 
 type JourneyStep = {
   org: string;
@@ -73,7 +73,7 @@ export default function JourneyMap() {
               <p className="text-muted text-xs mb-0.5">{step.period}</p>
               <h4
                 className="text-text leading-tight"
-                style={{ fontFamily: QUICKSAND, fontWeight: 600, fontSize: "1.1rem" }}
+                style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
               >
                 {step.org}
               </h4>

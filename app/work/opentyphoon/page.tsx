@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "OpenTyphoon - Patt",
+  title: "Typhoon - Patt",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */
@@ -17,8 +17,9 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: CALISTOGA,
-        fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+        fontFamily: DM_SANS,
+        fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+        fontWeight: 700,
         color: accent,
         lineHeight: 1.15,
       }}
@@ -54,7 +55,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: CALISTOGA, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -139,11 +140,11 @@ export default function OpenTyphoonPage() {
             <h1
               className="text-text leading-[1.08] mb-5"
               style={{
-                fontFamily: CALISTOGA,
+                fontFamily: PLAYFAIR,
                 fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
               }}
             >
-              OpenTyphoon.ai
+              Typhoon
             </h1>
           </FadeIn>
 
@@ -225,8 +226,8 @@ export default function OpenTyphoonPage() {
         {/* Context */}
         <FadeIn>
           <section>
-            <SectionLabel>what is typhoon</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted">
+            <SectionLabel>What Is Typhoon</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted">
               <p>
                 Typhoon is an open-source Thai large language model initiative,
                 built under SCB 10X and positioned as Thailand&apos;s frontier AI
@@ -248,8 +249,8 @@ export default function OpenTyphoonPage() {
         {/* Program management */}
         <FadeIn>
           <section>
-            <SectionLabel>program management</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-10">
+            <SectionLabel>Program Management</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-10">
               <p>
                 Typhoon wasn&apos;t one project. It was several running in
                 parallel, and keeping them all moving without collisions was a big
@@ -261,22 +262,22 @@ export default function OpenTyphoonPage() {
               {[
                 {
                   n: "1",
-                  title: "Data collection & annotation",
+                  title: "Data Collection & Annotation",
                   desc: "Managed the pipeline for 3TB+ of public Thai language corpora and coordinated a data annotation team for instruction-following datasets. Collaborated with researchers on data approaches for supervised fine-tuning.",
                 },
                 {
                   n: "2",
-                  title: "Model training coordination",
+                  title: "Model Training Coordination",
                   desc: "While researchers handled the technical training, I managed timelines, resources, and dependencies across training runs, ensuring the team could move fast without stepping on each other.",
                 },
                 {
                   n: "3",
-                  title: "Partnership portfolio",
+                  title: "Partnership Portfolio",
                   desc: "Tracked and managed relationships across research collaborations, academic partnerships, and API integration partners simultaneously.",
                 },
                 {
                   n: "4",
-                  title: "Operations & admin",
+                  title: "Operations & Admin",
                   desc: "The unglamorous but essential work: team logistics, budgeting, tooling, and keeping a fast-growing research team running smoothly.",
                 },
               ].map((step) => (
@@ -286,13 +287,14 @@ export default function OpenTyphoonPage() {
                     style={{
                       background: `linear-gradient(135deg, ${pink}, ${gold})`,
                       color: "#fff",
-                      fontFamily: CALISTOGA,
+                      fontFamily: DM_SANS,
+                      fontWeight: 700,
                     }}
                   >
                     {step.n}
                   </span>
                   <div>
-                    <p className="text-text font-medium mb-1" style={{ fontFamily: CALISTOGA }}>
+                    <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
                       {step.title}
                     </p>
                     <p className="text-muted text-base leading-relaxed">{step.desc}</p>
@@ -306,8 +308,8 @@ export default function OpenTyphoonPage() {
         {/* GTM */}
         <FadeIn>
           <section>
-            <SectionLabel>go-to-market</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-10">
+            <SectionLabel>Go-to-Market</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-10">
               <p>
                 This is the part I&apos;m most proud of. Building a great model
                 means nothing if no one uses it. I treated Typhoon&apos;s
@@ -320,26 +322,26 @@ export default function OpenTyphoonPage() {
             <div className="space-y-8">
               {[
                 {
-                  title: "developer platform",
+                  title: "Developer Platform",
                   body: "Launched opentyphoon.ai with model access, API endpoints, and documentation, reducing the barrier from \"clone a repo\" to \"hit an API.\"",
                 },
                 {
-                  title: "community",
+                  title: "Community",
                   body: "Grew a Discord community from zero to 2,000+ members where developers shared use cases, reported issues, and built on Typhoon together.",
                 },
                 {
-                  title: "technical content",
+                  title: "Technical Content",
                   body: "Produced content showing real-world applications, including a YouTube feature on \"The Rise of Intelligence\" where I presented industry use cases like the customer support copilot built on Typhoon.",
                 },
                 {
-                  title: "events",
+                  title: "Events",
                   body: "Organized and represented Typhoon at ACL 2024 in Bangkok (the premier NLP conference), Techsauce Global Summit (Southeast Asia's largest tech conference), and hosted a Typhoon Hackathon with 30 teams.",
                 },
               ].map((item) => (
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>
@@ -355,8 +357,8 @@ export default function OpenTyphoonPage() {
         {/* Partnerships */}
         <FadeIn>
           <section>
-            <SectionLabel>partnerships</SectionLabel>
-            <div className="space-y-5 text-lg leading-relaxed text-muted mb-8">
+            <SectionLabel>Partnerships</SectionLabel>
+            <div className="space-y-5 text-base leading-relaxed text-muted mb-8">
               <p>
                 Credibility in open-source AI comes from the company you keep. I
                 built partnerships that gave Typhoon independent validation at a
@@ -389,7 +391,7 @@ export default function OpenTyphoonPage() {
                 >
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: CALISTOGA, fontSize: "1.05rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
                   >
                     {p.name}
                   </h3>
@@ -409,7 +411,7 @@ export default function OpenTyphoonPage() {
         {/* Additional impact */}
         <FadeIn>
           <section>
-            <SectionLabel>the numbers, in context</SectionLabel>
+            <SectionLabel>The Numbers, in Context</SectionLabel>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <StatCard value="320k+" label="model downloads on Hugging Face" bg="rgba(240,200,186,0.2)" />
               <StatCard value="23M+" label="API calls through the platform" bg="rgba(184,212,191,0.2)" />
@@ -433,11 +435,11 @@ export default function OpenTyphoonPage() {
           >
             <h3
               className="text-text mb-4"
-              style={{ fontFamily: CALISTOGA, fontSize: "1.15rem" }}
+              style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
             >
-              a note on my role
+              A Note on My Role
             </h3>
-            <div className="space-y-4 text-muted text-lg leading-relaxed">
+            <div className="space-y-4 text-muted text-base leading-relaxed">
               <p>
                 I want to be upfront: I&apos;m not a researcher. I didn&apos;t
                 train the model or write the papers. My contribution was

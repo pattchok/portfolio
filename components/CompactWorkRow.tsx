@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
-import { QUICKSAND } from "@/lib/constants";
+import { DM_SANS } from "@/lib/constants";
 
 type CompactWorkRowProps = {
   name: string;
@@ -79,8 +79,7 @@ export default function CompactWorkRow({
               className="text-text leading-tight mb-1.5"
               style={{
                 fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-                fontFamily: QUICKSAND,
-                fontWeight: 600,
+                fontFamily: DM_SANS, fontWeight: 600,
               }}
             >
               {name}
@@ -90,16 +89,20 @@ export default function CompactWorkRow({
             </p>
 
             {meta && (
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted mb-3">
+              <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted mb-3">
                 {meta.stack && (
                   <div>
-                    <span className="font-bold tracking-tight uppercase text-pink-dark">stack</span>{" "}
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      stack
+                    </span>
                     {meta.stack}
                   </div>
                 )}
                 {meta.industry && (
                   <div>
-                    <span className="font-bold tracking-tight uppercase text-pink-dark">industry</span>{" "}
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      industry
+                    </span>
                     {meta.industry}
                   </div>
                 )}
@@ -116,7 +119,7 @@ export default function CompactWorkRow({
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-muted hover:text-brown hover:underline transition-colors duration-200"
+                    className="text-xs text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200"
                   >
                     {link.label}{" "}&rarr;
                   </a>

@@ -1,7 +1,12 @@
 // Shared design constants used across pages and components
 
-export const CALISTOGA = "var(--font-calistoga), Georgia, serif";
-export const QUICKSAND = "var(--font-quicksand), sans-serif";
+// Heading font (serif) — page/section headings
+export const PLAYFAIR = "var(--font-playfair), Georgia, serif";
+
+// Subheading font (sans) — project/work names
+export const DM_SANS = "var(--font-dm-sans), sans-serif";
+
+// Display font — hero section only (gimmick)
 export const LOMA = "var(--font-loma), sans-serif";
 
 export const CARD_STYLE: React.CSSProperties = {

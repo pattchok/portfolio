@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { CALISTOGA } from "@/lib/constants";
+import { PLAYFAIR } from "@/lib/constants";
 
 export const metadata = {
   title: "Photos - Patt",
@@ -48,7 +48,7 @@ export default function PhotosPage() {
           </Link>
           <h1
             className="text-text leading-tight mb-4"
-            style={{ fontFamily: CALISTOGA, fontSize: "clamp(2.4rem, 5vw, 3.5rem)" }}
+            style={{ fontFamily: PLAYFAIR, fontSize: "clamp(2.4rem, 5vw, 3.5rem)" }}
           >
             photos
           </h1>

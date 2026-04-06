@@ -1,12 +1,14 @@
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import AboutMeCard from "@/components/AboutMeCard";
 import JourneyMap from "@/components/JourneyMap";
 import WavyCTA from "@/components/WavyCTA";
-import { CALISTOGA, QUICKSAND } from "@/lib/constants";
+import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 const sectionHeadingStyle = {
-  fontFamily: CALISTOGA,
+  fontFamily: PLAYFAIR,
   fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+  fontWeight: 700,
 } as const;
 
 export default function AboutPage() {
@@ -23,7 +25,7 @@ export default function AboutPage() {
           <FadeIn delay={1.4}>
             <section>
               <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
-                my journey
+                My Journey
               </h2>
               <div
                 style={{
@@ -41,7 +43,7 @@ export default function AboutPage() {
           <FadeIn delay={0.16}>
             <section>
               <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
-                community
+                Community
               </h2>
               <div
                 style={{
@@ -57,9 +59,9 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: QUICKSAND, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
-                    The AI Collective
+                    The AI Collective, Seattle Chapter
                   </h3>
                   <p className="text-muted text-base leading-relaxed mb-4">
                     I co-organized AI meetups and community events in Seattle with The AI Collective,
@@ -67,15 +69,14 @@ export default function AboutPage() {
                     the latest in AI. We hosted regular sessions with talks, demos, and hands-on workshops.
                   </p>
                   <div className="grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map((n) => (
-                      <div
-                        key={n}
-                        className="rounded-xl overflow-hidden border border-border/30 flex items-center justify-center"
-                        style={{ height: "140px", backgroundColor: n === 1 ? "#EDD5C5" : n === 2 ? "#C2D0B8" : "#F0E9DC", opacity: 0.55 }}
-                      >
-                        <p className="text-muted text-xs text-center px-3">photo coming soon</p>
-                      </div>
-                    ))}
+                    <Image src="/about/aicollective-1.jpg" alt="AI Collective event" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <div
+                      className="rounded-xl overflow-hidden border border-border/30"
+                      style={{ height: "140px", backgroundColor: "#f5f5f4" }}
+                    >
+                      <Image src="/about/aicollective-2.png" alt="Patt at AI Collective" width={600} height={400} className="w-full h-full object-contain object-center" />
+                    </div>
+                    <Image src="/about/aicollective-3.png" alt="AI Collective community" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                   </div>
                 </div>
 
@@ -83,7 +84,7 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: QUICKSAND, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     Thai NLP
                   </h3>
@@ -93,16 +94,26 @@ export default function AboutPage() {
                     and community-building efforts to grow the Thai NLP ecosystem.
                   </p>
                   <div className="grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map((n) => (
-                      <div
-                        key={n}
-                        className="rounded-xl overflow-hidden border border-border/30 flex items-center justify-center"
-                        style={{ height: "140px", backgroundColor: n === 1 ? "#C2D0B8" : n === 2 ? "#EDD5C5" : "#F0E9DC", opacity: 0.55 }}
-                      >
-                        <p className="text-muted text-xs text-center px-3">photo coming soon</p>
-                      </div>
-                    ))}
+                    <Image src="/about/thainlp-1.png" alt="Thai NLP community" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/thainlp-2.png" alt="Techsauce 2024" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/thainlp-3.png" alt="ACL 2024" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                   </div>
+                </div>
+
+                {/* RAISE */}
+                <div>
+                  <h3
+                    className="text-text mb-2"
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                  >
+                    RAISE Winter Exposition, UW
+                  </h3>
+                  <p className="text-muted text-base leading-relaxed">
+                    During my time at UW, I joined the Winter Exposition by RAISE (Responsible AI Systems
+                    and Experiences), a UW research initiative focused on building AI systems that are
+                    trustworthy and human-centered. It was a great opportunity to engage with researchers
+                    and practitioners working on responsible AI.
+                  </p>
                 </div>
               </div>
             </section>
@@ -112,7 +123,7 @@ export default function AboutPage() {
           <FadeIn delay={0.18}>
             <section>
               <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
-                education
+                Education
               </h2>
               <div
                 style={{
@@ -127,22 +138,23 @@ export default function AboutPage() {
                 {/* UW */}
                 <div>
                   <h3
-                    className="leading-tight uppercase tracking-wide text-brown"
-                    style={{ fontFamily: QUICKSAND, fontWeight: 700, fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
+                    className="leading-tight text-text"
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     University of Washington
                   </h3>
-                  <p className="text-text text-sm mt-1.5 font-semibold">M.S. in Information Management (GPA 3.96/4.0)</p>
-                  <p className="text-muted text-sm mt-0.5">Major in AI and Data Science</p>
+                  <p className="text-text text-base mt-1.5 font-semibold">M.S. in Information Management</p>
+                  <p className="text-muted text-base mt-0.5">Major in AI and Data Science</p>
                   <div className="flex items-center gap-2 text-xs mt-2">
                     <span className="font-bold tracking-tight uppercase text-pink-dark">Seattle, WA</span>
                     <span className="text-muted">&middot;</span>
                     <span className="text-muted">2024&ndash;2025</span>
                   </div>
                   <div
-                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-sm leading-relaxed space-y-1"
+                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-base leading-relaxed space-y-1"
                     style={{ borderColor: "rgba(201,169,110,0.35)" }}
                   >
+                    <p>GPA 3.96/4.0</p>
                     <p>Dean&apos;s Scholarship</p>
                   </div>
                 </div>
@@ -150,22 +162,23 @@ export default function AboutPage() {
                 {/* Chulalongkorn */}
                 <div>
                   <h3
-                    className="leading-tight uppercase tracking-wide text-brown"
-                    style={{ fontFamily: QUICKSAND, fontWeight: 700, fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
+                    className="leading-tight text-text"
+                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     Chulalongkorn University
                   </h3>
-                  <p className="text-text text-sm mt-1.5 font-semibold">Bachelor of Business Administration (First Class Honors, GPA 3.88/4.0)</p>
-                  <p className="text-muted text-sm mt-0.5">Major in Finance and Accounting Information System</p>
+                  <p className="text-text text-base mt-1.5 font-semibold">Bachelor of Business Administration</p>
+                  <p className="text-muted text-base mt-0.5">Major in Finance and Accounting Information System</p>
                   <div className="flex items-center gap-2 text-xs mt-2">
                     <span className="font-bold tracking-tight uppercase text-pink-dark">Bangkok, Thailand</span>
                     <span className="text-muted">&middot;</span>
                     <span className="text-muted">2015&ndash;2019</span>
                   </div>
                   <div
-                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-sm leading-relaxed space-y-1"
+                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-base leading-relaxed space-y-1"
                     style={{ borderColor: "rgba(201,169,110,0.35)" }}
                   >
+                    <p>First Class Honors, GPA 3.88/4.0</p>
                     <p>Full-ride scholarship as the top three students at admission</p>
                   </div>
                 </div>
