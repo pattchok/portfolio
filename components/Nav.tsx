@@ -10,7 +10,7 @@ import { socialLinks } from "@/lib/constants";
 const navLinks = [
   { href: "/", label: "home" },
   { href: "/work", label: "work" },
-  { href: "/projects", label: "projects" },
+  { href: "/play", label: "play" },
   { href: "/about", label: "about" },
 ];
 

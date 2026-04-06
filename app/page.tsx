@@ -1,9 +1,10 @@
 import FadeIn from "@/components/FadeIn";
+import TypeWriter from "@/components/TypeWriter";
 import WavyCTA from "@/components/WavyCTA";
 import WorkCard from "@/components/WorkCard";
 import HeroBg from "@/components/HeroBg";
 import { getFeaturedItems } from "@/lib/featured";
-import { CALISTOGA, QUICKSAND } from "@/lib/constants";
+import { CALISTOGA, QUICKSAND, LOMA } from "@/lib/constants";
 
 const featuredProjects = getFeaturedItems();
 
@@ -16,27 +17,36 @@ export default function HomePage() {
         <div className="relative z-10 max-w-4xl w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-8 lg:gap-16 items-center">
             <div>
-              <FadeIn delay={0.05}>
-                <h1
-                  className="text-text leading-[1.1] mb-4"
-                  style={{ fontSize: "clamp(3rem, 6.5vw, 5rem)", fontFamily: CALISTOGA }}
-                >
-                  patt chokchainant
-                </h1>
-              </FadeIn>
-              <FadeIn delay={0.14}>
-                <p className="text-brown text-xl md:text-2xl mb-8 tracking-wide">
-                  curious learner · operator · amateur builder
-                </p>
-              </FadeIn>
-              <FadeIn delay={0.24}>
+              <p className="text-brown mb-3 tracking-wide" style={{ fontSize: "clamp(2rem, 4vw, 2.5rem)", fontFamily: LOMA }}>
+                <TypeWriter
+                  text="สวัสดีค่ะ"
+                  delay={400}
+                  speed={100}
+                />
+              </p>
+              <h1 className="text-text leading-[1.05] relative mb-6" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)" }}>
+                <span aria-hidden="true" className="invisible">hi, i&apos;m patt :)</span>
+                <span className="absolute left-0 top-0">
+                  <TypeWriter
+                    text="hi, i'm patt "
+                    gradientSuffix=":)"
+                    gradientStyle={{
+                      background: "linear-gradient(135deg, #F0C8BA, #C9A96E, #B8D4BF)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                    delay={1700}
+                    speed={80}
+                    hideCursorUntilStart
+                  />
+                </span>
+              </h1>
+              <FadeIn delay={3.5}>
                 <p className="text-muted text-xl md:text-2xl leading-relaxed max-w-xl mb-10">
-                  product manager with 6+ years in ai and data, passionate about
-                  understanding what people actually need and turning those into
-                  insight-driven products.
+                  product manager with 6+ years in AI and data, passionate about shipping solutions that address people's actual needs
                 </p>
               </FadeIn>
-              <FadeIn delay={0.36}>
+              <FadeIn delay={3.8}>
                 <WavyCTA href="/about" variant="nav">get to know me :)</WavyCTA>
               </FadeIn>
             </div>
@@ -53,6 +63,24 @@ export default function HomePage() {
 
       {/* ── Featured work ─────────────────────────────────────── */}
       <div style={{ backgroundColor: "#F3F5F0" }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-12 pb-2">
+          <FadeIn>
+            <h2
+              className="text-text"
+              style={{ fontFamily: CALISTOGA, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}
+            >
+              featured work
+            </h2>
+            <div
+              style={{
+                height: "2px",
+                background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
+                marginTop: "8px",
+                opacity: 0.6,
+              }}
+            />
+          </FadeIn>
+        </div>
         {featuredProjects.map((item, i) => {
           const reversed = i % 2 !== 0;
 

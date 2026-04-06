@@ -21,10 +21,10 @@ export default async function ProjectDetailPage({
       <div className="max-w-3xl mx-auto px-6 md:px-10 lg:px-20 pt-32 pb-24">
         {/* Back */}
         <Link
-          href="/projects"
+          href="/work#side-projects"
           className="text-muted text-sm hover:text-brown transition-colors duration-200 mb-12 inline-block"
         >
-          ← projects
+          &larr; work
         </Link>
 
         {/* Meta */}

@@ -41,10 +41,10 @@ export default function PhotosPage() {
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <Link
-            href="/about#map"
+            href="/play#map"
             className="text-brown text-sm hover:text-brown-light transition-colors duration-200 mb-6 inline-block"
           >
-            &larr; back to about
+            &larr; back to play
           </Link>
           <h1
             className="text-text leading-tight mb-4"
