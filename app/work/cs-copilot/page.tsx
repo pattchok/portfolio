@@ -87,7 +87,7 @@ const CalloutBox = ({
 /* ── page ─────────────────────────────────────────────────────── */
 export default function RagCopilotPage() {
   return (
-    <main style={{ backgroundColor: "#F3F5F0" }} className="min-h-screen">
+    <main style={{ backgroundColor: "#F3F5F0" }} className="min-h-screen overflow-hidden">
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 pb-16 px-6 md:px-10 lg:px-16">
         {/* decorative blobs */}
@@ -203,7 +203,14 @@ export default function RagCopilotPage() {
       </FadeIn>
 
       {/* ── Content ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative">
+        {/* decorative blobs scattered throughout */}
+        <div className="absolute pointer-events-none" style={{ top: "5%", right: "-55px", width: "140px", height: "140px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "20%", left: "-75px", width: "170px", height: "170px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "40%", right: "-45px", width: "110px", height: "110px", background: sage, opacity: 0.15, borderRadius: "55% 45% 50% 50% / 45% 55% 45% 55%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "58%", left: "-65px", width: "150px", height: "150px", background: gold, opacity: 0.1, borderRadius: "40% 60% 55% 45% / 60% 40% 50% 50%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "75%", right: "-35px", width: "120px", height: "120px", background: pink, opacity: 0.13, borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "90%", left: "-50px", width: "90px", height: "90px", background: sage, opacity: 0.11, borderRadius: "45% 55% 50% 50% / 55% 45% 50% 50%" }} />
         {/* The problem */}
         <FadeIn>
           <section>

@@ -35,7 +35,13 @@
       "Bash(npx tsc:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(cp \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/prompthub/prompthub-logo.jpg\" /Users/kukkukp/dev/portfolio/public/projects/prompthub-cover.jpg)",
+      "Bash(cp \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/speedboat/speedboat-logo.png\" /Users/kukkukp/dev/portfolio/public/projects/speedboat-cover.png)",
+      "Bash(cp \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/huggingface-design-competition/hugging-face-cover.png\" /Users/kukkukp/dev/portfolio/public/projects/huggingface-cover.png)",
+      "Bash(md5 \"/Users/kukkukp/Desktop/kukkukp/website-portfolio/projects/speedboat/speedboat-home.png\")",
+      "Bash(md5 /Users/kukkukp/dev/portfolio/public/projects/speedboat-cover.png)",
+      "Bash(md5 /Users/kukkukp/Desktop/speedboat-new.png)"
     ]
   }
 }

@@ -106,7 +106,7 @@ export default function PlayPage() {
                 />
               </div>
               <p className="text-muted text-base text-center mt-4 mb-8">
-                i&apos;ve been to <strong><em>28 countries</em></strong> so far and have been keeping track of all my favorite spots! check out some of my <strong>photos</strong> below :)
+                I&apos;ve been to <strong><em>28 countries</em></strong> so far and have been keeping track of all my favorite spots! Check out some of my <strong>photos</strong> below :)
               </p>
               <div className="grid grid-cols-3 gap-2 mb-6">
                 <Image src="/travel/1mtrainier.JPG" alt="mt. rainier" width={600} height={400} className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
@@ -126,8 +126,8 @@ export default function PlayPage() {
               <div className="flex items-start justify-center gap-16 flex-wrap mb-10">
                 <div>
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">race</p>
-                  <p className="text-xl text-text" style={{ fontFamily: CALISTOGA }}>🏅 my better half marathon</p>
-                  <p className="text-muted text-sm mt-1">february 8, 2026</p>
+                  <p className="text-xl text-text" style={{ fontFamily: CALISTOGA }}>🏅 My Better Half Marathon</p>
+                  <p className="text-muted text-sm mt-1">February 8, 2026</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">finish time</p>
@@ -150,7 +150,7 @@ export default function PlayPage() {
 
               <p className="text-muted text-xs text-center mt-4">📍 Seward Park, Seattle, WA</p>
               <p className="text-muted text-base text-center mt-4">
-                i started <strong>running</strong> more since i moved to Seattle. the PNW has such beautiful trails :) this was my first race ever, and i ran a <strong><em>sub-60 10k</em></strong>! pretty proud of that!
+                I started <strong>running</strong> more since I moved to Seattle. The PNW has such beautiful trails :) This was my first race ever, and I ran a <strong><em>sub-60 10k</em></strong>! Pretty proud of that!
               </p>
             </FadeIn>
           </div>
@@ -163,7 +163,7 @@ export default function PlayPage() {
                 <Image src="/reading.png" alt="reading tracker" width={1200} height={800} className="w-full rounded-xl object-cover" />
               </div>
               <p className="text-muted text-base text-center mt-4">
-                i love <strong>reading</strong> before bed and on trips :) my favorites are fantasy, rom-com, and a little bit of sci-fi. i recently started recording what i read and took a <em>selfie with the book</em> on the day i finish it!
+                I love <strong>reading</strong> before bed and on trips :) My favorites are fantasy, rom-com, and a little bit of sci-fi. I recently started recording what I read and took a <strong><em>selfie with the book</em></strong> on the day I finish it!
               </p>
             </FadeIn>
           </div>
@@ -174,7 +174,7 @@ export default function PlayPage() {
             <FadeIn delay={0.1}>
               <FlowerCarousel />
               <p className="text-muted text-base text-center mt-4">
-                i love giving people <strong>handmade gifts</strong>, and flower arrangement is one of the perfect ways to do that :) i&apos;m still pretty new but hope to learn more <em>techniques</em> in the future!
+                I always love giving people <strong>handmade gifts</strong>, and <strong><em>flowers</em></strong> are one of them :) Each arrangement carries a little message, whether it&apos;s gratitude for a mentor, comfort for a friend, or celebration for someone I love.
               </p>
             </FadeIn>
           </div>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <rect width="800" height="520" rx="0" fill="#B8D4BF"/>
+  <rect width="800" height="520" rx="0" fill="url(#grad)" opacity="0.4"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="800" y2="520">
+      <stop offset="0%" stop-color="#F0C8BA" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#FDF5EE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="245" text-anchor="middle" font-family="Quicksand, sans-serif" font-size="84" font-style="italic" fill="#FAF5EE" opacity="0.9">coming soon :)</text>
+  <text x="400" y="310" text-anchor="middle" font-family="Quicksand, sans-serif" font-size="36" font-style="italic" fill="#FAF5EE" opacity="0.55">shadowclaw</text>
+</svg>

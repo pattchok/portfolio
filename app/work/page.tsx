@@ -36,7 +36,7 @@ export default function WorkPage() {
           </p>
           <a
             href="#side-projects"
-            className="inline-flex items-center gap-1 text-sm text-brown hover:text-brown-light transition-colors duration-200 mb-12"
+            className="inline-flex items-center gap-1 text-sm text-brown hover:text-brown-light hover:underline transition-colors duration-200 mb-12"
           >
             check out my side projects below
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -108,6 +108,7 @@ export default function WorkPage() {
                 shortDesc={p.shortDesc}
                 href={`/projects/${p.slug}`}
                 thumbBg={p.thumbBg}
+                thumbImg={p.thumbImg}
                 year={p.year}
                 links={p.links}
               />

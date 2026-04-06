@@ -86,7 +86,7 @@ const CalloutBox = ({
 /* ── page ─────────────────────────────────────────────────────── */
 export default function OpenTyphoonPage() {
   return (
-    <main style={{ backgroundColor: "#F3F5F0" }} className="min-h-screen">
+    <main style={{ backgroundColor: "#F3F5F0" }} className="min-h-screen overflow-hidden">
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 pb-16 px-6 md:px-10 lg:px-16">
         {/* decorative blobs */}
@@ -215,7 +215,13 @@ export default function OpenTyphoonPage() {
       </FadeIn>
 
       {/* ── Content ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative">
+        {/* decorative blobs scattered throughout */}
+        <div className="absolute pointer-events-none" style={{ top: "8%", right: "-60px", width: "160px", height: "160px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "25%", left: "-80px", width: "180px", height: "180px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "45%", right: "-50px", width: "120px", height: "120px", background: sage, opacity: 0.15, borderRadius: "55% 45% 50% 50% / 45% 55% 45% 55%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "62%", left: "-70px", width: "140px", height: "140px", background: gold, opacity: 0.1, borderRadius: "40% 60% 55% 45% / 60% 40% 50% 50%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "80%", right: "-40px", width: "100px", height: "100px", background: pink, opacity: 0.13, borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%" }} />
         {/* Context */}
         <FadeIn>
           <section>

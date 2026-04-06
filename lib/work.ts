@@ -18,7 +18,7 @@ export const workProjects: WorkProject[] = [
   {
     slug: "opentyphoon",
     name: "OpenTyphoon.ai",
-    shortDesc: "Thailand's large language model. Built to understand and generate Thai language at scale — a foundational AI infrastructure project.",
+    shortDesc: "Thailand's large language model. Built to understand and generate Thai language at scale, a foundational AI infrastructure project.",
     year: "2023–2025",
     company: "SCB 10X",
     thumbBg: "#EDD5C5",
@@ -32,7 +32,7 @@ export const workProjects: WorkProject[] = [
   {
     slug: "cs-copilot",
     name: "Customer Support Copilot",
-    shortDesc: "An AI copilot that cut ticket resolution from 42 minutes to under 5 — built for Thailand's largest commercial bank.",
+    shortDesc: "An AI copilot that cut ticket resolution from 42 minutes to under 5, built for Thailand's largest commercial bank.",
     year: "2024",
     company: "SCB 10X",
     thumbBg: "#B8D4BF",
@@ -45,7 +45,7 @@ export const workProjects: WorkProject[] = [
   {
     slug: "finnomena",
     name: "Finnomena",
-    shortDesc: "Investment platform for Thai retail investors — making wealth management more accessible and understandable.",
+    shortDesc: "Investment platform for Thai retail investors, making wealth management more accessible and understandable.",
     year: "2022",
     company: "Finnomena",
     thumbBg: "#C2D0B8",

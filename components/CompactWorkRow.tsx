@@ -43,7 +43,7 @@ export default function CompactWorkRow({
               <iframe
                 src={thumbIframe}
                 className="w-full h-full"
-                style={{ border: 0, pointerEvents: "none" }}
+                style={{ border: 0, pointerEvents: "none", transform: "scale(0.6)", transformOrigin: "top left", width: "167%", height: "167%" }}
                 loading="lazy"
               />
             ) : thumbImg ? (
@@ -118,12 +118,12 @@ export default function CompactWorkRow({
                     rel="noopener noreferrer"
                     className="text-xs text-muted hover:text-brown hover:underline transition-colors duration-200"
                   >
-                    {link.label} &rarr;
+                    {link.label}{" "}&rarr;
                   </a>
                 ))}
               </div>
             ) : (
-              <WavyCTA href={href}>view more</WavyCTA>
+              <WavyCTA href={href} className="text-sm">view more</WavyCTA>
             )}
           </div>
         </div>

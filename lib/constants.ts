@@ -21,7 +21,7 @@ export const socialLinks = [
     external: true,
   },
   {
-    href: "https://github.com/pattcho",
+    href: "https://github.com/pattchok",
     label: "GitHub",
     iconName: "github" as const,
     external: true,
