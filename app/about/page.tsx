@@ -99,22 +99,6 @@ export default function AboutPage() {
                     <Image src="/about/thainlp-3.png" alt="ACL 2024" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                   </div>
                 </div>
-
-                {/* RAISE */}
-                <div>
-                  <h3
-                    className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
-                  >
-                    RAISE Winter Exposition, UW
-                  </h3>
-                  <p className="text-muted text-base leading-relaxed">
-                    During my time at UW, I joined the Winter Exposition by RAISE (Responsible AI Systems
-                    and Experiences), a UW research initiative focused on building AI systems that are
-                    trustworthy and human-centered. It was a great opportunity to engage with researchers
-                    and practitioners working on responsible AI.
-                  </p>
-                </div>
               </div>
             </section>
           </FadeIn>
@@ -134,53 +118,30 @@ export default function AboutPage() {
                 }}
               />
 
-              <div className="space-y-10">
+              <div className="space-y-8">
                 {/* UW */}
                 <div>
                   <h3
                     className="leading-tight text-text"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.25rem" }}
                   >
                     University of Washington
                   </h3>
-                  <p className="text-text text-base mt-1.5 font-semibold">M.S. in Information Management</p>
-                  <p className="text-muted text-base mt-0.5">Major in AI and Data Science</p>
-                  <div className="flex items-center gap-2 text-xs mt-2">
-                    <span className="font-bold tracking-tight uppercase text-pink-dark">Seattle, WA</span>
-                    <span className="text-muted">&middot;</span>
-                    <span className="text-muted">2024&ndash;2025</span>
-                  </div>
-                  <div
-                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-base leading-relaxed space-y-1"
-                    style={{ borderColor: "rgba(201,169,110,0.35)" }}
-                  >
-                    <p>GPA 3.96/4.0</p>
-                    <p>Dean&apos;s Scholarship</p>
-                  </div>
+                  <p className="text-text text-base mt-1.5 font-semibold">M.S. in Information Management, AI and Data Science</p>
+                  <p className="text-sm mt-1.5"><span className="font-bold tracking-tight uppercase text-pink-dark">Seattle, WA</span> <span className="text-muted">&middot; 2024&ndash;2025 &middot; GPA 3.96 &middot; Dean&apos;s Scholarship</span></p>
                 </div>
 
                 {/* Chulalongkorn */}
                 <div>
                   <h3
                     className="leading-tight text-text"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.25rem" }}
                   >
                     Chulalongkorn University
                   </h3>
-                  <p className="text-text text-base mt-1.5 font-semibold">Bachelor of Business Administration</p>
-                  <p className="text-muted text-base mt-0.5">Major in Finance and Accounting Information System</p>
-                  <div className="flex items-center gap-2 text-xs mt-2">
-                    <span className="font-bold tracking-tight uppercase text-pink-dark">Bangkok, Thailand</span>
-                    <span className="text-muted">&middot;</span>
-                    <span className="text-muted">2015&ndash;2019</span>
-                  </div>
-                  <div
-                    className="mt-3 ml-4 pl-4 border-l-2 text-muted text-base leading-relaxed space-y-1"
-                    style={{ borderColor: "rgba(201,169,110,0.35)" }}
-                  >
-                    <p>First Class Honors, GPA 3.88/4.0</p>
-                    <p>Full-ride scholarship as the top three students at admission</p>
-                  </div>
+                  <p className="text-text text-base mt-1.5 font-semibold">B.B.A. in Finance and Accounting, Information System</p>
+                  <p className="text-sm mt-1.5"><span className="font-bold tracking-tight uppercase text-pink-dark">Bangkok, Thailand</span> <span className="text-muted">&middot; 2015&ndash;2019 &middot; GPA 3.88 &middot; First Class Honors &middot; Full-ride Scholarship</span></p>
+                  <p className="text-muted text-sm mt-1"><span className="font-semibold text-text">International Exchange:</span> Stockholm University, Fall 2018</p>
                 </div>
               </div>
             </section>

@@ -45,15 +45,15 @@ export const workProjects: WorkProject[] = [
   {
     slug: "finnomena",
     name: "Finnomena",
-    shortDesc: "Investment platform for Thai retail investors, making wealth management more accessible and understandable.",
+    shortDesc: "Designed and launched an AI-powered portfolio planning tool for 3,000+ financial advisors, built in partnership with Franklin Templeton.",
     year: "2022",
     company: "Finnomena",
     thumbBg: "#C2D0B8",
     thumbImg: "/work/finnomena/finnomena-logo.png",
-    comingSoon: true,
     meta: {
       role: "Product Manager",
-      industry: "Fintech / Investments",
+      stack: "Franklin Templeton Investment Optimization Engine",
+      industry: "Fintech / Wealth Management",
     },
   },
   {
