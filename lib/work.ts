@@ -36,6 +36,7 @@ export const workProjects: WorkProject[] = [
     year: "2024",
     company: "SCB 10X",
     thumbBg: "#B8D4BF",
+    thumbImg: "/work/cs-copilot/copilot-cover.png",
     meta: {
       role: "Product Manager (0→1)",
       stack: "LangChain · Pinecone · LangFuse · Salesforce",
@@ -52,7 +53,7 @@ export const workProjects: WorkProject[] = [
     thumbImg: "/work/finnomena/finnomena-logo.png",
     meta: {
       role: "Product Manager",
-      stack: "Franklin Templeton Investment Optimization Engine",
+      stack: "Figma · Jira · Miro",
       industry: "Fintech / Wealth Management",
     },
   },

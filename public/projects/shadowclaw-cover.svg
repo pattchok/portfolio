@@ -8,6 +8,5 @@
       <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.4"/>
     </linearGradient>
   </defs>
-  <text x="400" y="245" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="84" font-style="italic" fill="#FAF5EE" opacity="0.9">coming soon :)</text>
-  <text x="400" y="310" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="36" font-style="italic" fill="#FAF5EE" opacity="0.55">shadowclaw</text>
+  <text x="400" y="270" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="84" font-style="italic" fill="#FAF5EE" opacity="0.9">coming soon :)</text>
 </svg>

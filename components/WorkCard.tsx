@@ -23,19 +23,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
             }`}
           >
             <div className={reversed ? "[direction:ltr]" : ""}>
-              {slug === "cs-copilot" ? (
-                <div
-                  className="rounded-2xl w-full border border-border/30 overflow-hidden"
-                  style={{ height: "280px", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
-                >
-                  <iframe
-                    src="/work/cs-copilot/copilot-preview.html"
-                    className="w-full h-full"
-                    style={{ border: 0, pointerEvents: "none" }}
-                    loading="lazy"
-                  />
-                </div>
-              ) : thumbImg ? (
+              {thumbImg ? (
                 <div
                   className="rounded-2xl w-full border border-border/30 overflow-hidden"
                   style={{ height: "280px" }}

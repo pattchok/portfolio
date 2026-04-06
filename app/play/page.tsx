@@ -174,7 +174,7 @@ export default function PlayPage() {
             <FadeIn delay={0.1}>
               <FlowerCarousel />
               <p className="text-muted text-base text-center mt-4">
-                I always love giving people <strong>handmade gifts</strong>, and <strong><em>flowers</em></strong> are one of them :) Each arrangement carries a little message, whether it&apos;s gratitude for a mentor, comfort for a friend, or celebration for someone I love.
+                I always love giving people <strong>handmade gifts</strong>, and <strong><em>flowers</em></strong> are one of them :){" "}Each bouquet carries a little message I want to tell the receiver through the meaning of each flower.
               </p>
             </FadeIn>
           </div>

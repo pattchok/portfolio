@@ -72,7 +72,7 @@ export default function WorkPage() {
               href={`/work/${p.slug}`}
               thumbBg={p.thumbBg}
               thumbImg={p.thumbImg}
-              thumbIframe={p.slug === "cs-copilot" ? "/work/cs-copilot/copilot-preview.html" : undefined}
+              thumbIframe={undefined}
               meta={p.meta}
               year={p.year}
               company={p.company}

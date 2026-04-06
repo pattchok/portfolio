@@ -177,7 +177,7 @@ export default function FinnomenaPage() {
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                   stack
                 </span>
-                Franklin Templeton Investment Optimization Engine
+                Figma &middot; Jira &middot; Miro
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">

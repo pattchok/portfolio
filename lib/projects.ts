@@ -29,8 +29,8 @@ export const sideProjects: SideProject[] = [
   },
   {
     slug: "huggingface-design",
-    name: "hugging face design competition",
-    shortDesc: "A design competition during my time at UW MS Information Management program. We didn't win but we learned a lot during the process, especially around information architecture and UX/UI design!",
+    name: "Hugging Face Design Competition",
+    shortDesc: "A design competition hosted by Hugging Face to redesign their landing page, focusing on better UX, clearer information architecture, and a more user-friendly experience.",
     year: "2025",
     thumbBg: "#EDD5C5",
     thumbImg: "/projects/huggingface-cover.png",
@@ -41,8 +41,8 @@ export const sideProjects: SideProject[] = [
   },
   {
     slug: "prompthub",
-    name: "prompthub",
-    shortDesc: "A community hub for sharing and discovering AI prompts, built when prompt engineering was still a new idea.",
+    name: "PromptHub",
+    shortDesc: "A marketplace for buying and selling AI prompts, designed to prevent buyers from reverse-engineering the secret sauce, built within the first 6 months after ChatGPT launched in Nov 2022.",
     year: "2023",
     thumbBg: "#EDD5C5",
     thumbImg: "/projects/prompthub-cover.jpg",
@@ -52,13 +52,13 @@ export const sideProjects: SideProject[] = [
   },
   {
     slug: "speedboat",
-    name: "speedboat studio",
+    name: "Speedboat Studio",
     shortDesc: "A no-code NFT platform built for local creators to leverage blockchain technology in borderless world.",
     year: "2022",
     thumbBg: "#F0C8BA",
     thumbImg: "/projects/speedboat-home.png",
     links: [
-      { label: "live (not maintained)", href: "https://speedboat.studio/" },
+      { label: "live (no longer active)", href: "https://speedboat.studio/" },
     ],
   },
 ];
