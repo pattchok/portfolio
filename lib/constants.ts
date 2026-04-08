@@ -44,7 +44,7 @@ export const socialLinks = [
     external: false,
   },
   {
-    href: "/resume.pdf",
+    href: "/Patt%20Chokchainant_Resume.pdf",
     label: "Resume",
     iconName: "resume" as const,
     external: true,

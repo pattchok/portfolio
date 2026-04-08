@@ -14,7 +14,7 @@ const sectionHeadingStyle = {
 
 export default function AboutPage() {
   return (
-    <main className="relative px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#FDFBF7" }}>
+    <main className="relative px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#F3F5F0" }}>
       <PageBg />
       <div className="relative z-10 max-w-4xl mx-auto">
 
