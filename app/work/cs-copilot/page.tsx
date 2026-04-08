@@ -164,27 +164,27 @@ export default function RagCopilotPage() {
             <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  role
+                  Role
                 </span>
-                product manager (0&rarr;1)
+                Product Manager (0&rarr;1)
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  team
+                  Team
                 </span>
-                cross-functional &middot; ~8 people
+                Cross-functional &middot; ~8 people
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  stack
+                  Stack
                 </span>
                 LangChain &middot; Pinecone &middot; LangFuse &middot; Salesforce
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  industry
+                  Industry
                 </span>
-                financial services
+                Financial Services
               </div>
             </div>
           </FadeIn>

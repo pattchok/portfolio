@@ -137,9 +137,6 @@ export default function HomePage() {
       {/* ── View more CTA ─────────────────────────────────────── */}
       <section className="px-6 md:px-10 lg:px-16 py-14 border-t border-border text-center bg-cream -mt-px">
         <FadeIn>
-          <p className="text-muted text-xl italic mb-6" style={{ fontFamily: DM_SANS }}>
-            there&apos;s more where that came from
-          </p>
           <WavyCTA href="/work" variant="nav">view more of my work!</WavyCTA>
         </FadeIn>
       </section>

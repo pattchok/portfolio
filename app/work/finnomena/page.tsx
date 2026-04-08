@@ -163,27 +163,27 @@ export default function FinnomenaPage() {
             <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  role
+                  Role
                 </span>
-                product manager
+                Product Manager
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  team
+                  Team
                 </span>
-                cross-functional &middot; Finnomena + Franklin Templeton
+                Cross-functional &middot; Finnomena + Franklin Templeton
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  stack
+                  Stack
                 </span>
                 Figma &middot; Jira &middot; Miro
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  industry
+                  Industry
                 </span>
-                fintech / wealth management
+                Fintech / Wealth Management
               </div>
             </div>
           </FadeIn>

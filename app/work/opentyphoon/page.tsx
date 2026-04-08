@@ -163,31 +163,31 @@ export default function OpenTyphoonPage() {
             <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  role
+                  Role
                 </span>
-                program manager &amp; co-founder
+                Program Manager &amp; Co-founder
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  team
+                  Team
                 </span>
                 4 &rarr; 12 people
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  stack
+                  Stack
                 </span>
                 PyTorch &middot; Hugging Face &middot; vLLM
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  industry
+                  Industry
                 </span>
-                AI infrastructure
+                AI Infrastructure
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  publication
+                  Publication
                 </span>
                 <a
                   href="https://arxiv.org/abs/2312.13951"

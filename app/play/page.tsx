@@ -85,10 +85,9 @@ export default function PlayPage() {
         {/* Intro */}
         <FadeIn delay={0.06}>
           <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-14">
-            Most of what I love doing now started because I tried something on a whim and kept going.
-            I run before the sun comes up, arrange flowers on weekends, read way too many fantasy novels,
-            and plan my next trip the moment I get back from one. I believe it&apos;s never too late to
-            pick up something new, and these are the things that keep me grounded and make everything else better.
+            I pick up hobbies on a whim and somehow stick with them. I think trying new things is one
+            of the best ways to stay curious and keep life fun, and it usually makes me better at
+            everything else too!
           </p>
         </FadeIn>
 

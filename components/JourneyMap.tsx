@@ -4,42 +4,47 @@ type JourneyStep = {
   org: string;
   role: string;
   period: string;
-  subItems?: string[];
-  parallel?: { name: string; desc?: string };
 };
 
 const steps: JourneyStep[] = [
   {
     org: "Chulalongkorn University",
     role: "B.B.A. in Finance & Accounting",
-    period: "2015-2019",
+    period: "2015 – 2019",
   },
   {
     org: "Sertis",
-    role: "Product Manager, AI & Data",
-    period: "2019-2021",
+    role: "Product Manager",
+    period: "2019 – 2021",
   },
   {
     org: "Finnomena",
-    role: "Product Manager, Fintech",
-    period: "2022",
+    role: "Product Manager",
+    period: "2021 – 2022",
   },
   {
-    org: "SCB 10X",
-    role: "Product & Program Manager",
-    period: "2023-2025",
-    subItems: ["LingThai", "Typhoon", "CS Copilot"],
-    parallel: { name: "Speedboat Studio", desc: "side project" },
+    org: "Speedboat Studio",
+    role: "Co-founder",
+    period: "2021 – 2023",
+  },
+  {
+    org: "SCB 10X – Typhoon",
+    role: "Senior Product Manager",
+    period: "2023 – 2025",
   },
   {
     org: "University of Washington",
-    role: "M.S. in Information Management",
-    period: "2024-2025",
-    parallel: { name: "The AI Collective", desc: "Seattle AI community" },
+    role: "M.S. in Information Management (AI and Data Science)",
+    period: "2024 – 2025",
   },
   {
-    org: "Joe Coffee",
-    role: "what's next",
+    org: "The AI Collective",
+    role: "Seattle Community Organizer",
+    period: "2025",
+  },
+  {
+    org: "Coffey Venture",
+    role: "Senior Product Manager",
     period: "present",
   },
 ];
@@ -78,40 +83,6 @@ export default function JourneyMap() {
                 {step.org}
               </h4>
               <p className="text-muted text-sm">{step.role}</p>
-
-              {/* Sub-items (e.g. projects under SCB 10X) */}
-              {step.subItems && (
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {step.subItems.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs px-2.5 py-1 rounded-full border"
-                      style={{
-                        borderColor: "rgba(201,169,110,0.35)",
-                        color: "#8C5E48",
-                        backgroundColor: "rgba(201,169,110,0.08)",
-                      }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {/* Parallel activity */}
-              {step.parallel && (
-                <div
-                  className="mt-2 pl-3 border-l-2"
-                  style={{ borderColor: "rgba(184,212,191,0.5)" }}
-                >
-                  <p className="text-sm text-brown" style={{ fontWeight: 500 }}>
-                    {step.parallel.name}
-                  </p>
-                  {step.parallel.desc && (
-                    <p className="text-xs text-muted">{step.parallel.desc}</p>
-                  )}
-                </div>
-              )}
             </div>
           </div>
         ))}

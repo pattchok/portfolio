@@ -140,7 +140,7 @@ export default function AboutPage() {
                     Chulalongkorn University
                   </h3>
                   <p className="text-text text-base mt-1.5 font-semibold">B.B.A. in Finance and Accounting, Information System</p>
-                  <p className="text-sm mt-1.5"><span className="font-bold tracking-tight uppercase text-pink-dark">Bangkok, Thailand</span> <span className="text-muted">&middot; 2015&ndash;2019 &middot; GPA 3.88 &middot; First Class Honors &middot; Full-ride Scholarship</span></p>
+                  <p className="text-sm mt-1.5"><span className="font-bold tracking-tight uppercase text-pink-dark">Bangkok, Thailand</span> <span className="text-muted">&middot; 2015&ndash;2019 &middot; GPA 3.88 &middot; First Class Honors</span></p>
                   <p className="text-muted text-sm mt-1"><span className="font-semibold text-text">International Exchange:</span> Stockholm University, Fall 2018</p>
                 </div>
               </div>

@@ -19,6 +19,7 @@ export default function Footer() {
                 color: "#FAF5EE",
                 fontSize: "1.4rem",
                 fontFamily: PLAYFAIR,
+                fontWeight: 700,
               }}
             >
               Patt Chokchainant

@@ -162,27 +162,27 @@ export default function ConversationalAIPage() {
             <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  role
+                  Role
                 </span>
-                product manager (first PM role)
+                Product Manager (first PM role)
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  team
+                  Team
                 </span>
-                cross-functional &middot; Sertis + 7-Eleven
+                Cross-functional &middot; Sertis + 7-Eleven
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  stack
+                  Stack
                 </span>
                 Google Dialogflow &middot; Python &middot; RegEx
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  industry
+                  Industry
                 </span>
-                retail / commerce
+                Retail / Commerce
               </div>
             </div>
           </FadeIn>
@@ -295,7 +295,7 @@ export default function ConversationalAIPage() {
               className="text-text mb-6"
               style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.1rem" }}
             >
-              chat commerce flow
+              Chat Commerce Flow
             </h3>
             <div className="space-y-0">
               {[

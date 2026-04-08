@@ -14,16 +14,27 @@ const blobData = [
 
 const paragraphs = [
   <>
-    I majored in finance and accounting in my undergrad at Chulalongkorn University.
-    What I enjoyed most was the data part, like the records, how things connect, and
-    seeing how things actually work. That curiosity and a love for hearing directly from
-    users is what got me into product management.
+    I&apos;ve always been the person who wants to understand how things connect. I
+    studied finance and accounting because I loved seeing how numbers could move across
+    and shape an entire business. But after sitting in an audit room checking if things
+    were accurate and complete, I realized I wanted to be on the side that builds things,
+    not the side that checks them.
   </>,
   <>
-    I shifted careers right after graduation to be a junior PM at Sertis, a data and AI
-    consulting firm, then went on to work in fintech, financial services, and AI infrastructure.
-    I&apos;ve been in PM for 6+ years now. I later did my master&apos;s at the University of Washington
-    in information management to strengthen the data and AI side of things in a more technical way.
+    The funny part is, I didn&apos;t even know &ldquo;product manager&rdquo; was a real
+    job. I was applying to data analyst roles when a recruiter told me my personality
+    would be a better fit for PM. I had no idea what I was getting into, but I ended up
+    spending the next six years in Bangkok building data and AI products (really enjoyed
+    it actually!). I was also very lucky that I got to work on Typhoon, Thailand&apos;s
+    first open-source large language model, where we made it accessible and available
+    for everyone in the country. That project still makes me really proud.
+  </>,
+  <>
+    Along the way, I never fully shook the insecurity of being the non-technical person
+    in a room full of engineers. I spent years trying to narrow down that gap and I
+    think I did a pretty good job (lol), but it still bugged me. So I decided to move to
+    Seattle to pursue a master&apos;s in Information Science at the University of
+    Washington, specializing in AI and data science, and here I am now!
   </>,
 ];
 
