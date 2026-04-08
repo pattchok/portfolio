@@ -3,6 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import AboutMeCard from "@/components/AboutMeCard";
 import JourneyMap from "@/components/JourneyMap";
 import WavyCTA from "@/components/WavyCTA";
+import PageBg from "@/components/PageBg";
 import { PLAYFAIR, DM_SANS } from "@/lib/constants";
 
 const sectionHeadingStyle = {
@@ -13,8 +14,9 @@ const sectionHeadingStyle = {
 
 export default function AboutPage() {
   return (
-    <main className="px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#FDF5EE" }}>
-      <div className="max-w-4xl mx-auto">
+    <main className="relative px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#FDFBF7" }}>
+      <PageBg />
+      <div className="relative z-10 max-w-4xl mx-auto">
 
         <div className="space-y-16">
 
@@ -24,14 +26,15 @@ export default function AboutPage() {
           {/* Journey Map */}
           <FadeIn delay={1.4}>
             <section>
-              <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
+              <h2 className="text-text leading-tight" style={sectionHeadingStyle}>
                 My Journey
               </h2>
               <div
                 style={{
-                  height: "1.5px",
+                  height: "3px",
                   background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
-                  opacity: 0.5,
+                  opacity: 0.6,
+                  marginTop: "10px",
                   marginBottom: "16px",
                 }}
               />
@@ -42,14 +45,15 @@ export default function AboutPage() {
           {/* Community */}
           <FadeIn delay={0.16}>
             <section>
-              <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
+              <h2 className="text-text leading-tight" style={sectionHeadingStyle}>
                 Community
               </h2>
               <div
                 style={{
-                  height: "1.5px",
+                  height: "3px",
                   background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
-                  opacity: 0.5,
+                  opacity: 0.6,
+                  marginTop: "10px",
                   marginBottom: "16px",
                 }}
               />
@@ -106,14 +110,15 @@ export default function AboutPage() {
           {/* Education */}
           <FadeIn delay={0.18}>
             <section>
-              <h2 className="text-text leading-tight mb-6" style={sectionHeadingStyle}>
+              <h2 className="text-text leading-tight" style={sectionHeadingStyle}>
                 Education
               </h2>
               <div
                 style={{
-                  height: "1.5px",
+                  height: "3px",
                   background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
-                  opacity: 0.5,
+                  opacity: 0.6,
+                  marginTop: "10px",
                   marginBottom: "16px",
                 }}
               />

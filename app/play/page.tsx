@@ -2,6 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
 import FlowerCarousel from "@/components/FlowerCarousel";
+import PageBg from "@/components/PageBg";
 import { PLAYFAIR, DM_SANS, CARD_STYLE } from "@/lib/constants";
 
 const GRAD_TEXT: React.CSSProperties = {
@@ -61,9 +62,10 @@ const sectionHeading = (text: string) => (
 
 export default function PlayPage() {
   return (
-    <main className="px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#F3F5F0" }}>
+    <main className="relative px-6 md:px-10 lg:px-16 pt-32 pb-24" style={{ backgroundColor: "#F3F5F0" }}>
+      <PageBg />
       <GradDefs />
-      <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto">
         {/* Page heading */}
         <FadeIn>
           <h1
@@ -74,7 +76,7 @@ export default function PlayPage() {
           </h1>
           <div
             style={{
-              height: "2px",
+              height: "4px",
               background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
               marginTop: "10px",
               opacity: 0.6,

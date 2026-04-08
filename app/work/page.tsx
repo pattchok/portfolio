@@ -1,13 +1,16 @@
 import FadeIn from "@/components/FadeIn";
 import CompactWorkRow from "@/components/CompactWorkRow";
+import PageBg from "@/components/PageBg";
 import { workProjects } from "@/lib/work";
 import { sideProjects } from "@/lib/projects";
 import { PLAYFAIR } from "@/lib/constants";
 
 export default function WorkPage() {
   return (
-    <main style={{ backgroundColor: "#F3F5F0", scrollBehavior: "smooth" }} className="px-6 md:px-10 lg:px-16 pt-32 pb-24">
-      <div className="max-w-4xl mx-auto">
+    <main style={{ backgroundColor: "#F3F5F0", scrollBehavior: "smooth" }} className="relative px-6 md:px-10 lg:px-16 pt-32 pb-24">
+      <PageBg />
+
+      <div className="relative z-10 max-w-4xl mx-auto">
         {/* Page heading */}
         <FadeIn>
           <h1
@@ -18,7 +21,7 @@ export default function WorkPage() {
           </h1>
           <div
             style={{
-              height: "2px",
+              height: "4px",
               background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
               marginTop: "10px",
               opacity: 0.6,
@@ -55,7 +58,7 @@ export default function WorkPage() {
           </h2>
           <div
             style={{
-              height: "1.5px",
+              height: "3px",
               background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
               opacity: 0.5,
               marginBottom: "4px",
@@ -92,7 +95,7 @@ export default function WorkPage() {
             </h2>
             <div
               style={{
-                height: "1.5px",
+                height: "3px",
                 background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
                 opacity: 0.5,
                 marginBottom: "4px",

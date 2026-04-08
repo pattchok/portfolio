@@ -34,7 +34,7 @@ const lomaThin = localFont({
 
 
 export const metadata: Metadata = {
-  title: "𐔌՞. ✿ patt",
+  title: "patt",
   description: "PM with 6+ years building across AI and data. Based in Seattle.",
 };
 

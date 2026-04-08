@@ -53,16 +53,16 @@ export default function HomePage() {
 
             {/* Right: side blobs — pink top-right, sage center, gold bottom-left */}
             <div className="hidden lg:flex flex-col items-end gap-10 self-center">
-              <div style={{ width: "190px", height: "190px", background: "#F0C8BA", opacity: 0.65, borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%", alignSelf: "flex-end" }} />
-              <div style={{ width: "120px", height: "120px", background: "#B8D4BF", opacity: 0.6, borderRadius: "40% 60% 45% 55% / 60% 40% 60% 40%", alignSelf: "center" }} />
-              <div style={{ width: "80px", height: "80px", background: "#C9A96E", opacity: 0.5, borderRadius: "50% 50% 40% 60% / 40% 60% 40% 60%", alignSelf: "flex-start" }} />
+              <div style={{ width: "190px", height: "190px", background: "#F0C8BA", opacity: 0.3, borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%", alignSelf: "flex-end" }} />
+              <div style={{ width: "120px", height: "120px", background: "#B8D4BF", opacity: 0.28, borderRadius: "40% 60% 45% 55% / 60% 40% 60% 40%", alignSelf: "center" }} />
+              <div style={{ width: "80px", height: "80px", background: "#C9A96E", opacity: 0.22, borderRadius: "50% 50% 40% 60% / 40% 60% 40% 60%", alignSelf: "flex-start" }} />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Featured work ─────────────────────────────────────── */}
-      <div style={{ backgroundColor: "#F3F5F0" }}>
+      <div style={{ backgroundColor: "#FDFBF7" }}>
         <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 pt-12 pb-2">
           <FadeIn>
             <h2
@@ -73,7 +73,7 @@ export default function HomePage() {
             </h2>
             <div
               style={{
-                height: "2px",
+                height: "4px",
                 background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
                 marginTop: "8px",
                 opacity: 0.6,

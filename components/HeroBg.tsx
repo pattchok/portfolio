@@ -17,13 +17,11 @@ export default function HeroBg() {
             @keyframes drift3 { from { transform: translateX(0px); } to { transform: translateX(38px); } }
             @keyframes drift4 { from { transform: translateX(0px); } to { transform: translateX(-50px); } }
             @keyframes drift5 { from { transform: translateX(0px); } to { transform: translateX(30px); } }
-            @keyframes drift6 { from { transform: translateX(0px); } to { transform: translateX(-34px); } }
-            .cloud1 { animation: drift1 52s ease-in-out infinite alternate; animation-play-state: ${ps}; }
-            .cloud2 { animation: drift2 68s ease-in-out infinite alternate; animation-play-state: ${ps}; }
-            .cloud3 { animation: drift3 44s ease-in-out infinite alternate; animation-play-state: ${ps}; }
-            .cloud4 { animation: drift4 58s ease-in-out infinite alternate; animation-play-state: ${ps}; }
-            .cloud5 { animation: drift5 62s ease-in-out infinite alternate; animation-play-state: ${ps}; }
-            .cloud6 { animation: drift6 48s ease-in-out infinite alternate; animation-play-state: ${ps}; }
+            .wave1 { animation: drift1 52s ease-in-out infinite alternate; animation-play-state: ${ps}; }
+            .wave2 { animation: drift2 68s ease-in-out infinite alternate; animation-play-state: ${ps}; }
+            .wave3 { animation: drift3 44s ease-in-out infinite alternate; animation-play-state: ${ps}; }
+            .wave4 { animation: drift4 58s ease-in-out infinite alternate; animation-play-state: ${ps}; }
+            .wave5 { animation: drift5 62s ease-in-out infinite alternate; animation-play-state: ${ps}; }
           `}</style>
 
           <linearGradient id="bgBase" x1="0" y1="0" x2="1" y2="1">
@@ -35,73 +33,51 @@ export default function HeroBg() {
           <filter id="blur70" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="70" />
           </filter>
-          <filter id="cloudBlur" x="-15%" y="-30%" width="130%" height="160%">
-            <feGaussianBlur stdDeviation="8" />
+          <filter id="waveBlur" x="-15%" y="-50%" width="130%" height="200%">
+            <feGaussianBlur stdDeviation="14" />
           </filter>
         </defs>
 
         <rect width="1440" height="800" fill="url(#bgBase)" />
 
-        <ellipse cx="80"   cy="400" rx="200" ry="340" fill="#D4A090" opacity="0.22" filter="url(#blur70)" />
-        <ellipse cx="430"  cy="420" rx="520" ry="370" fill="#F0C8BA" opacity="0.28" filter="url(#blur70)" />
-        <ellipse cx="720"  cy="390" rx="360" ry="300" fill="#F0E5CE" opacity="0.22" filter="url(#blur70)" />
-        <ellipse cx="1020" cy="420" rx="500" ry="360" fill="#B8D4BF" opacity="0.26" filter="url(#blur70)" />
-        <ellipse cx="1370" cy="400" rx="180" ry="320" fill="#8FB89A" opacity="0.20" filter="url(#blur70)" />
+        <ellipse cx="80"   cy="400" rx="200" ry="340" fill="#D4A090" opacity="0.11" filter="url(#blur70)" />
+        <ellipse cx="430"  cy="420" rx="520" ry="370" fill="#F0C8BA" opacity="0.14" filter="url(#blur70)" />
+        <ellipse cx="720"  cy="390" rx="360" ry="300" fill="#F0E5CE" opacity="0.11" filter="url(#blur70)" />
+        <ellipse cx="1020" cy="420" rx="500" ry="360" fill="#B8D4BF" opacity="0.13" filter="url(#blur70)" />
+        <ellipse cx="1370" cy="400" rx="180" ry="320" fill="#8FB89A" opacity="0.10" filter="url(#blur70)" />
 
-        {/* Cloud 1 — upper right, large */}
-        <g className="cloud1" filter="url(#cloudBlur)" opacity="0.85">
-          <ellipse cx="1155" cy="145" rx="180" ry="42" fill="white" />
-          <circle cx="1050" cy="118" r="44"  fill="white" />
-          <circle cx="1105" cy="96"  r="56"  fill="white" />
-          <circle cx="1168" cy="80"  r="64"  fill="white" />
-          <circle cx="1232" cy="98"  r="50"  fill="white" />
-          <circle cx="1285" cy="120" r="38"  fill="white" />
-        </g>
-
-        {/* Cloud 2 — left, mid-height */}
-        <g className="cloud2" filter="url(#cloudBlur)" opacity="0.72">
-          <ellipse cx="220" cy="526" rx="142" ry="34" fill="white" />
-          <circle cx="120" cy="505" r="34" fill="white" />
-          <circle cx="172" cy="488" r="46" fill="white" />
-          <circle cx="230" cy="476" r="54" fill="white" />
-          <circle cx="288" cy="490" r="40" fill="white" />
-          <circle cx="336" cy="510" r="28" fill="white" />
-        </g>
-
-        {/* Cloud 3 — upper center, wisp */}
-        <g className="cloud3" filter="url(#cloudBlur)" opacity="0.56">
-          <ellipse cx="616" cy="80" rx="88" ry="22" fill="white" />
-          <circle cx="550" cy="64" r="26" fill="white" />
-          <circle cx="592" cy="48" r="36" fill="white" />
-          <circle cx="638" cy="40" r="40" fill="white" />
-          <circle cx="682" cy="54" r="30" fill="white" />
-        </g>
-
-        {/* Cloud 4 — right, upper-mid */}
-        <g className="cloud4" filter="url(#cloudBlur)" opacity="0.48">
-          <ellipse cx="1306" cy="354" rx="108" ry="26" fill="white" />
-          <circle cx="1232" cy="334" r="30" fill="white" />
-          <circle cx="1274" cy="314" r="42" fill="white" />
-          <circle cx="1324" cy="304" r="46" fill="white" />
-          <circle cx="1372" cy="322" r="32" fill="white" />
-        </g>
-
-        {/* Cloud 5 — upper left, small */}
-        <g className="cloud5" filter="url(#cloudBlur)" opacity="0.44">
-          <ellipse cx="198" cy="152" rx="70" ry="20" fill="white" />
-          <circle cx="148" cy="136" r="24" fill="white" />
-          <circle cx="186" cy="120" r="34" fill="white" />
-          <circle cx="228" cy="116" r="32" fill="white" />
-          <circle cx="262" cy="132" r="22" fill="white" />
-        </g>
-
-        {/* Cloud 6 — lower right, small */}
-        <g className="cloud6" filter="url(#cloudBlur)" opacity="0.36">
-          <ellipse cx="1190" cy="608" rx="60" ry="18" fill="white" />
-          <circle cx="1144" cy="592" r="22" fill="white" />
-          <circle cx="1180" cy="576" r="30" fill="white" />
-          <circle cx="1218" cy="574" r="28" fill="white" />
-          <circle cx="1252" cy="590" r="20" fill="white" />
+        {/* Soft white wavy ribbons — thinner, some fading in/out mid-screen */}
+        <g fill="white" filter="url(#waveBlur)">
+          {/* Upper — ends around middle-left */}
+          <path
+            className="wave1"
+            d="M -200 140 C 60 95, 220 190, 400 140 S 600 90, 760 140 L 760 162 C 600 212, 400 168, 220 212 S 60 115, -200 162 Z"
+            opacity="0.55"
+          />
+          {/* Upper-right — starts around middle-right */}
+          <path
+            className="wave2"
+            d="M 820 210 C 980 165, 1120 255, 1280 210 S 1520 165, 1720 210 L 1720 232 C 1520 278, 1280 238, 1120 278 S 980 185, 820 232 Z"
+            opacity="0.45"
+          />
+          {/* Mid — crosses through center, thin */}
+          <path
+            className="wave3"
+            d="M -200 430 C 140 382, 360 478, 620 430 S 1060 382, 1340 430 S 1720 478, 2040 430 L 2040 450 C 1720 500, 1340 460, 1060 500 S 620 460, 360 500 S 140 450, -200 450 Z"
+            opacity="0.4"
+          />
+          {/* Lower-left — fades out before middle */}
+          <path
+            className="wave4"
+            d="M -200 560 C 100 512, 260 608, 440 560 S 640 510, 780 560 L 780 580 C 640 628, 440 588, 260 628 S 100 530, -200 580 Z"
+            opacity="0.38"
+          />
+          {/* Lower-right — starts around middle-right */}
+          <path
+            className="wave5"
+            d="M 900 650 C 1060 602, 1200 698, 1340 650 S 1560 602, 1720 650 L 1720 670 C 1560 718, 1340 678, 1200 718 S 1060 615, 900 670 Z"
+            opacity="0.35"
+          />
         </g>
       </svg>
 

@@ -23,11 +23,6 @@ const steps: JourneyStep[] = [
     period: "2021 – 2022",
   },
   {
-    org: "Speedboat Studio",
-    role: "Co-founder",
-    period: "2021 – 2023",
-  },
-  {
     org: "SCB 10X – Typhoon",
     role: "Senior Product Manager",
     period: "2023 – 2025",
@@ -36,11 +31,6 @@ const steps: JourneyStep[] = [
     org: "University of Washington",
     role: "M.S. in Information Management (AI and Data Science)",
     period: "2024 – 2025",
-  },
-  {
-    org: "The AI Collective",
-    role: "Seattle Community Organizer",
-    period: "2025",
   },
   {
     org: "Coffey Venture",

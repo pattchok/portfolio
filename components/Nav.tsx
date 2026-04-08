@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { SocialIcon } from "@/components/SocialIcons";
-import { socialLinks } from "@/lib/constants";
+import { socialLinks, LOMA } from "@/lib/constants";
 
 const navLinks = [
   { href: "/", label: "home" },
@@ -45,8 +45,7 @@ export default function Nav() {
           className="text-brown hover:text-text transition-colors duration-200"
           aria-label="Home"
         >
-          <span style={{ fontSize: "1.25rem", letterSpacing: "0.01em" }}>𐔌՞. ✿ </span>
-          <span style={{ fontFamily: "var(--font-dynapuff)", fontSize: "1.3rem" }}>patt</span>
+          <span style={{ fontFamily: LOMA, fontSize: "1.5rem", letterSpacing: "0.02em" }}>patt chokchainant</span>
         </Link>
 
         {/* Desktop links */}
