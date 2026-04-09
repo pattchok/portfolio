@@ -12,10 +12,10 @@ export default function HomePage() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="bg-cream relative overflow-hidden min-h-[75vh] flex items-center px-6 md:px-10 lg:px-16 pt-24 pb-16">
+      <section className="bg-cream relative overflow-hidden min-h-[75vh] flex items-center px-6 md:px-10 lg:px-16 pt-40 pb-16">
         <HeroBg />
         <div className="relative z-10 max-w-4xl w-full mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-8 lg:gap-16 items-center">
+          <div>
             <div>
               <p className="text-brown mb-3 tracking-wide" style={{ fontSize: "clamp(2rem, 4vw, 2.5rem)", fontFamily: LOMA }}>
                 <TypeWriter
@@ -24,7 +24,7 @@ export default function HomePage() {
                   speed={60}
                 />
               </p>
-              <h1 className="text-text leading-[1.05] relative mb-6" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)" }}>
+              <h1 className="text-text leading-[1.05] relative mb-12" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)" }}>
                 <span aria-hidden="true" className="invisible">hi, i&apos;m patt :)</span>
                 <span className="absolute left-0 top-0">
                   <TypeWriter
@@ -36,26 +36,22 @@ export default function HomePage() {
                       WebkitTextFillColor: "transparent",
                     }}
                     delay={1400}
-                    speed={60}
+                    speed={50}
                     hideCursorUntilStart
                   />
                 </span>
               </h1>
               <FadeIn delay={3.5}>
-                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-xl mb-10">
-                  product manager with 6+ years in AI and data, passionate about shipping solutions that address people's actual needs
+                <p className="text-text text-lg md:text-xl leading-relaxed max-w-xl mt-8 mb-5 font-semibold">
+                  Product Manager with 6+ years in AI and data, specializing in conversational AI and LLMs across CX, Fintech, and Retail E-commerce
+                </p>
+                <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl mb-10">
+                  Strong motivation in building products that make complex tech feel simple and approachable; products people actually trust and find useful enough to come back to
                 </p>
               </FadeIn>
               <FadeIn delay={3.8}>
                 <WavyCTA href="/about" variant="nav">get to know me :)</WavyCTA>
               </FadeIn>
-            </div>
-
-            {/* Right: side blobs — pink top-right, sage center, gold bottom-left */}
-            <div className="hidden lg:flex flex-col items-end gap-10 self-center">
-              <div style={{ width: "190px", height: "190px", background: "#F0C8BA", opacity: 0.3, borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%", alignSelf: "flex-end" }} />
-              <div style={{ width: "120px", height: "120px", background: "#B8D4BF", opacity: 0.28, borderRadius: "40% 60% 45% 55% / 60% 40% 60% 40%", alignSelf: "center" }} />
-              <div style={{ width: "80px", height: "80px", background: "#C9A96E", opacity: 0.22, borderRadius: "50% 50% 40% 60% / 40% 60% 40% 60%", alignSelf: "flex-start" }} />
             </div>
           </div>
         </div>

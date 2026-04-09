@@ -169,13 +169,7 @@ export default function FinnomenaPage() {
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Team
-                </span>
-                Cross-functional &middot; Finnomena + Franklin Templeton
-              </div>
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Stack
+                  Tech Stack
                 </span>
                 Figma &middot; Jira &middot; Miro
               </div>

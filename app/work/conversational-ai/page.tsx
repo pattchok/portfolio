@@ -168,21 +168,15 @@ export default function ConversationalAIPage() {
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Team
+                  Tech Stack
                 </span>
-                Cross-functional &middot; Sertis + 7-Eleven
-              </div>
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Stack
-                </span>
-                Google Dialogflow &middot; Python &middot; RegEx
+                Google DialogFlow &middot; Python &middot; RegEx
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                   Industry
                 </span>
-                Retail / Commerce
+                Retail E-Commerce
               </div>
             </div>
           </FadeIn>

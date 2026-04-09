@@ -169,13 +169,7 @@ export default function OpenTyphoonPage() {
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Team
-                </span>
-                4 &rarr; 12 people
-              </div>
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Stack
+                  Tech Stack
                 </span>
                 PyTorch &middot; Hugging Face &middot; vLLM
               </div>
@@ -183,7 +177,7 @@ export default function OpenTyphoonPage() {
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                   Industry
                 </span>
-                AI Infrastructure
+                AI Infrastructure, Multimodal AI (LLMs, VLMs, Voice)
               </div>
               <div>
                 <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
