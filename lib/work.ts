@@ -16,20 +16,6 @@ export type WorkProject = {
 
 export const workProjects: WorkProject[] = [
   {
-    slug: "cs-copilot",
-    name: "Customer Support Copilot",
-    shortDesc: "An AI copilot that cut ticket resolution from 42 minutes to under 5, built for Thailand's largest commercial bank.",
-    year: "2022–2025",
-    company: "SCB 10X",
-    thumbBg: "#B8D4BF",
-    thumbImg: "/work/cs-copilot/copilot-cover.png",
-    meta: {
-      role: "Product Manager (0→1)",
-      stack: "LangChain · Pinecone · LangFuse · Salesforce",
-      industry: "Financial Services",
-    },
-  },
-  {
     slug: "opentyphoon",
     name: "Typhoon",
     shortDesc: "Thailand's open-source multimodal AI: LLMs, vision, and voice models delivered through local hosting, APIs, and developer tools.",
@@ -41,6 +27,20 @@ export const workProjects: WorkProject[] = [
       role: "Product Manager",
       stack: "PyTorch · Hugging Face · vLLM",
       industry: "AI Infrastructure, Multimodal AI (LLMs, VLMs, Voice)",
+    },
+  },
+  {
+    slug: "cs-copilot",
+    name: "Customer Support Copilot",
+    shortDesc: "An AI copilot that cut ticket resolution from 42 minutes to under 5, built for Thailand's largest commercial bank.",
+    year: "2022–2025",
+    company: "SCB 10X",
+    thumbBg: "#B8D4BF",
+    thumbImg: "/work/cs-copilot/copilot-cover.png",
+    meta: {
+      role: "Product Manager (0→1)",
+      stack: "LangChain · Pinecone · LangFuse · Salesforce",
+      industry: "Financial Services",
     },
   },
   {

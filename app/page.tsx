@@ -14,7 +14,7 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="bg-cream relative overflow-hidden min-h-[75vh] flex items-center px-6 md:px-10 lg:px-16 pt-40 pb-16">
         <HeroBg />
-        <div className="relative z-10 max-w-4xl w-full mx-auto">
+        <div className="relative z-10 max-w-4xl w-full mx-auto text-lg">
           <div>
             <div>
               <p className="text-brown mb-3 tracking-wide" style={{ fontSize: "clamp(2rem, 4vw, 2.5rem)", fontFamily: LOMA }}>
@@ -42,11 +42,27 @@ export default function HomePage() {
                 </span>
               </h1>
               <FadeIn delay={3.5}>
-                <p className="text-text text-lg md:text-xl leading-relaxed max-w-xl mt-8 mb-5 font-semibold">
-                  Product Manager with 6+ years in AI and data, specializing in conversational AI and LLMs across CX, Fintech, and Retail E-commerce
+                <p className="text-text text-xl md:text-2xl leading-relaxed max-w-2xl mt-8 mb-5">
+                  I led product management for Thailand&apos;s frontier AI research lab, try our latest language model{" "}
+                  <a href="https://opentyphoon.ai/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-brown hover:underline underline-offset-4 transition-colors duration-200">here &rarr;</a>
                 </p>
-                <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl mb-10">
-                  Strong motivation in building products that make complex tech feel simple and approachable; products people actually trust and find useful enough to come back to
+                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+                  Working on a few side projects, check out what{" "}
+                  <a href="/work#side-projects" className="font-bold text-muted">
+                    <span className="relative pb-1">
+                      I&apos;ve built
+                      <svg aria-hidden="true" className="absolute left-0 w-full overflow-visible pointer-events-none" style={{ bottom: "-2px", height: "7px" }} viewBox="0 0 100 7" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="heroWavyGrad" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stopColor="#F0C8BA" />
+                            <stop offset="45%" stopColor="#C9A96E" />
+                            <stop offset="100%" stopColor="#B8D4BF" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M0,3.5 C8,0.5 16,6.5 24,3.5 C32,0.5 40,6.5 48,3.5 C56,0.5 64,6.5 72,3.5 C80,0.5 88,6.5 96,3.5 C98,2 100,3.5 100,3.5" fill="none" stroke="url(#heroWavyGrad)" strokeWidth="3.5" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                      </svg>
+                    </span>
+                  </a> recently!
                 </p>
               </FadeIn>
               <FadeIn delay={3.8}>

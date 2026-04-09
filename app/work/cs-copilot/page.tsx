@@ -78,7 +78,7 @@ const CalloutBox = ({
       boxShadow: "0 12px 40px rgba(140, 96, 80, 0.12), 0 2px 8px rgba(140, 96, 80, 0.06)",
     }}
   >
-    <p className="text-muted text-base leading-relaxed">
+    <p className="text-muted leading-relaxed">
       {emoji && <span className="mr-2">{emoji}</span>}
       {children}
     </p>
@@ -197,7 +197,7 @@ export default function RagCopilotPage() {
       <div className="pb-8" />
 
       {/* ── Content ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative text-lg">
         {/* decorative blobs scattered throughout */}
         <div className="absolute pointer-events-none" style={{ top: "5%", right: "-55px", width: "140px", height: "140px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
         <div className="absolute pointer-events-none" style={{ top: "20%", left: "-75px", width: "170px", height: "170px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />
@@ -258,7 +258,7 @@ export default function RagCopilotPage() {
         <FadeIn>
           <section>
             <SectionLabel>Context & Problem</SectionLabel>
-            <div className="space-y-5 text-base leading-relaxed text-muted">
+            <div className="space-y-5 leading-relaxed text-muted">
               <p>
                 SCB 10X is the innovation arm of Siam Commercial Bank,
                 Thailand&apos;s largest financial institution. Their customer
@@ -267,20 +267,20 @@ export default function RagCopilotPage() {
               </p>
               <ul className="list-disc pl-6 space-y-3 marker:text-brown">
                 <li>
-                  <strong>Scattered data and information</strong>: Resolving
+                  <strong className="text-text">Scattered data and information</strong>: Resolving
                   a single ticket averaged 42 minutes, excluding tickets
                   that needed days of follow-up across
                   departments and knowledge sources (bank policies, user
                   databases, and more).
                 </li>
                 <li>
-                  <strong>No automatic conversation capture</strong>: Tickets
+                  <strong className="text-text">No automatic conversation capture</strong>: Tickets
                   had to be written up by hand after each chat, and sometimes
                   there just wasn&apos;t time. Information got lost,
                   inaccurate, or incomplete.
                 </li>
                 <li>
-                  <strong>Too many tools, too much switching</strong>: A
+                  <strong className="text-text">Too many tools, too much switching</strong>: A
                   single question could mean CS agents juggling the customer
                   chat window, Salesforce, data dashboards, and internal chat
                   channels all at once.
@@ -300,7 +300,7 @@ export default function RagCopilotPage() {
         <FadeIn>
           <section>
             <SectionLabel>Solution</SectionLabel>
-            <div className="space-y-5 text-base leading-relaxed text-muted mb-8">
+            <div className="space-y-5 leading-relaxed text-muted mb-8">
               <p>
                 We were in financial services under heavy regulation. AI
                 couldn&apos;t talk to customers directly, so instead of
@@ -308,7 +308,7 @@ export default function RagCopilotPage() {
               </p>
             </div>
 
-            <ul className="list-disc pl-6 space-y-4 text-base leading-relaxed text-muted mb-8 marker:text-brown">
+            <ul className="list-disc pl-6 space-y-4 leading-relaxed text-muted mb-8 marker:text-brown">
               <li>
                 <strong>RAG pipeline</strong>: Retrieved relevant documents
                 and customer information in real time, across the bank&apos;s
@@ -362,9 +362,114 @@ export default function RagCopilotPage() {
                   >
                     {item.title}
                   </h3>
-                  <p className="text-muted text-base leading-relaxed">
+                  <p className="text-muted leading-relaxed">
                     {item.body}
                   </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Tech stack / under the hood */}
+        <FadeIn>
+          <section>
+            <SectionLabel>Tech Stack</SectionLabel>
+            <div className="space-y-5 leading-relaxed text-muted mb-8">
+              <p>
+                The RAG pipeline searched across the bank&apos;s entire
+                knowledge base, everything from password reset guides to
+                cross-bank transfer policies to Thai-specific regulatory edge
+                cases.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {[
+                { name: "LangChain", desc: "Orchestration & prompt routing" },
+                { name: "Pinecone", desc: "Vector DB for semantic search" },
+                { name: "LangFuse", desc: "Observability & monitoring" },
+                { name: "Salesforce", desc: "Knowledge base, CRM & output" },
+              ].map((t) => (
+                <div
+                  key={t.name}
+                  className="rounded-xl px-4 py-4 text-center"
+                  style={{
+                    background: "rgba(253,250,247,0.6)",
+                    border: "1px solid rgba(234,216,204,0.4)",
+                  }}
+                >
+                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: DM_SANS }}>
+                    {t.name}
+                  </p>
+                  <p className="text-muted text-xs leading-snug">{t.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* System architecture SVG */}
+            <div className="mb-8">
+              <Image
+                src="/work/cs-copilot/rag_copilot_system_architecture.svg"
+                alt="System architecture diagram"
+                width={900}
+                height={500}
+                className="w-full h-auto"
+              />
+            </div>
+
+            <p className="text-muted leading-relaxed">
+              PII was handled through a redaction layer. Sensitive customer
+              data was masked before anything hit the LLM, then re-injected
+              after.
+            </p>
+          </section>
+        </FadeIn>
+
+        {/* Key Features */}
+        <FadeIn>
+          <section>
+            <SectionLabel>Key Features</SectionLabel>
+            {/* User flow diagram */}
+            <div className="mb-10">
+              <Image
+                src="/work/cs-copilot/rag_copilot_user_flow.svg"
+                alt="User flow diagram"
+                width={1200}
+                height={180}
+                className="w-full h-auto"
+              />
+            </div>
+
+            {/* Feature list */}
+            <div className="space-y-0">
+              {[
+                {
+                  title: "Real-time knowledge retrieval",
+                  desc: "Semantic search across the bank's Salesforce knowledge base (policies, troubleshooting guides, regulatory docs) surfaced in context as the agent chats.",
+                },
+                {
+                  title: "Suggested replies with human review",
+                  desc: "AI drafts three reply options per message, each grounded in retrieved sources. Agents pick one, edit, and send. Human in the loop at every step.",
+                },
+                {
+                  title: "Auto-generated ticket summaries",
+                  desc: "At the end of each conversation, the system writes a summary and next-step list back to Salesforce. No more forgotten or incomplete tickets.",
+                },
+                {
+                  title: "PII redaction layer",
+                  desc: "Sensitive customer data masked before it reaches the LLM, then re-injected into the final output. PDPA-compliant by design.",
+                },
+                {
+                  title: "Evaluation & observability",
+                  desc: "Custom-built eval framework using LangFuse tracing, automated retrieval tests, and a golden dataset co-created with CS leads.",
+                },
+              ].map((f) => (
+                <div key={f.title} className="py-5 border-b border-border/30 last:border-0">
+                  <h3 className="text-text mb-2" style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}>
+                    {f.title}
+                  </h3>
+                  <p className="text-muted leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -379,7 +484,7 @@ export default function RagCopilotPage() {
               {[
                 {
                   title: "No established patterns for production RAG",
-                  desc: "This was late 2023, just a year after ChatGPT launched. RAG was brand new. Chunking strategies, embedding approaches, retrieval tuning. All figured out through trial and error.",
+                  desc: "Chunking strategies, embedding approaches, and retrieval tuning were all very new concepts. There was no best practice or playbook since it was just a year after ChatGPT launched.",
                   bg: "rgba(240,200,186,0.15)",
                 },
                 {
@@ -413,122 +518,6 @@ export default function RagCopilotPage() {
                 </div>
               ))}
             </div>
-          </section>
-        </FadeIn>
-
-        {/* Tech stack / under the hood */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Tech Stack</SectionLabel>
-            <div className="space-y-5 text-base leading-relaxed text-muted mb-8">
-              <p>
-                The RAG pipeline searched across the bank&apos;s entire
-                knowledge base, everything from password reset guides to
-                cross-bank transfer policies to Thai-specific regulatory edge
-                cases.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                { name: "LangChain", desc: "Orchestration & prompt routing" },
-                { name: "Pinecone", desc: "Vector DB for semantic search" },
-                { name: "LangFuse", desc: "Observability & monitoring" },
-                { name: "Salesforce", desc: "Knowledge base, CRM & output" },
-              ].map((t) => (
-                <div
-                  key={t.name}
-                  className="rounded-xl px-4 py-4 text-center"
-                  style={{
-                    background: "rgba(253,250,247,0.6)",
-                    border: "1px solid rgba(234,216,204,0.4)",
-                  }}
-                >
-                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: DM_SANS }}>
-                    {t.name}
-                  </p>
-                  <p className="text-muted text-xs leading-snug">{t.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* System architecture SVG */}
-            <div
-              className="rounded-2xl overflow-hidden border border-border/30 p-4 mb-8"
-              style={{ background: "#fff" }}
-            >
-              <Image
-                src="/work/cs-copilot/rag_copilot_system_architecture.svg"
-                alt="System architecture diagram"
-                width={900}
-                height={500}
-                className="w-full h-auto"
-              />
-            </div>
-
-            <p className="text-muted text-base leading-relaxed">
-              PII was handled through a redaction layer. Sensitive customer
-              data was masked before anything hit the LLM, then re-injected
-              after.
-            </p>
-          </section>
-        </FadeIn>
-
-        {/* Key Features */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Key Features</SectionLabel>
-            <div className="space-y-0">
-              {[
-                {
-                  title: "Real-time knowledge retrieval",
-                  desc: "Semantic search across the bank's Salesforce knowledge base (policies, troubleshooting guides, regulatory docs) surfaced in context as the agent chats.",
-                },
-                {
-                  title: "Suggested replies with human review",
-                  desc: "AI drafts three reply options per message, each grounded in retrieved sources. Agents pick one, edit, and send. Human in the loop at every step.",
-                },
-                {
-                  title: "Auto-generated ticket summaries",
-                  desc: "At the end of each conversation, the system writes a summary and next-step list back to Salesforce. No more forgotten or incomplete tickets.",
-                },
-                {
-                  title: "PII redaction layer",
-                  desc: "Sensitive customer data masked before it reaches the LLM, then re-injected into the final output. PDPA-compliant by design.",
-                },
-                {
-                  title: "Evaluation & observability",
-                  desc: "Custom-built eval framework using LangFuse tracing, automated retrieval tests, and a golden dataset co-created with CS leads.",
-                },
-              ].map((f) => (
-                <div key={f.title} className="py-5 border-b border-border/30 last:border-0">
-                  <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
-                    {f.title}
-                  </p>
-                  <p className="text-muted text-base leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeIn>
-
-        {/* Closing */}
-        <FadeIn>
-          <section
-            className="rounded-2xl px-8 py-8 text-center"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(240,200,186,0.18) 0%, rgba(253,250,247,0.5) 50%, rgba(184,212,191,0.15) 100%)",
-              border: "1px solid rgba(234,216,204,0.3)",
-            }}
-          >
-            <p
-              className="text-muted text-base leading-relaxed"
-              style={{ fontStyle: "italic" }}
-            >
-              Most internal AI tools never make it past pilot. This one
-              shipped.
-            </p>
           </section>
         </FadeIn>
 

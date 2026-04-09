@@ -196,7 +196,7 @@ export default function ConversationalAIPage() {
       </FadeIn>
 
       {/* ── Content ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative text-lg">
         {/* decorative blobs scattered throughout */}
         <div className="absolute pointer-events-none" style={{ top: "6%", right: "-50px", width: "150px", height: "150px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
         <div className="absolute pointer-events-none" style={{ top: "22%", left: "-70px", width: "160px", height: "160px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />

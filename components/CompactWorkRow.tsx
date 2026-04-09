@@ -93,7 +93,7 @@ export default function CompactWorkRow({
                 {meta.stack && (
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                      stack
+                      tech stack
                     </span>
                     {meta.stack}
                   </div>
