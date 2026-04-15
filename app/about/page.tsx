@@ -23,25 +23,6 @@ export default function AboutPage() {
           {/* My Story — animated card */}
           <AboutMeCard />
 
-          {/* Journey Map */}
-          <FadeIn delay={1.4}>
-            <section>
-              <h2 className="text-text leading-tight" style={sectionHeadingStyle}>
-                My Journey
-              </h2>
-              <div
-                style={{
-                  height: "3px",
-                  background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
-                  opacity: 0.6,
-                  marginTop: "10px",
-                  marginBottom: "16px",
-                }}
-              />
-              <JourneyMap />
-            </section>
-          </FadeIn>
-
           {/* Community */}
           <FadeIn delay={0.16}>
             <section>
@@ -104,6 +85,25 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+            </section>
+          </FadeIn>
+
+          {/* Journey Map */}
+          <FadeIn delay={1.4}>
+            <section>
+              <h2 className="text-text leading-tight" style={sectionHeadingStyle}>
+                My Journey
+              </h2>
+              <div
+                style={{
+                  height: "3px",
+                  background: "linear-gradient(to right, #F0C8BA, #C9A96E, #B8D4BF, transparent)",
+                  opacity: 0.6,
+                  marginTop: "10px",
+                  marginBottom: "16px",
+                }}
+              />
+              <JourneyMap />
             </section>
           </FadeIn>
 
