@@ -28,6 +28,17 @@ export const sideProjects: SideProject[] = [
     ],
   },
   {
+    slug: "snapstrip",
+    name: "SnapStrip",
+    shortDesc: "A digital photo booth that turns quick snaps into shareable photo strips. Pick a backdrop, pose, and share the link.",
+    year: "2026",
+    thumbBg: "#F0C8BA",
+    thumbImg: "/projects/snapstrip-cover.svg",
+    links: [
+      { label: "live", href: "https://snapstrip-two.vercel.app/" },
+    ],
+  },
+  {
     slug: "huggingface-design",
     name: "Hugging Face Design Competition",
     shortDesc: "A design competition hosted by Hugging Face to redesign their landing page, focusing on better UX, clearer information architecture, and a more user-friendly experience.",

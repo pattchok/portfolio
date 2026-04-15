@@ -1,4 +1,4 @@
-import { DM_SANS } from "@/lib/constants";
+import { LATO } from "@/lib/constants";
 
 type JourneyStep = {
   org: string;
@@ -68,7 +68,7 @@ export default function JourneyMap() {
               <p className="text-muted text-xs mb-0.5">{step.period}</p>
               <h4
                 className="text-text leading-tight"
-                style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
+                style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
               >
                 {step.org}
               </h4>

@@ -4,7 +4,7 @@ import AboutMeCard from "@/components/AboutMeCard";
 import JourneyMap from "@/components/JourneyMap";
 import WavyCTA from "@/components/WavyCTA";
 import PageBg from "@/components/PageBg";
-import { PLAYFAIR, DM_SANS } from "@/lib/constants";
+import { PLAYFAIR, LATO } from "@/lib/constants";
 
 const sectionHeadingStyle = {
   fontFamily: PLAYFAIR,
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     The AI Collective, Seattle Chapter
                   </h3>
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     Thai NLP
                   </h3>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="leading-tight text-text"
-                    style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.25rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 700, fontSize: "1.25rem" }}
                   >
                     University of Washington
                   </h3>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="leading-tight text-text"
-                    style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.25rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 700, fontSize: "1.25rem" }}
                   >
                     Chulalongkorn University
                   </h3>

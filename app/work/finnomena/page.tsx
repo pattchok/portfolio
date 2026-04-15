@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { PLAYFAIR, DM_SANS } from "@/lib/constants";
+import { PLAYFAIR, LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Finnomena - Patt",
@@ -17,7 +17,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: DM_SANS,
+        fontFamily: LATO,
         fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
         fontWeight: 700,
         color: accent,
@@ -55,7 +55,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -263,14 +263,14 @@ export default function FinnomenaPage() {
                     style={{
                       background: `linear-gradient(135deg, ${pink}, ${gold})`,
                       color: "#fff",
-                      fontFamily: DM_SANS,
+                      fontFamily: LATO,
                       fontWeight: 700,
                     }}
                   >
                     {step.n}
                   </span>
                   <div>
-                    <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
+                    <p className="text-text mb-1" style={{ fontFamily: LATO, fontWeight: 600 }}>
                       {step.title}
                     </p>
                     <p className="text-muted text-base leading-relaxed">{step.desc}</p>
@@ -315,7 +315,7 @@ export default function FinnomenaPage() {
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>

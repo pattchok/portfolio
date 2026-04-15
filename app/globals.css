@@ -34,7 +34,7 @@
 
   /* Typography */
   --font-serif: var(--font-playfair), Georgia, serif;
-  --font-sans:  var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:  var(--font-lato), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* ─── Base styles ───────────────────────────────────────────────── */
@@ -55,7 +55,7 @@ body {
     radial-gradient(ellipse at 80% 20%, rgba(120, 190, 145, 0.4) 0%, transparent 55%),
     radial-gradient(ellipse at 50% 40%, rgba(210, 170, 90, 0.2) 0%, transparent 50%);
   color: #2D1F0E;
-  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--font-lato), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

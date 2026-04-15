@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
-import { DM_SANS } from "@/lib/constants";
+import { LATO } from "@/lib/constants";
 
 type CompactWorkRowProps = {
   name: string;
@@ -79,7 +79,7 @@ export default function CompactWorkRow({
               className="text-text leading-tight mb-1.5"
               style={{
                 fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-                fontFamily: DM_SANS, fontWeight: 600,
+                fontFamily: LATO, fontWeight: 600,
               }}
             >
               {name}

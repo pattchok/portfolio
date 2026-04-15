@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { PLAYFAIR, DM_SANS } from "@/lib/constants";
+import { PLAYFAIR, LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Customer Support Copilot - Patt",
@@ -18,7 +18,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: DM_SANS,
+        fontFamily: LATO,
         fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
         fontWeight: 700,
         color: accent,
@@ -56,7 +56,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -358,7 +358,7 @@ export default function RagCopilotPage() {
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>
@@ -399,7 +399,7 @@ export default function RagCopilotPage() {
                     border: "1px solid rgba(234,216,204,0.4)",
                   }}
                 >
-                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: DM_SANS }}>
+                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: LATO }}>
                     {t.name}
                   </p>
                   <p className="text-muted text-xs leading-snug">{t.desc}</p>
@@ -466,7 +466,7 @@ export default function RagCopilotPage() {
                 },
               ].map((f) => (
                 <div key={f.title} className="py-5 border-b border-border/30 last:border-0">
-                  <h3 className="text-text mb-2" style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}>
+                  <h3 className="text-text mb-2" style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}>
                     {f.title}
                   </h3>
                   <p className="text-muted leading-relaxed">{f.desc}</p>
@@ -510,7 +510,7 @@ export default function RagCopilotPage() {
                 >
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
                   >
                     {c.title}
                   </h3>

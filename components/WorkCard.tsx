@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
-import { DM_SANS } from "@/lib/constants";
+import { LATO } from "@/lib/constants";
 import type { WorkProject } from "@/lib/work";
 
 type WorkCardProps = {
@@ -46,7 +46,7 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
             <div className={reversed ? "[direction:ltr]" : ""}>
               <h2
                 className="text-text leading-tight mb-4"
-                style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: DM_SANS, fontWeight: 600 }}
+                style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: LATO, fontWeight: 600 }}
               >
                 {name}
               </h2>

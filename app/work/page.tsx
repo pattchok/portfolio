@@ -31,11 +31,11 @@ export default function WorkPage() {
 
         {/* Intro */}
         <FadeIn delay={0.06}>
-          <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-14">
-            I&apos;ve spent 6+ years working at the intersection of AI, data, and product. Most of my work
-            has been in industries like financial services, retail, and AI infrastructure. I care deeply
-            about building things that actually solve real problems for real people, and I believe in
-            shipping early, learning fast, and staying close to the users.
+          <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-5">
+            I&apos;ve spent 6+ years building in AI and data products across financial services, retail, and e-commerce. A lot of my work has been leading AI initiatives inside organizations, helping teams go from &ldquo;we want to use AI&rdquo; to shipping something useful and getting people to adopt it.
+          </p>
+          <p className="text-base md:text-lg leading-relaxed text-muted mb-14">
+            I care about building things that solve real problems for people, shipping early, learning fast, and staying close to the users throughout.
           </p>
           <a
             href="#side-projects"
@@ -54,7 +54,7 @@ export default function WorkPage() {
             className="text-text leading-tight mb-2"
             style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700 }}
           >
-            Work Experience
+            My Fun 9-5 Career
           </h2>
           <div
             style={{
@@ -91,7 +91,7 @@ export default function WorkPage() {
               className="text-text leading-tight mb-2"
               style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700 }}
             >
-              Side Projects
+              What I Did Outside of My 9-5
             </h2>
             <div
               style={{

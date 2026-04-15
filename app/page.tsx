@@ -4,7 +4,7 @@ import WavyCTA from "@/components/WavyCTA";
 import WorkCard from "@/components/WorkCard";
 import HeroBg from "@/components/HeroBg";
 import { getFeaturedItems } from "@/lib/featured";
-import { PLAYFAIR, DM_SANS, LOMA } from "@/lib/constants";
+import { PLAYFAIR, LATO, LOMA } from "@/lib/constants";
 
 const featuredProjects = getFeaturedItems();
 
@@ -41,13 +41,12 @@ export default function HomePage() {
                   />
                 </span>
               </h1>
-              <FadeIn delay={3.5}>
+              <FadeIn delay={2.5}>
                 <p className="text-text text-xl md:text-2xl leading-relaxed max-w-2xl mt-8 mb-5">
-                  I led product management for Thailand&apos;s frontier AI research lab, try our latest language model{" "}
-                  <a href="https://opentyphoon.ai/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-brown hover:underline underline-offset-4 transition-colors duration-200">here &rarr;</a>
+                  I enjoy the <strong className="font-bold">&lsquo;what if&rsquo;</strong> conversations. I love <strong className="font-bold">talking to people</strong> to understand their problems. And I get excited about making all of that into something <strong className="font-bold">useful</strong>, which led me to product and program management!
                 </p>
                 <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
-                  Working on a few side projects, check out what{" "}
+                  I&apos;m working on a few side projects, check out what{" "}
                   <a href="/work#side-projects" className="font-bold text-muted">
                     <span className="relative pb-1">
                       I&apos;ve built
@@ -65,7 +64,7 @@ export default function HomePage() {
                   </a> recently!
                 </p>
               </FadeIn>
-              <FadeIn delay={3.8}>
+              <FadeIn delay={2.8}>
                 <WavyCTA href="/about" variant="nav">get to know me :)</WavyCTA>
               </FadeIn>
             </div>
@@ -81,7 +80,7 @@ export default function HomePage() {
               className="text-text"
               style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700 }}
             >
-              Featured Work
+              What I&apos;ve Built
             </h2>
             <div
               style={{
@@ -129,7 +128,7 @@ export default function HomePage() {
                     <div className={reversed ? "[direction:ltr]" : ""}>
                       <h3
                         className="text-text leading-tight mb-5"
-                        style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: DM_SANS, fontWeight: 600 }}
+                        style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", fontFamily: LATO, fontWeight: 600 }}
                       >
                         {item.name}
                       </h3>

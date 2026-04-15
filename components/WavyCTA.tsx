@@ -165,6 +165,7 @@ export default function WavyCTA({
   const inner = (
     <span
       className={`inline-flex items-center gap-2 group font-medium text-text ${large ? "text-lg" : ""} ${className}`}
+      style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
     >
       <span className="relative pb-2">
         {children}

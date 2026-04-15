@@ -3,7 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import WavyCTA from "@/components/WavyCTA";
 import FlowerCarousel from "@/components/FlowerCarousel";
 import PageBg from "@/components/PageBg";
-import { PLAYFAIR, DM_SANS, CARD_STYLE } from "@/lib/constants";
+import { PLAYFAIR, LATO, CARD_STYLE } from "@/lib/constants";
 
 const GRAD_TEXT: React.CSSProperties = {
   color: "#8C6050",
@@ -87,9 +87,8 @@ export default function PlayPage() {
         {/* Intro */}
         <FadeIn delay={0.06}>
           <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-14">
-            I pick up hobbies on a whim and somehow stick with them. I think trying new things is one
-            of the best ways to stay curious and keep life fun, and it usually makes me better at
-            everything else too!
+            I sometimes pick up new hobbies for fun and somehow stick with them. I think trying new things is one
+            of the best ways to stay curious and keep life vibrant. It keeps my feet on the ground and brings me back to myself!
           </p>
         </FadeIn>
 
@@ -127,12 +126,12 @@ export default function PlayPage() {
               <div className="flex items-start justify-center gap-16 flex-wrap mb-10">
                 <div>
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">race</p>
-                  <p className="text-xl text-text" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>🏅 My Better Half Marathon</p>
+                  <p className="text-xl text-text" style={{ fontFamily: LATO, fontWeight: 600 }}>🏅 My Better Half Marathon</p>
                   <p className="text-muted text-sm mt-1">February 8, 2026</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-1">finish time</p>
-                  <p className="text-3xl text-brown" style={{ fontFamily: DM_SANS, fontWeight: 700 }}>55:55.1</p>
+                  <p className="text-3xl text-brown" style={{ fontFamily: LATO, fontWeight: 700 }}>55:55.1</p>
                   <p className="text-muted text-xs mt-1">10k &middot; chip time</p>
                 </div>
               </div>

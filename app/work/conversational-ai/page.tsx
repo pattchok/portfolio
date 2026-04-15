@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { PLAYFAIR, DM_SANS } from "@/lib/constants";
+import { PLAYFAIR, LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "7-Eleven Conversational AI - Patt",
@@ -17,7 +17,7 @@ const SectionLabel = ({ children }: { children: string }) => (
   <div className="mb-6">
     <h2
       style={{
-        fontFamily: DM_SANS,
+        fontFamily: LATO,
         fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
         fontWeight: 700,
         color: accent,
@@ -55,7 +55,7 @@ const StatCard = ({
   >
     <p
       className="leading-none mb-2"
-      style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
+      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: accent }}
     >
       {value}
     </p>
@@ -255,7 +255,7 @@ export default function ConversationalAIPage() {
               >
                 <h3
                   className="text-text mb-3"
-                  style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
                 >
                   Customer Support Agent
                 </h3>
@@ -271,7 +271,7 @@ export default function ConversationalAIPage() {
               >
                 <h3
                   className="text-text mb-3"
-                  style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
                 >
                   Chat Commerce Assistant
                 </h3>
@@ -287,7 +287,7 @@ export default function ConversationalAIPage() {
             {/* How the commerce flow worked */}
             <h3
               className="text-text mb-6"
-              style={{ fontFamily: DM_SANS, fontWeight: 700, fontSize: "1.1rem" }}
+              style={{ fontFamily: LATO, fontWeight: 700, fontSize: "1.1rem" }}
             >
               Chat Commerce Flow
             </h3>
@@ -325,14 +325,14 @@ export default function ConversationalAIPage() {
                     style={{
                       background: `linear-gradient(135deg, ${pink}, ${gold})`,
                       color: "#fff",
-                      fontFamily: DM_SANS,
+                      fontFamily: LATO,
                       fontWeight: 700,
                     }}
                   >
                     {step.n}
                   </span>
                   <div>
-                    <p className="text-text mb-1" style={{ fontFamily: DM_SANS, fontWeight: 600 }}>
+                    <p className="text-text mb-1" style={{ fontFamily: LATO, fontWeight: 600 }}>
                       {step.title}
                     </p>
                     <p className="text-muted text-base leading-relaxed">{step.desc}</p>
@@ -369,7 +369,7 @@ export default function ConversationalAIPage() {
                 <div key={item.title}>
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.15rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
                   >
                     {item.title}
                   </h3>
@@ -416,7 +416,7 @@ export default function ConversationalAIPage() {
                 >
                   <h3
                     className="text-text mb-2"
-                    style={{ fontFamily: DM_SANS, fontWeight: 600, fontSize: "1.05rem" }}
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
                   >
                     {c.title}
                   </h3>

@@ -4,7 +4,7 @@
 export const PLAYFAIR = "var(--font-playfair), Georgia, serif";
 
 // Subheading font (sans) — project/work names
-export const DM_SANS = "var(--font-dm-sans), sans-serif";
+export const LATO = "var(--font-lato), sans-serif";
 
 // Display font — hero section only (gimmick)
 export const LOMA = "var(--font-loma), sans-serif";

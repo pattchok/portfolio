@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DynaPuff, Playfair_Display, DM_Sans } from "next/font/google";
+import { DynaPuff, Playfair_Display, Lato, DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -10,6 +10,13 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  variable: "--font-lato",
+  weight: ["400", "700", "900"],
   display: "swap",
 });
 
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} ${dynapuff.variable} ${lomaThin.variable} h-full`}
+      className={`${playfair.variable} ${lato.variable} ${dmSans.variable} ${dynapuff.variable} ${lomaThin.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <Nav />

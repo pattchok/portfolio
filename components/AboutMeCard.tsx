@@ -14,27 +14,20 @@ const blobData = [
 
 const paragraphs = [
   <>
-    I&apos;ve always been the person who wants to understand how things connect. I
-    studied finance and accounting because I loved seeing how numbers could move across
-    and shape an entire business. But after sitting in an audit room checking if things
-    were accurate and complete, I realized I wanted to be on the side that builds things,
-    not the side that checks them.
+    I came from a business background (accounting specifically) and didn&apos;t know
+    &lsquo;product manager&rsquo; was a real job. I heard about it when applying to data
+    analyst roles in my first job because a recruiter said it would fit my personality
+    better; I enjoy talking to people, understanding problems, and connecting the dots.
+    I ended up spending six years building AI and data products (really enjoyed it
+    actually!). I consider myself very fortunate to have had those opportunities, and
+    being the non-technical person surrounded by engineers and scientists pushed me to
+    learn more every day.
   </>,
   <>
-    The funny part is, I didn&apos;t even know &ldquo;product manager&rdquo; was a real
-    job. I was applying to data analyst roles when a recruiter told me my personality
-    would be a better fit for PM. I had no idea what I was getting into, but I ended up
-    spending the next six years in Bangkok building data and AI products (really enjoyed
-    it actually!). I was also very lucky that I got to work on Typhoon, Thailand&apos;s
-    first open-source large language model, where we made it accessible and available
-    for everyone in the country. That project still makes me really proud.
-  </>,
-  <>
-    Along the way, I never fully shook the insecurity of being the non-technical person
-    in a room full of engineers. I spent years trying to narrow down that gap and I
-    think I did a pretty good job (lol), but it still bugged me. So I decided to move to
-    Seattle to pursue a master&apos;s in Information Science at the University of
-    Washington, specializing in AI and data science, and here I am now!
+    Something I&apos;ve only recently put into words, because I basically grew up
+    doing it naturally, is that I like taking random, messy things and packaging them
+    together into something usable. That inclination is what led me to product
+    and program management, and it&apos;s become part of who I am today :)
   </>,
 ];
 

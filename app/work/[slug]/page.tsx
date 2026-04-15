@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { workProjects } from "@/lib/work";
 import WavyCTA from "@/components/WavyCTA";
-import { PLAYFAIR, DM_SANS } from "@/lib/constants";
+import { PLAYFAIR, LATO } from "@/lib/constants";
 
 export function generateStaticParams() {
   return workProjects
