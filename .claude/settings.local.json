@@ -47,7 +47,8 @@
       "Bash(python3 -c \"import PyPDF2; print\\('PyPDF2'\\)\")",
       "Bash(python3:*)",
       "WebFetch(domain:snapstrip-two.vercel.app)",
-      "Bash(/usr/bin/curl -s -o /dev/null -w '%{http_code}' https://snapstrip-two.vercel.app/__TRACKED_VAR__)"
+      "Bash(/usr/bin/curl -s -o /dev/null -w '%{http_code}' https://snapstrip-two.vercel.app/__TRACKED_VAR__)",
+      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/work/typhoon/**)"
     ]
   }
 }

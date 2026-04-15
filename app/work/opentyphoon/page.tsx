@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { PLAYFAIR, LATO } from "@/lib/constants";
@@ -390,6 +391,246 @@ export default function OpenTyphoonPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Events */}
+        <FadeIn>
+          <section>
+            <SectionLabel>Events</SectionLabel>
+            <p className="text-muted leading-relaxed mb-8">
+              Organized booths and represented Typhoon at major conferences and
+              developer events across the region.
+            </p>
+
+            <div className="space-y-8">
+              {/* ACL 2024 */}
+              <div>
+                <h3
+                  className="text-text mb-1"
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
+                >
+                  ACL 2024 &mdash; Bangkok, Thailand
+                </h3>
+                <p className="text-muted leading-relaxed mb-4">
+                  The premier global NLP conference. We organized a booth to demo
+                  Typhoon&apos;s models and connect with the international research
+                  community.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src="/work/typhoon/typhoon-acl1.png" alt="Typhoon booth at ACL 2024" fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src="/work/typhoon/typhoon-acl2.jpeg" alt="Typhoon at ACL 2024" fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Techsauce 2024 */}
+              <div>
+                <h3
+                  className="text-text mb-1"
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
+                >
+                  Techsauce Global Summit 2024
+                </h3>
+                <p className="text-muted leading-relaxed mb-4">
+                  Southeast Asia&apos;s largest tech conference. Represented
+                  Typhoon to an audience of founders, developers, and enterprise
+                  leaders across the region.
+                </p>
+                <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
+                  <Image src="/work/typhoon/typhoon-techsauce2024.png" alt="Typhoon at Techsauce 2024" fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
+                </div>
+              </div>
+
+              {/* Typhoon Hackathon */}
+              <div>
+                <h3
+                  className="text-text mb-1"
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
+                >
+                  Typhoon Hackathon
+                </h3>
+                <p className="text-muted leading-relaxed mb-4">
+                  Hosted a hackathon with 30 teams building real applications on
+                  Typhoon. A hands-on way to stress-test the models and grow the
+                  developer community at the same time.
+                </p>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src="/work/typhoon/typhoon-hackathon-1.jpg" alt="Typhoon Hackathon" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src="/work/typhoon/typhoon-hackathon-2.jpg" alt="Typhoon Hackathon teams" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src="/work/typhoon/typhoon-hackathon-3.jpg" alt="Typhoon Hackathon event" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Speaking & Teaching */}
+        <FadeIn>
+          <section>
+            <SectionLabel>Speaking & Teaching</SectionLabel>
+            <p className="text-muted leading-relaxed mb-8">
+              Presented Typhoon&apos;s work and led workshops across research,
+              industry, and academic audiences.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  img: "/work/typhoon/WangChanGLM.jpeg",
+                  alt: "WangChanGLM Use Case Demo",
+                  title: "WangChanGLM Use Case Demo",
+                  body: "Walked through real-world use cases and hands-on demos of Thai LLM applications.",
+                },
+                {
+                  img: "/work/typhoon/typhoon-vistec3.jpeg",
+                  alt: "Open-source NLP talk at VISTEC",
+                  title: "Open-source NLP for Real-world Applications — VISTEC",
+                  body: "Presented on applying open-source NLP in production settings, bridging research and industry.",
+                },
+                {
+                  img: "/work/typhoon/typhoon-kmitl.jpg",
+                  alt: "Guest lecture at KMITL",
+                  title: "Guest Lecture — KMITL",
+                  body: "Guest lecture at King Mongkut's Institute of Technology Ladkrabang on Thai language AI development. Also led an instructor session for the Super AI Engineers Program.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl overflow-hidden"
+                  style={{
+                    background: "rgba(253,250,247,0.85)",
+                    border: "1px solid rgba(0,0,0,0.04)",
+                    boxShadow: "0 4px 20px rgba(140, 96, 80, 0.06)",
+                  }}
+                >
+                  <div className="relative w-full" style={{ aspectRatio: "4 / 3" }}>
+                    <Image src={item.img} alt={item.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 350px" />
+                  </div>
+                  <div className="px-5 py-4">
+                    <h3
+                      className="text-text mb-2 leading-snug"
+                      style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1rem" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-muted text-sm leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* Publications & Media */}
+        <FadeIn>
+          <section>
+            <SectionLabel>Publications & Media</SectionLabel>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* Technical report */}
+              <div
+                className="rounded-xl px-6 py-6 flex flex-col"
+                style={{
+                  background: "rgba(240,200,186,0.15)",
+                  border: "1px solid rgba(0,0,0,0.03)",
+                }}
+              >
+                <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-2">
+                  Technical Report &middot; 70+ citations
+                </p>
+                <h3
+                  className="text-text mb-3 leading-snug"
+                  style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.1rem" }}
+                >
+                  Typhoon: Thai Large Language Models
+                </h3>
+                <p className="text-muted text-sm leading-relaxed mb-3">
+                  Co-authored technical report on the development of Thailand&apos;s
+                  first open-source Thai LLM, covering data preparation,
+                  pretraining, instruction-tuning, and evaluation. Typhoon
+                  achieved performance on par with GPT-3.5 in Thai while being
+                  2.62x more efficient at tokenizing Thai text.
+                </p>
+                <p className="text-muted text-xs leading-relaxed mb-4">
+                  Kunat Pipatanakul, Phatrasek Jirabovonvisut, Potsawee Manakul,
+                  Sittipong Sripaisarnmongkol, Ruangsak Patomwong,{" "}
+                  <strong className="text-text">Pathomporn Chokchainant</strong>,
+                  Kasima Tharnpipitchai
+                </p>
+                <a
+                  href="https://arxiv.org/abs/2312.13951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-bold text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200 mt-auto"
+                >
+                  arxiv.org/abs/2312.13951 &rarr;
+                </a>
+              </div>
+
+              {/* YouTube feature */}
+              <a
+                href="https://www.youtube.com/watch?v=fkYhx9nOkmE&t=2080s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl overflow-hidden flex flex-col group"
+                style={{
+                  background: "rgba(184,212,191,0.15)",
+                  border: "1px solid rgba(0,0,0,0.03)",
+                }}
+              >
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
+                  <Image
+                    src="/work/typhoon/the-rise-of-intelligence-2.png"
+                    alt="The Rise of Intelligence YouTube feature"
+                    fill
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                    style={{ background: "rgba(0,0,0,0.15)" }}
+                  >
+                    <div
+                      className="rounded-full flex items-center justify-center"
+                      style={{
+                        width: "56px",
+                        height: "56px",
+                        background: "rgba(255,255,255,0.92)",
+                        boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+                      }}
+                    >
+                      <span style={{ color: accent, fontSize: "22px", marginLeft: "3px" }}>&#9654;</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-6 py-5">
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-2">
+                    YouTube Feature
+                  </p>
+                  <h3
+                    className="text-text mb-2 leading-snug"
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.1rem" }}
+                  >
+                    The Rise of Intelligence
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    Featured segment where I presented real-world industry use
+                    cases for Thai LLMs, including the customer support copilot
+                    project.
+                  </p>
+                </div>
+              </a>
             </div>
           </section>
         </FadeIn>
