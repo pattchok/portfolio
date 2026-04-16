@@ -85,7 +85,7 @@ export default function WorkPage() {
         </div>
 
         {/* Side projects */}
-        <div id="side-projects" className="mt-16">
+        <div id="side-projects" className="mt-16" style={{ scrollMarginTop: "120px" }}>
           <FadeIn>
             <h2
               className="text-text leading-tight mb-2"

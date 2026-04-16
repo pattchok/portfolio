@@ -30,6 +30,11 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Hide global nav on work detail pages (e.g. /work/opentyphoon).
+  // Keeps it on /work index and everywhere else.
+  const isWorkDetail = pathname?.startsWith("/work/") ?? false;
+  if (isWorkDetail) return null;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${

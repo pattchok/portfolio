@@ -24,7 +24,7 @@ export default function HomePage() {
                   speed={60}
                 />
               </p>
-              <h1 className="text-text leading-[1.05] relative mb-12" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)" }}>
+              <h1 className="leading-[1.05] relative mb-12" style={{ fontFamily: LOMA, fontSize: "clamp(3rem, 6vw, 3.75rem)", color: "#362d27" }}>
                 <span aria-hidden="true" className="invisible">hi, i&apos;m patt :)</span>
                 <span className="absolute left-0 top-0">
                   <TypeWriter
@@ -35,37 +35,41 @@ export default function HomePage() {
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
-                    delay={1400}
+                    delay={400}
                     speed={50}
                     hideCursorUntilStart
                   />
                 </span>
               </h1>
-              <FadeIn delay={2.5}>
-                <p className="text-text text-xl md:text-2xl leading-relaxed max-w-2xl mt-8 mb-5">
-                  I enjoy the <strong className="font-bold">&lsquo;what if&rsquo;</strong> conversations. I love <strong className="font-bold">talking to people</strong> to understand their problems. And I get excited about making all of that into something <strong className="font-bold">useful</strong>, which led me to product and program management!
+              <FadeIn delay={1.6}>
+                <p className="text-xl md:text-2xl leading-relaxed max-w-2xl mt-8 mb-5 font-bold" style={{ color: "#362d27" }}>
+                  Product Manager making AI products easy to use for everyone
                 </p>
-                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
-                  I&apos;m working on a few side projects, check out what{" "}
+                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-3">
+                  I led Thailand&apos;s frontier AI research lab, try our latest language model{" "}
+                  <a
+                    href="https://opentyphoon.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-muted underline underline-offset-4 decoration-2"
+                  >
+                    here
+                  </a>!
+                </p>
+                <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mt-8 mb-6 font-bold">
+                  Check out what{" "}
                   <a href="/work#side-projects" className="font-bold text-muted">
                     <span className="relative pb-1">
                       I&apos;ve built
                       <svg aria-hidden="true" className="absolute left-0 w-full overflow-visible pointer-events-none" style={{ bottom: "-2px", height: "7px" }} viewBox="0 0 100 7" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="heroWavyGrad" x1="0" y1="0" x2="1" y2="0">
-                            <stop offset="0%" stopColor="#F0C8BA" />
-                            <stop offset="45%" stopColor="#C9A96E" />
-                            <stop offset="100%" stopColor="#B8D4BF" />
-                          </linearGradient>
-                        </defs>
                         <path d="M0,3.5 C8,0.5 16,6.5 24,3.5 C32,0.5 40,6.5 48,3.5 C56,0.5 64,6.5 72,3.5 C80,0.5 88,6.5 96,3.5 C98,2 100,3.5 100,3.5" fill="none" stroke="url(#heroWavyGrad)" strokeWidth="3.5" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
                       </svg>
                     </span>
-                  </a> recently!
+                  </a>&nbsp;&nbsp;&rarr;
                 </p>
               </FadeIn>
-              <FadeIn delay={2.8}>
-                <WavyCTA href="/about" variant="nav">get to know me :)</WavyCTA>
+              <FadeIn delay={1.6}>
+                <WavyCTA href="/about" variant="nav" color="#362d27">get to know me :)</WavyCTA>
               </FadeIn>
             </div>
           </div>
@@ -80,7 +84,7 @@ export default function HomePage() {
               className="text-text"
               style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700 }}
             >
-              What I&apos;ve Built
+              Projects I&apos;m Most Proud Of
             </h2>
             <div
               style={{

@@ -151,6 +151,7 @@ interface WavyCTAProps {
   large?: boolean;
   /** "detail" (default) = wavy line for secondary pages, "nav" = dot trail for main page navigation */
   variant?: "detail" | "nav";
+  color?: string;
 }
 
 export default function WavyCTA({
@@ -160,12 +161,13 @@ export default function WavyCTA({
   external = false,
   large = false,
   variant = "detail",
+  color,
 }: WavyCTAProps) {
 
   const inner = (
     <span
-      className={`inline-flex items-center gap-2 group font-medium text-text ${large ? "text-lg" : ""} ${className}`}
-      style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+      className={`inline-flex items-center gap-2 group font-medium ${color ? "" : "text-text"} ${large ? "text-lg" : ""} ${className}`}
+      style={{ fontFamily: "var(--font-dm-sans), sans-serif", ...(color ? { color } : {}) }}
     >
       <span className="relative pb-2">
         {children}
