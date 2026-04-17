@@ -58,13 +58,13 @@ export const workProjects: WorkProject[] = [
     },
   },
   {
-    slug: "conversational-ai",
+    slug: "7-eleven-chatbot",
     name: "7-Eleven Conversational AI Chatbot",
     shortDesc: "Built the chat commerce experience inside Thailand's 7-Eleven app, serving 16M+ monthly active users across 15,000+ stores nationwide.",
     year: "2019–2021",
     company: "Sertis",
     thumbBg: "#C9A96E",
-    thumbImg: "/work/conversational-ai/7-eleven-chatbot.png",
+    thumbImg: "/work/7-eleven-chatbot/7-eleven-chatbot.png",
     meta: {
       role: "Junior PM",
       stack: "Google DialogFlow · Python · RegEx",

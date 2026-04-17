@@ -48,7 +48,10 @@
       "Bash(python3:*)",
       "WebFetch(domain:snapstrip-two.vercel.app)",
       "Bash(/usr/bin/curl -s -o /dev/null -w '%{http_code}' https://snapstrip-two.vercel.app/__TRACKED_VAR__)",
-      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/work/typhoon/**)"
+      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/work/typhoon/**)",
+      "WebFetch(domain:opentyphoon.ai)",
+      "WebFetch(domain:amylalai.com)",
+      "Bash(sips -g pixelWidth -g pixelHeight typhoon-acl1.png typhoon-acl2.jpeg)"
     ]
   }
 }

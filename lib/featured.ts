@@ -8,7 +8,7 @@ import { sideProjects } from "./projects";
 export const featuredEntries: Array<{ type: "work" | "project"; slug: string }> = [
   { type: "work",    slug: "opentyphoon"       },
   { type: "work",    slug: "cs-copilot"        },
-  { type: "work",    slug: "conversational-ai" },
+  { type: "work",    slug: "7-eleven-chatbot" },
 ];
 
 export type FeaturedItem = {

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { PLAYFAIR, LATO } from "@/lib/constants";
+import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
+import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Customer Support Copilot - Patt",
@@ -15,27 +16,19 @@ const pink = "#F0C8BA";
 const gold = "#C9A96E";
 
 const SectionLabel = ({ children }: { children: string }) => (
-  <div className="mb-6">
-    <h2
-      style={{
-        fontFamily: LATO,
-        fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
-        fontWeight: 700,
-        color: accent,
-        lineHeight: 1.15,
-      }}
-    >
-      {children}
-    </h2>
-    <div
-      style={{
-        height: "2px",
-        background: `linear-gradient(to right, ${pink}, ${gold}, ${sage}, transparent)`,
-        marginTop: "8px",
-        opacity: 0.6,
-      }}
-    />
-  </div>
+  <h2
+    className="mb-3 uppercase"
+    style={{
+      fontFamily: LATO,
+      fontSize: "1rem",
+      fontWeight: 700,
+      color: "#8C6050",
+      letterSpacing: "0.08em",
+      lineHeight: 1.2,
+    }}
+  >
+    {children}
+  </h2>
 );
 
 const StatCard = ({
@@ -48,7 +41,7 @@ const StatCard = ({
   bg: string;
 }) => (
   <div
-    className="rounded-2xl px-6 py-7 text-center"
+    className="rounded-2xl px-6 py-7 text-center flex flex-col items-center justify-center h-full"
     style={{
       background: bg,
       border: "1px solid rgba(0,0,0,0.04)",
@@ -64,480 +57,408 @@ const StatCard = ({
   </div>
 );
 
-const CalloutBox = ({
-  children,
-  emoji,
-}: {
-  children: React.ReactNode;
-  emoji?: string;
-}) => (
-  <div
-    className="rounded-xl px-6 py-5 my-8"
-    style={{
-      background: "rgba(253,250,247,0.85)",
-      boxShadow: "0 12px 40px rgba(140, 96, 80, 0.12), 0 2px 8px rgba(140, 96, 80, 0.06)",
-    }}
-  >
-    <p className="text-muted leading-relaxed">
-      {emoji && <span className="mr-2">{emoji}</span>}
-      {children}
-    </p>
-  </div>
-);
+const sections: SectionNavItem[] = [
+  { id: "tldr", label: "TL;DR" },
+  { id: "problem", label: "Problem" },
+  { id: "solution", label: "Solution" },
+  { id: "tech", label: "Tech Stack" },
+  { id: "impact", label: "Impact" },
+];
 
 /* ── page ─────────────────────────────────────────────────────── */
 export default function RagCopilotPage() {
   return (
-    <main style={{ backgroundColor: "#F3F5F0" }} className="min-h-screen overflow-hidden">
-      {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-28 pb-16 px-6 md:px-10 lg:px-16">
+    <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
+      {/* ── Back link ───────────────────────────────────────────── */}
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-28">
+        <FadeIn>
+          <Link
+            href="/work"
+            className="text-muted text-sm hover:text-brown transition-colors duration-200 inline-block"
+          >
+            &larr; work
+          </Link>
+        </FadeIn>
+      </div>
+
+      {/* ── Content with sticky section nav ─────────────────────── */}
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10 pb-24 relative text-lg">
         {/* decorative blobs */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: "-40px",
-            right: "-30px",
-            width: "220px",
-            height: "220px",
-            background: pink,
-            opacity: 0.25,
-            borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%",
-          }}
-        />
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            bottom: "10%",
-            left: "-40px",
-            width: "140px",
-            height: "140px",
-            background: sage,
-            opacity: 0.2,
-            borderRadius: "40% 60% 45% 55% / 60% 40% 60% 40%",
-          }}
-        />
+        <div className="absolute pointer-events-none" style={{ top: "8%", right: "-60px", width: "160px", height: "160px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "25%", left: "-80px", width: "180px", height: "180px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "45%", right: "-50px", width: "120px", height: "120px", background: sage, opacity: 0.15, borderRadius: "55% 45% 50% 50% / 45% 55% 45% 55%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "62%", left: "-70px", width: "140px", height: "140px", background: gold, opacity: 0.1, borderRadius: "40% 60% 55% 45% / 60% 40% 50% 50%" }} />
+        <div className="absolute pointer-events-none" style={{ top: "80%", right: "-40px", width: "100px", height: "100px", background: pink, opacity: 0.13, borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%" }} />
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          <FadeIn>
-            <Link
-              href="/work"
-              className="text-muted text-sm hover:text-brown transition-colors duration-200 mb-10 inline-block"
-            >
-              &larr; work
-            </Link>
-          </FadeIn>
+        <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-12 relative">
+          <SectionNav items={sections} title="AI Copilot for Customer Support" offset={100} />
 
-          <FadeIn delay={0.05}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-bold tracking-tight uppercase text-pink-dark">
-                SCB 10X
-              </span>
-              <span className="text-muted text-xs">&middot;</span>
-              <span className="text-muted text-xs">2022&ndash;2025</span>
-            </div>
-          </FadeIn>
+          <div className="space-y-20 min-w-0">
+            {/* TL;DR */}
+            <FadeIn>
+              <section id="tldr" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>TL;DR</SectionLabel>
 
-          <FadeIn delay={0.1}>
-            <h1
-              className="text-text leading-[1.08] mb-5"
-              style={{
-                fontFamily: PLAYFAIR,
-                fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
-              }}
-            >
-              AI Copilot for Customer Support
-            </h1>
-          </FadeIn>
+                <p
+                  className="text-muted leading-relaxed mb-8"
+                  style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
+                >
+                  A RAG-based AI copilot for customer support at Thailand&apos;s
+                  largest bank, helping{" "}
+                  <strong style={{ color: accent }}>150+ agents</strong> cut
+                  ticket resolution time from{" "}
+                  <strong style={{ color: accent }}>42 minutes to under 5</strong>.
+                  It retrieves customer info in real time, cross-checks internal
+                  bank policies, drafts suggested replies for agents to review,
+                  and auto-generates a ticket summary at the end of every
+                  conversation.
+                </p>
 
-          <FadeIn delay={0.16}>
-            <p
-              className="text-muted leading-relaxed mb-8"
-              style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
-            >
-              A RAG-based AI copilot for customer support at Thailand&apos;s
-              largest bank,{" "}
-              <em>
-                <strong style={{ color: accent }}>
-                  helping 150+ agents cut ticket resolution time from 42
-                  minutes to under 5
-                </strong>
-              </em>
-              . It retrieves customer info in real time, cross-checks internal
-              bank policies, drafts suggested replies for agents to review,
-              and auto-generates a ticket summary at the end of every
-              conversation.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.22}>
-            <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Role
-                </span>
-                Senior Product Manager (0&rarr;1)
-              </div>
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Tech Stack
-                </span>
-                LangChain &middot; Pinecone &middot; LangFuse &middot; Salesforce
-              </div>
-              <div>
-                <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
-                  Industry
-                </span>
-                Financial Services
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <div className="pb-8" />
-
-      {/* ── Content ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24 space-y-20 relative text-lg">
-        {/* decorative blobs scattered throughout */}
-        <div className="absolute pointer-events-none" style={{ top: "5%", right: "-55px", width: "140px", height: "140px", background: gold, opacity: 0.12, borderRadius: "50% 40% 60% 40% / 40% 50% 40% 60%" }} />
-        <div className="absolute pointer-events-none" style={{ top: "20%", left: "-75px", width: "170px", height: "170px", background: pink, opacity: 0.14, borderRadius: "45% 55% 40% 60% / 55% 45% 55% 45%" }} />
-        <div className="absolute pointer-events-none" style={{ top: "40%", right: "-45px", width: "110px", height: "110px", background: sage, opacity: 0.15, borderRadius: "55% 45% 50% 50% / 45% 55% 45% 55%" }} />
-        <div className="absolute pointer-events-none" style={{ top: "58%", left: "-65px", width: "150px", height: "150px", background: gold, opacity: 0.1, borderRadius: "40% 60% 55% 45% / 60% 40% 50% 50%" }} />
-        <div className="absolute pointer-events-none" style={{ top: "75%", right: "-35px", width: "120px", height: "120px", background: pink, opacity: 0.13, borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%" }} />
-        <div className="absolute pointer-events-none" style={{ top: "90%", left: "-50px", width: "90px", height: "90px", background: sage, opacity: 0.11, borderRadius: "45% 55% 50% 50% / 55% 45% 50% 50%" }} />
-        {/* Mockups */}
-        <FadeIn>
-          <section>
-            {/* Chat mockup */}
-            <div className="mb-10">
-              <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                copilot chat interface
-              </p>
-              <div
-                className="rounded-2xl overflow-hidden border border-border/30"
-                style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
-              >
-                <iframe
-                  src="/work/cs-copilot/copilot-mockup-chat.html"
-                  className="w-full"
-                  style={{ height: "720px", border: 0 }}
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Summary mockup */}
-            <div className="mb-6">
-              <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                auto-generated ticket summary
-              </p>
-              <div
-                className="rounded-2xl overflow-hidden border border-border/30"
-                style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
-              >
-                <iframe
-                  src="/work/cs-copilot/copilot-mockup-summary.html"
-                  className="w-full"
-                  style={{ height: "962px", border: 0 }}
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Disclaimer */}
-            <p className="text-muted text-sm text-center italic">
-              Due to enterprise confidentiality, actual product screens
-              can&apos;t be shared. These interactive mockups were built to
-              demonstrate the experience. Conversations are in Thai (the
-              product&apos;s native language) with English translations.
-            </p>
-          </section>
-        </FadeIn>
-
-        {/* Context & Problem */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Context & Problem</SectionLabel>
-            <div className="space-y-5 leading-relaxed text-muted">
-              <p>
-                SCB 10X is the innovation arm of Siam Commercial Bank,
-                Thailand&apos;s largest financial institution. Their customer
-                support team handled thousands of inquiries daily, and most of
-                the process was still manual.
-              </p>
-              <ul className="list-disc pl-6 space-y-3 marker:text-brown">
-                <li>
-                  <strong className="text-text">Scattered data and information</strong>: Resolving
-                  a single ticket averaged 42 minutes, excluding tickets
-                  that needed days of follow-up across
-                  departments and knowledge sources (bank policies, user
-                  databases, and more).
-                </li>
-                <li>
-                  <strong className="text-text">No automatic conversation capture</strong>: Tickets
-                  had to be written up by hand after each chat, and sometimes
-                  there just wasn&apos;t time. Information got lost,
-                  inaccurate, or incomplete.
-                </li>
-                <li>
-                  <strong className="text-text">Too many tools, too much switching</strong>: A
-                  single question could mean CS agents juggling the customer
-                  chat window, Salesforce, data dashboards, and internal chat
-                  channels all at once.
-                </li>
-              </ul>
-              <CalloutBox>
-                This was late 2023, about a year after ChatGPT launched. RAG
-                was a brand-new concept. There were no best practices or
-                playbooks for building this in production, and definitely not
-                in Thai.
-              </CalloutBox>
-            </div>
-          </section>
-        </FadeIn>
-
-        {/* Solution */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Solution</SectionLabel>
-            <div className="space-y-5 leading-relaxed text-muted mb-8">
-              <p>
-                We were in financial services under heavy regulation. AI
-                couldn&apos;t talk to customers directly, so instead of
-                replacing agents, we built a copilot that made them faster.
-              </p>
-            </div>
-
-            <ul className="list-disc pl-6 space-y-4 leading-relaxed text-muted mb-8 marker:text-brown">
-              <li>
-                <strong>RAG pipeline</strong>: Retrieved relevant documents
-                and customer information in real time, across the bank&apos;s
-                full knowledge base.
-              </li>
-              <li>
-                <strong>AI-generated reply suggestions</strong>: Agents could
-                review and edit before sending, keeping a human in the loop
-                at every step, as required in regulated financial services.
-              </li>
-              <li>
-                <strong>PDPA-compliant PII redaction</strong>: Sensitive
-                customer data was masked before anything hit the LLM, then
-                re-injected after.
-              </li>
-              <li>
-                <strong>Auto-generated ticket summaries</strong>: Written back
-                to Salesforce at the end of every conversation.
-              </li>
-            </ul>
-          </section>
-        </FadeIn>
-
-        {/* My role */}
-        <FadeIn>
-          <section>
-            <SectionLabel>My Role</SectionLabel>
-            <div className="space-y-8">
-              {[
-                {
-                  title: "User research & workflow mapping",
-                  body: "I embedded with the CS team directly, observing how they worked across tools, where they hit bottlenecks, and how they handled edge cases. I documented the end-to-end workflow and translated it into clear requirements for engineering.",
-                },
-                {
-                  title: "Product strategy & system design",
-                  body: "The decision to build a copilot instead of a chatbot came from regulation, trust, and practicality. AI in banking needs a human in the loop. I defined when to surface suggestions, how to route different query types, and when the model should stay quiet.",
-                },
-                {
-                  title: "Evaluation framework",
-                  body: "There was no off-the-shelf way to evaluate RAG in late 2023, so we built our own: automated retrieval tests, LLM-based evaluation against a golden dataset I put together with CS leads, and a structured feedback loop from the agents themselves.",
-                },
-                {
-                  title: "Stakeholder alignment",
-                  body: "I managed two trust gaps at the same time. Leadership wanted AI but needed confidence in its limitations. The CS team was worried about being replaced. I built the case for investment with honest scoping, and brought agents into the process early so they could see the tool was built to support them.",
-                },
-              ].map((item) => (
-                <div key={item.title}>
-                  <h3
-                    className="text-text mb-2"
-                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-muted leading-relaxed">
-                    {item.body}
-                  </p>
+                <div className="flex flex-wrap gap-x-10 gap-y-3 text-base text-muted">
+                  <div>
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      Role
+                    </span>
+                    Senior PM (0&rarr;1)
+                    <span className="block text-muted/80 text-sm mt-0.5">
+                      SCB 10X &middot; 2022&ndash;2025
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      Tech Stack
+                    </span>
+                    LangChain &middot; Pinecone &middot; LangFuse &middot; Salesforce
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      Industry
+                    </span>
+                    Financial Services
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
+                      Skills
+                    </span>
+                    Product Management &middot; User Research &middot; Evaluation
+                  </div>
                 </div>
-              ))}
-            </div>
-          </section>
-        </FadeIn>
+              </section>
+            </FadeIn>
 
-        {/* Tech stack / under the hood */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Tech Stack</SectionLabel>
-            <div className="space-y-5 leading-relaxed text-muted mb-8">
-              <p>
-                The RAG pipeline searched across the bank&apos;s entire
-                knowledge base, everything from password reset guides to
-                cross-bank transfer policies to Thai-specific regulatory edge
-                cases.
-              </p>
-            </div>
+            {/* Mockups — between TL;DR and Problem */}
+            <FadeIn>
+              <div>
+                {/* Chat mockup */}
+                <div className="mb-8">
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
+                    copilot chat interface
+                  </p>
+                  <div
+                    className="rounded-2xl overflow-hidden border border-border/30"
+                    style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
+                  >
+                    <iframe
+                      src="/work/cs-copilot/copilot-mockup-chat.html"
+                      className="w-full"
+                      style={{ height: "720px", border: 0 }}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                { name: "LangChain", desc: "Orchestration & prompt routing" },
-                { name: "Pinecone", desc: "Vector DB for semantic search" },
-                { name: "LangFuse", desc: "Observability & monitoring" },
-                { name: "Salesforce", desc: "Knowledge base, CRM & output" },
-              ].map((t) => (
+                {/* Summary mockup */}
+                <div className="mb-4">
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
+                    auto-generated ticket summary
+                  </p>
+                  <div
+                    className="rounded-2xl overflow-hidden border border-border/30"
+                    style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
+                  >
+                    <iframe
+                      src="/work/cs-copilot/copilot-mockup-summary.html"
+                      className="w-full"
+                      style={{ height: "962px", border: 0 }}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                <p className="text-muted text-sm italic leading-snug text-center">
+                  Due to enterprise confidentiality, actual product screens
+                  can&apos;t be shared. These interactive mockups were built to
+                  demonstrate the experience. Conversations are in Thai with
+                  English translations.
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Problem */}
+            <FadeIn>
+              <section id="problem" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>The Problem</SectionLabel>
+                <div className="space-y-5 leading-relaxed" style={{ color: "#5C4033" }}>
+                  <p>
+                    SCB 10X is the innovation arm of Siam Commercial Bank,
+                    Thailand&apos;s largest financial institution. Their
+                    customer support team handled thousands of inquiries daily,
+                    and most of the process was still manual.
+                  </p>
+                  <ul className="list-disc pl-6 space-y-3 marker:text-brown">
+                    <li>
+                      <strong className="text-text">Scattered data and information</strong>:
+                      Resolving a single ticket averaged 42 minutes, excluding
+                      tickets that needed days of follow-up across departments
+                      and knowledge sources (bank policies, user databases, and
+                      more).
+                    </li>
+                    <li>
+                      <strong className="text-text">Unstructured knowledge base</strong>:
+                      Internal documentation wasn&apos;t clean or organized for
+                      retrieval. Policies lived in PDFs, wikis, and shared drives
+                      with inconsistent formats, making it hard for agents to
+                      find the right answer fast.
+                    </li>
+                    <li>
+                      <strong className="text-text">No automatic conversation capture</strong>:
+                      Tickets had to be written up by hand after each chat, and
+                      sometimes there just wasn&apos;t time. Information got
+                      lost, inaccurate, or incomplete.
+                    </li>
+                    <li>
+                      <strong className="text-text">Too many tools, too much switching</strong>:
+                      A single question could mean agents juggling the customer
+                      chat window, Salesforce, data dashboards, and internal
+                      chat channels all at once.
+                    </li>
+                    <li>
+                      <strong className="text-text">Strict regulation and personal data protection</strong>:
+                      Financial services sit under heavy regulation. Every
+                      design choice had to factor in compliance and PDPA-level
+                      data privacy, not to mention the sensitivity of anything
+                      that touches a customer&apos;s account.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Callout: no playbook */}
                 <div
-                  key={t.name}
-                  className="rounded-xl px-4 py-4 text-center"
+                  className="rounded-xl px-6 py-5 mt-8"
                   style={{
-                    background: "rgba(253,250,247,0.6)",
-                    border: "1px solid rgba(234,216,204,0.4)",
+                    background: "rgba(253,250,247,0.85)",
+                    boxShadow: "0 12px 40px rgba(140, 96, 80, 0.12), 0 2px 8px rgba(140, 96, 80, 0.06)",
                   }}
                 >
-                  <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: LATO }}>
-                    {t.name}
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
+                    Context
                   </p>
-                  <p className="text-muted text-xs leading-snug">{t.desc}</p>
+                  <p className="text-muted leading-relaxed">
+                    This was late 2023, about a year after ChatGPT launched.
+                    RAG was a brand-new concept. No best practices, no
+                    playbooks for building it in production, and definitely
+                    not in Thai.
+                  </p>
                 </div>
-              ))}
-            </div>
+              </section>
+            </FadeIn>
 
-            {/* System architecture SVG */}
-            <div className="mb-8">
-              <Image
-                src="/work/cs-copilot/rag_copilot_system_architecture.svg"
-                alt="System architecture diagram"
-                width={900}
-                height={500}
-                className="w-full h-auto"
-              />
-            </div>
+            {/* Solution */}
+            <FadeIn>
+              <section id="solution" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>The Solution</SectionLabel>
 
-            <p className="text-muted leading-relaxed">
-              PII was handled through a redaction layer. Sensitive customer
-              data was masked before anything hit the LLM, then re-injected
-              after.
-            </p>
-          </section>
-        </FadeIn>
-
-        {/* Key Features */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Key Features</SectionLabel>
-            {/* User flow diagram */}
-            <div className="mb-10">
-              <Image
-                src="/work/cs-copilot/rag_copilot_user_flow.svg"
-                alt="User flow diagram"
-                width={1200}
-                height={180}
-                className="w-full h-auto"
-              />
-            </div>
-
-            {/* Feature list */}
-            <div className="space-y-0">
-              {[
-                {
-                  title: "Real-time knowledge retrieval",
-                  desc: "Semantic search across the bank's Salesforce knowledge base (policies, troubleshooting guides, regulatory docs) surfaced in context as the agent chats.",
-                },
-                {
-                  title: "Suggested replies with human review",
-                  desc: "AI drafts three reply options per message, each grounded in retrieved sources. Agents pick one, edit, and send. Human in the loop at every step.",
-                },
-                {
-                  title: "Auto-generated ticket summaries",
-                  desc: "At the end of each conversation, the system writes a summary and next-step list back to Salesforce. No more forgotten or incomplete tickets.",
-                },
-                {
-                  title: "PII redaction layer",
-                  desc: "Sensitive customer data masked before it reaches the LLM, then re-injected into the final output. PDPA-compliant by design.",
-                },
-                {
-                  title: "Evaluation & observability",
-                  desc: "Custom-built eval framework using LangFuse tracing, automated retrieval tests, and a golden dataset co-created with CS leads.",
-                },
-              ].map((f) => (
-                <div key={f.title} className="py-5 border-b border-border/30 last:border-0">
-                  <h3 className="text-text mb-2" style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}>
-                    {f.title}
-                  </h3>
-                  <p className="text-muted leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeIn>
-
-        {/* Challenges */}
-        <FadeIn>
-          <section>
-            <SectionLabel>Challenges</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {[
-                {
-                  title: "No established patterns for production RAG",
-                  desc: "Chunking strategies, embedding approaches, and retrieval tuning were all very new concepts. There was no best practice or playbook since it was just a year after ChatGPT launched.",
-                  bg: "rgba(240,200,186,0.15)",
-                },
-                {
-                  title: "Unstructured knowledge base",
-                  desc: "The bank's knowledge base wasn't clean or structured for RAG. We spent a lot of time cleaning and restructuring the data before the system could find anything useful.",
-                  bg: "rgba(184,212,191,0.15)",
-                },
-                {
-                  title: "Low-resource language support",
-                  desc: "Most models at the time were optimized for English. Thai is a low-resource language in the LLM space, so getting accurate retrieval and natural-sounding Thai responses was a lot harder than an equivalent English system.",
-                  bg: "rgba(201,169,110,0.12)",
-                },
-                {
-                  title: "Regulatory & data privacy constraints",
-                  desc: "Every design choice had to factor in financial regulations, data privacy, and the sensitivity of touching anyone's actual money.",
-                  bg: "rgba(240,200,186,0.12)",
-                },
-              ].map((c) => (
-                <div
-                  key={c.title}
-                  className="rounded-xl px-6 py-5"
-                  style={{ background: c.bg, border: "1px solid rgba(0,0,0,0.03)" }}
+                {/* Core statement */}
+                <p
+                  className="leading-relaxed mb-12 text-lg"
+                  style={{ fontFamily: LATO, color: "#5C4033" }}
                 >
-                  <h3
-                    className="text-text mb-2"
-                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeIn>
+                  A RAG-based copilot that retrieves bank knowledge in real
+                  time, drafts suggested replies for agents to review, and
+                  auto-generates ticket summaries, so agents spend less time
+                  hunting for answers and more time talking to customers. We
+                  built it as a copilot, not a chatbot, because financial
+                  services regulation requires a human in the loop at every
+                  step.
+                </p>
 
-        {/* Nav */}
-        <FadeIn>
-          <div className="flex justify-between items-center pt-8 border-t border-border/40">
-            <Link
-              href="/work"
-              className="text-muted hover:text-brown transition-colors text-sm"
-            >
-              &larr; all work
-            </Link>
-            <Link
-              href="mailto:ch.pathomporn@gmail.com"
-              className="text-muted hover:text-brown transition-colors text-sm"
-            >
-              want to hear more? let&apos;s chat &rarr;
-            </Link>
+                {/* 3 features */}
+                <div className="space-y-14">
+                  {/* Feature 1 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      Real-time knowledge retrieval
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      Semantic search across the bank&apos;s Salesforce
+                      knowledge base (policies, troubleshooting guides,
+                      regulatory docs) surfaces in context as the agent chats.
+                      Sources populate in the bottom-right of the screen so
+                      agents see exactly where each answer came from.
+                    </p>
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: knowledge sources populating in bottom-right (GIF)
+                    </div>
+                  </div>
+
+                  {/* Feature 2 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      AI-generated reply suggestions
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      The copilot drafts three reply options per message, each
+                      grounded in retrieved sources. Agents pick one, edit, and
+                      send. Human in the loop at every step, as required in
+                      regulated financial services.
+                    </p>
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: AI-generated reply options (GIF)
+                    </div>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      Auto-generated ticket summary
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      At the end of each conversation, the system writes a
+                      summary and next-step list back to Salesforce. No more
+                      forgotten or incomplete tickets.
+                    </p>
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: ticket summary written back to Salesforce (GIF)
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </FadeIn>
+
+            {/* Tech Stack */}
+            <FadeIn>
+              <section id="tech" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>Tech Stack</SectionLabel>
+
+                <p className="leading-relaxed mb-8 text-lg" style={{ color: "#5C4033" }}>
+                  The RAG pipeline searched across the bank&apos;s entire
+                  knowledge base, everything from password reset guides to
+                  cross-bank transfer policies to Thai-specific regulatory
+                  edge cases.
+                </p>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                  {[
+                    { name: "LangChain", desc: "Orchestration & prompt routing" },
+                    { name: "Pinecone", desc: "Vector DB for semantic search" },
+                    { name: "LangFuse", desc: "Observability & monitoring" },
+                    { name: "Salesforce", desc: "Knowledge base, CRM & output" },
+                  ].map((t) => (
+                    <div
+                      key={t.name}
+                      className="rounded-xl px-4 py-4 text-center"
+                      style={{
+                        background: "rgba(253,250,247,0.6)",
+                        border: "1px solid rgba(234,216,204,0.4)",
+                      }}
+                    >
+                      <p className="text-text text-sm font-semibold mb-1" style={{ fontFamily: LATO }}>
+                        {t.name}
+                      </p>
+                      <p className="text-muted text-xs leading-snug">{t.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* System architecture diagram */}
+                <div className="mb-12">
+                  <Image
+                    src="/work/cs-copilot/rag_copilot_system_architecture.svg"
+                    alt="System architecture diagram"
+                    width={900}
+                    height={500}
+                    className="w-full h-auto"
+                  />
+                </div>
+
+                {/* PDPA / PII Redaction */}
+                <div className="mb-10">
+                  <h3
+                    className="text-text mb-3"
+                    style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.2rem, 2vw, 1.4rem)", lineHeight: 1.2 }}
+                  >
+                    PDPA-compliant PII redaction
+                  </h3>
+                  <p className="text-muted leading-relaxed">
+                    Sensitive customer data was masked before anything hit the
+                    LLM, then re-injected into the final output. Compliant by
+                    design, with no raw PII ever leaving the bank&apos;s
+                    infrastructure.
+                  </p>
+                </div>
+
+                {/* Evaluation */}
+                <div>
+                  <h3
+                    className="text-text mb-3"
+                    style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.2rem, 2vw, 1.4rem)", lineHeight: 1.2 }}
+                  >
+                    Evaluation in a world with no playbook
+                  </h3>
+                  <p className="text-muted leading-relaxed">
+                    There was no off-the-shelf way to evaluate RAG in late
+                    2023, so we built our own: automated retrieval tests,
+                    LLM-based evaluation against a golden dataset put together
+                    with CS leads, LangFuse tracing for observability, and a
+                    structured feedback loop from the agents themselves.
+                  </p>
+                </div>
+              </section>
+            </FadeIn>
+
+            {/* Impact */}
+            <FadeIn>
+              <section id="impact" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>The Impact</SectionLabel>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <StatCard value="42min → <5min" label="average ticket resolution time" bg="rgba(240,200,186,0.2)" />
+                  <StatCard value="150+" label="agents using the copilot" bg="rgba(184,212,191,0.2)" />
+                  <StatCard value="TBD" label="[add metric]" bg="rgba(201,169,110,0.15)" />
+                </div>
+              </section>
+            </FadeIn>
+
+            {/* Bottom-right back nav */}
+            <FadeIn>
+              <div className="flex justify-end items-center pt-8 border-t border-border/40">
+                <Link
+                  href="/work"
+                  className="text-muted hover:text-brown transition-colors text-sm"
+                >
+                  &larr; back to projects
+                </Link>
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </main>
   );

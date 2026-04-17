@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import HeroWorkBg from "@/components/HeroWorkBg";
+import PhotoCarousel from "@/components/PhotoCarousel";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { PLAYFAIR, LATO } from "@/lib/constants";
 
@@ -17,27 +18,19 @@ const pink = "#F0C8BA";
 const gold = "#C9A96E";
 
 const SectionLabel = ({ children }: { children: string }) => (
-  <div className="mb-6">
-    <h2
-      style={{
-        fontFamily: LATO,
-        fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
-        fontWeight: 700,
-        color: accent,
-        lineHeight: 1.15,
-      }}
-    >
-      {children}
-    </h2>
-    <div
-      style={{
-        height: "2px",
-        background: `linear-gradient(to right, ${pink}, ${gold}, ${sage}, transparent)`,
-        marginTop: "8px",
-        opacity: 0.6,
-      }}
-    />
-  </div>
+  <h2
+    className="mb-3 uppercase"
+    style={{
+      fontFamily: LATO,
+      fontSize: "1rem",
+      fontWeight: 700,
+      color: "#8C6050",
+      letterSpacing: "0.08em",
+      lineHeight: 1.2,
+    }}
+  >
+    {children}
+  </h2>
 );
 
 const StatCard = ({
@@ -69,11 +62,10 @@ const StatCard = ({
 const sections: SectionNavItem[] = [
   { id: "tldr", label: "TL;DR" },
   { id: "problem", label: "Problem" },
-  { id: "research", label: "Research" },
   { id: "solution", label: "Solution" },
+  { id: "research", label: "Research & Partnership" },
+  { id: "community", label: "Community Events" },
   { id: "impact", label: "Impact" },
-  { id: "beyond", label: "Beyond the Product" },
-  { id: "learnings", label: "Learnings" },
 ];
 
 /* ── page ─────────────────────────────────────────────────────── */
@@ -113,45 +105,29 @@ export default function OpenTyphoonPage() {
               <section id="tldr" style={{ scrollMarginTop: "100px" }}>
                 <SectionLabel>TL;DR</SectionLabel>
 
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold tracking-tight uppercase text-pink-dark">
-                    SCB 10X
-                  </span>
-                  <span className="text-muted text-xs">&middot;</span>
-                  <span className="text-muted text-xs">2022 &ndash; 2025</span>
-                </div>
-
-                <h2
-                  className="text-text leading-[1.15] mb-5"
-                  style={{
-                    fontFamily: LATO,
-                    fontWeight: 700,
-                    fontSize: "1.15rem",
-                  }}
-                >
-                  Overview
-                </h2>
-
                 <p
                   className="text-muted leading-relaxed mb-8"
                   style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
                 >
-                  {/* COPY-TODO: Overview — 2-3 sentences with key impact metrics. */}
-                  Drove program management, data collection and annotation, GTM,
-                  partnerships, and operations as a founding member and the only
-                  non-technical person on a team of 4 at Thailand&apos;s frontier AI
-                  research lab, from zero to{" "}
-                  <strong style={{ color: accent }}>320k+ downloads</strong> on
-                  Hugging Face and{" "}
-                  <strong style={{ color: accent }}>23M+ API calls</strong>.
+                  Typhoon is Thailand&apos;s first open-source multimodal AI
+                  initiative, covering LLMs, vision, and voice models built for
+                  the Thai language. As a{" "}
+                  <strong style={{ color: accent }}>founding member</strong> on a
+                  team of four, I led program management, GTM, partnerships, and
+                  community, scaling from zero to{" "}
+                  <strong style={{ color: accent }}>320k+</strong> model
+                  downloads,{" "}
+                  <strong style={{ color: accent }}>23M+</strong> API calls, and{" "}
+                  <strong style={{ color: accent }}>6k+</strong> developers on
+                  the platform.
                 </p>
 
-                <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
+                <div className="flex flex-wrap gap-x-10 gap-y-3 text-base text-muted">
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Role
                     </span>
-                    Technical Program Manager
+                    Founding PM
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
@@ -163,15 +139,16 @@ export default function OpenTyphoonPage() {
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Team Size
                     </span>
-                    {/* COPY-TODO: confirm team size progression */}
-                    4 founding &rarr; 12
+                    Founding team of 4, scaled to 12
+                    <span className="block text-muted/80 text-sm mt-0.5">
+                      SCB 10X &middot; 2022&ndash;2025
+                    </span>
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Skills
                     </span>
-                    {/* COPY-TODO: skills line */}
-                    Program management &middot; GTM &middot; Partnerships &middot; Community
+                    Technical Program Management &middot; GTM &middot; Partnerships &middot; Community
                   </div>
                 </div>
 
@@ -180,7 +157,7 @@ export default function OpenTyphoonPage() {
                     href="https://opentyphoon.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-bold text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200"
+                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
                   >
                     opentyphoon.ai &rarr;
                   </a>
@@ -188,31 +165,44 @@ export default function OpenTyphoonPage() {
                     href="https://arxiv.org/abs/2312.13951"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-bold text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200"
+                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
                   >
                     arxiv 2312.13951 (70+ citations) &rarr;
                   </a>
                 </div>
+
               </section>
+            </FadeIn>
+
+            {/* Fun fact: ACL 2024 — carousel spanning the content column */}
+            <FadeIn>
+              <div className="-mt-10">
+                <PhotoCarousel
+                  photos={[
+                    "/work/typhoon/typhoon-acl1.png",
+                    "/work/typhoon/typhoon-acl2.jpeg",
+                  ]}
+                  alt="Typhoon at ACL 2024"
+                  aspectRatio="4 / 3"
+                  noCard
+                />
+                <p className="text-muted text-sm italic leading-snug mt-4 text-center">
+                  fun fact: we were at <strong>ACL 2024</strong> in Bangkok!
+                </p>
+              </div>
             </FadeIn>
 
             {/* Problem */}
             <FadeIn>
               <section id="problem" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Problem</SectionLabel>
-                <div className="space-y-5 leading-relaxed text-muted">
-                  {/* COPY-TODO: Problem — 2-3 sentences max. */}
+                <SectionLabel>The Problem</SectionLabel>
+                <div className="space-y-5 leading-relaxed" style={{ color: "#5C4033" }}>
                   <p>
-                    Thai is one of the world&apos;s most underrepresented languages
+                    Thai is one of the world&apos;s most{" "}
+                    <strong className="text-text">underrepresented languages</strong>{" "}
                     in AI. Most large language models are built for English first,
                     and when they do support Thai, they often miss context, culture,
                     and how people actually communicate.
-                  </p>
-                  <p>
-                    Typhoon was built to make AI accessible for all Thai people. We
-                    wanted to build models that actually understand Thai. We built it
-                    locally to instill the cultural context from the start, and made
-                    it open-source so anyone can build on it.
                   </p>
                 </div>
 
@@ -225,7 +215,7 @@ export default function OpenTyphoonPage() {
                   }}
                 >
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                    A funny use case we found
+                    Funny use case we found
                   </p>
                   <p className="text-muted leading-relaxed mb-3">
                     Ask ChatGPT in Thai how to cook grilled chicken (ไก่ย่าง) and
@@ -235,31 +225,8 @@ export default function OpenTyphoonPage() {
                     ovens.
                   </p>
                   <p className="text-muted leading-relaxed">
-                    The language was right. The context was wrong. That&apos;s the
-                    gap Typhoon was built to close.
-                  </p>
-                </div>
-              </section>
-            </FadeIn>
-
-            {/* Research */}
-            <FadeIn>
-              <section id="research" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Research</SectionLabel>
-                <div className="space-y-5 leading-relaxed text-muted">
-                  {/* COPY-TODO: competitor landscape, user insights, technical constraints; 2-3 sentences per visual. */}
-                  <p>
-                    Typhoon is Thailand&apos;s #1 open-source Thai large language
-                    model initiative, positioned as the country&apos;s frontier AI
-                    research lab. Built under SCB 10X, Typhoon develops and releases
-                    open-source LLMs and multimodal AI technologies purpose-built
-                    for the Thai language.
-                  </p>
-                  <p>
-                    The model family has grown to include text generation, reasoning,
-                    automatic speech recognition (ASR), optical character recognition
-                    (OCR), vision, and translation models, including specialized
-                    models for the Isan dialect and medical AI applications.
+                    The language was right. The context was wrong. We built
+                    Typhoon to narrow this gap.
                   </p>
                 </div>
               </section>
@@ -268,263 +235,296 @@ export default function OpenTyphoonPage() {
             {/* Solution — hero section */}
             <FadeIn>
               <section id="solution" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Solution</SectionLabel>
-                <div className="space-y-5 leading-relaxed text-muted mb-8">
-                  {/* COPY-TODO: Solution lead — biggest, most visually rich section. Short captions under each visual. */}
-                  <p>
-                    Typhoon offers models on Hugging Face, APIs through the developer
-                    platform, a playground for testing, demo applications,
-                    documentation, and an active open-source community.
-                  </p>
+                <SectionLabel>The Solution</SectionLabel>
+
+                {/* Core statement */}
+                <p
+                  className="leading-relaxed mb-12 text-lg"
+                  style={{ fontFamily: LATO, color: "#5C4033" }}
+                >
+                  Building open-source multimodal AI models for Thai language
+                  and culture, so anyone can start using them for
+                  Thai-specific use cases.
+                </p>
+
+                {/* 3 features */}
+                <div className="space-y-14">
+                  {/* Feature 1 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      User picks the right model
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      Typhoon is a family of models across every modality:
+                      text, speech, vision, and translation. Users browse the
+                      collection, pick the model that fits, and can deploy it
+                      locally.
+                    </p>
+                    {/* VISUAL-TODO: Hugging Face model collection or grid of model icons */}
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: Hugging Face model collection / model grid
+                    </div>
+                  </div>
+
+                  {/* Feature 2 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      User tries the model directly in the browser
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      Before committing to anything, anyone can test any
+                      Typhoon model at playground.opentyphoon.ai. No extra
+                      setup needed.
+                    </p>
+                    {/* VISUAL-TODO: playground screenshot / GIF */}
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: playground screenshot / GIF
+                    </div>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      User builds production-grade applications with API
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      Full API access with documentation and demo apps. Same
+                      models as the playground, ready for production.
+                    </p>
+                    {/* VISUAL-TODO: API docs / code snippet */}
+                    <div
+                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
+                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
+                    >
+                      visual: API docs / code snippet
+                    </div>
+                  </div>
                 </div>
-                {/* COPY-TODO: insert animated mockups / real product screenshots full-width here. */}
+              </section>
+            </FadeIn>
+
+            {/* Research & Partnership */}
+            <FadeIn>
+              <section id="research" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>Research & Partnership</SectionLabel>
+
+                {/* Publication subheader */}
+                <h3
+                  className="text-text mt-8 mb-6"
+                  style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                >
+                  Publication
+                </h3>
+
+                {/* arxiv technical report */}
+                <div>
+                  <h4
+                    className="text-text mb-1 leading-snug"
+                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.1rem" }}
+                  >
+                    Typhoon: Thai Large Language Models
+                  </h4>
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
+                    Dec 2023 &middot; 70+ citations in 2026
+                  </p>
+                  <p className="text-muted text-base leading-relaxed mb-3">
+                    Co-authored technical report on the development of Thailand&apos;s
+                    first open-source Thai LLM, covering data preparation,
+                    pretraining, instruction-tuning, and evaluation. Typhoon
+                    achieved performance on par with GPT-3.5 in Thai while being
+                    2.62x more efficient at tokenizing Thai text.
+                  </p>
+                  <p className="text-muted text-sm leading-relaxed mb-4">
+                    Kunat Pipatanakul, Phatrasek Jirabovonvisut, Potsawee Manakul,
+                    Sittipong Sripaisarnmongkol, Ruangsak Patomwong,{" "}
+                    <strong className="text-text">Pathomporn Chokchainant</strong>,
+                    Kasima Tharnpipitchai
+                  </p>
+                  <a
+                    href="https://arxiv.org/abs/2312.13951"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
+                  >
+                    arxiv.org/abs/2312.13951 &rarr;
+                  </a>
+                </div>
+
+                {/* Partnership subheader */}
+                <h3
+                  className="text-text mt-8 mb-6"
+                  style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                >
+                  Partnership
+                </h3>
+
+                {/* Research Partner Collaboration */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    {
+                      logo: "/work/typhoon/stanford-hai-logo.png",
+                      project: "Stanford HAI",
+                      projectLogo: "/work/typhoon/stanford-helm-logo.png",
+                      href: "https://crfm.stanford.edu/helm/thaiexam/latest/",
+                      desc: "Worked with Professor Percy Liang's lab at Stanford HAI to add Thai to the HELM leaderboard, benchmarking Typhoon against 42 multilingual models.",
+                    },
+                    {
+                      logo: "/work/typhoon/seacrowd-logo.png",
+                      project: "SEACrowd",
+                      href: "https://seacrowd.org/",
+                      desc: "Joined AI Singapore's SEACrowd collaboration to pool Southeast Asian language data, placing Typhoon inside a broader regional research network.",
+                    },
+                    {
+                      logo: "/work/typhoon/vistec-logo.png",
+                      project: "VISTEC",
+                      href: "https://www.vistec.ac.th/",
+                      desc: "Ongoing research partnership with one of Thailand's leading science and technology institutes, spanning multiple projects across Thai NLP.",
+                    },
+                  ].map((p) => (
+                    <div key={p.project} className="text-center">
+                      <div className="flex flex-col items-center justify-end gap-0 mb-2" style={{ height: "130px" }}>
+                        {p.projectLogo ? (
+                          <>
+                            <div className="relative flex-shrink-0" style={{ width: "180px", height: "80px" }}>
+                              <Image src={p.logo} alt={`${p.project} logo`} fill className="object-contain" sizes="180px" />
+                            </div>
+                            <div className="relative flex-shrink-0" style={{ width: "110px", height: "50px" }}>
+                              <Image src={p.projectLogo} alt={`${p.project} project logo`} fill className="object-contain" sizes="110px" />
+                            </div>
+                          </>
+                        ) : (
+                          <div className="relative flex-shrink-0" style={{ width: "130px", height: "130px" }}>
+                            <Image src={p.logo} alt={`${p.project} logo`} fill className="object-contain" sizes="130px" />
+                          </div>
+                        )}
+                      </div>
+                      <h4
+                        className="text-text mb-2"
+                        style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.25rem, 2vw, 1.5rem)", lineHeight: 1.2 }}
+                      >
+                        {p.project}
+                      </h4>
+                      <p className="text-muted leading-relaxed text-base mb-3">{p.desc}</p>
+                      <a
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
+                      >
+                        {new URL(p.href).hostname.replace("www.", "")} &rarr;
+                      </a>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-muted leading-relaxed text-sm mt-8">
+                  Other partners and collaborators: SambaNova, TogetherAI, Mahidol
+                  University, Thammasat University, KMITL, InnovestX.
+                </p>
+              </section>
+            </FadeIn>
+
+            {/* Community Events */}
+            <FadeIn>
+              <section id="community" style={{ scrollMarginTop: "100px" }}>
+                <SectionLabel>Community Events</SectionLabel>
+
+                <div className="space-y-10">
+                  <div>
+                    <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
+                      <Image src="/work/typhoon/typhoon-techsauce2024.png" alt="Typhoon at Techsauce 2024" fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
+                    </div>
+                    <p className="text-muted text-sm italic leading-snug mt-3 text-center">
+                      <strong>Techsauce Global Summit 2024</strong>, Southeast Asia&apos;s largest tech conference
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                        <Image src="/work/typhoon/typhoon-hackathon-1.jpg" alt="Typhoon Hackathon" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                      </div>
+                      <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                        <Image src="/work/typhoon/typhoon-hackathon-2.jpg" alt="Typhoon Hackathon teams" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                      </div>
+                      <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
+                        <Image src="/work/typhoon/typhoon-hackathon-3.jpg" alt="Typhoon Hackathon event" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
+                      </div>
+                    </div>
+                    <p className="text-muted text-sm italic leading-snug mt-3 text-center">
+                      <strong>Typhoon Hackathon</strong>, hosted with 30 teams building applications using Typhoon
+                    </p>
+                  </div>
+
+                  {/* The Rise of Intelligence — YouTube feature */}
+                  <div>
+                    <a
+                      href="https://www.youtube.com/watch?v=fkYhx9nOkmE&t=2080s"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-xl overflow-hidden border border-border/30 relative group"
+                      style={{ aspectRatio: "16 / 9" }}
+                    >
+                      <Image
+                        src="/work/typhoon/the-rise-of-intelligence-2.png"
+                        alt="The Rise of Intelligence YouTube feature"
+                        fill
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                      />
+                      <div
+                        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        style={{ background: "rgba(0,0,0,0.15)" }}
+                      >
+                        <div
+                          className="rounded-full flex items-center justify-center"
+                          style={{
+                            width: "56px",
+                            height: "56px",
+                            background: "rgba(255,255,255,0.92)",
+                            boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+                          }}
+                        >
+                          <span style={{ color: accent, fontSize: "22px", marginLeft: "3px" }}>&#9654;</span>
+                        </div>
+                      </div>
+                    </a>
+                    <p className="text-muted text-sm italic leading-snug mt-3 text-center">
+                      <strong>The Rise of Intelligence</strong>, featured segment presenting real-world AI use cases in financial services customer support.
+                    </p>
+                  </div>
+                </div>
               </section>
             </FadeIn>
 
             {/* Impact */}
             <FadeIn>
               <section id="impact" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Impact</SectionLabel>
+                <SectionLabel>The Impact</SectionLabel>
                 <p className="text-muted leading-relaxed mb-8">
-                  As of September 2024 (during my tenure):
+                  As of September 2024:
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <StatCard value="320k+" label="model downloads on Hugging Face" bg="rgba(240,200,186,0.2)" />
+                  <StatCard value="320k+" label="Hugging Face model downloads" bg="rgba(240,200,186,0.2)" />
                   <StatCard value="23M+" label="API calls" bg="rgba(184,212,191,0.2)" />
                   <StatCard value="6k+" label="developers on the platform" bg="rgba(201,169,110,0.15)" />
-                  <StatCard value="2k+" label="community members on Discord" bg="rgba(240,200,186,0.15)" />
-                  <StatCard value="30" label="teams at the Typhoon Hackathon" bg="rgba(184,212,191,0.15)" />
-                  <StatCard value="4 → 12" label="team scaled before I transitioned out" bg="rgba(201,169,110,0.12)" />
-                </div>
-              </section>
-            </FadeIn>
-
-            {/* Beyond the Product — Typhoon-only */}
-            <FadeIn>
-              <section id="beyond" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Beyond the Product</SectionLabel>
-
-                {/* Research Partner Collaboration */}
-                <div className="mb-12">
-                  <h3
-                    className="text-text mb-4"
-                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
-                  >
-                    Research Partner Collaboration
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    {[
-                      {
-                        name: "Stanford HAI",
-                        desc: "Collaborated with Professor Percy Liang's lab to build Thai language evaluation datasets and leaderboards on Stanford HELM, benchmarking Typhoon against 42 multilingual models for summarization and QA tasks.",
-                        bg: "rgba(240,200,186,0.15)",
-                      },
-                      {
-                        name: "AI Singapore",
-                        desc: "Joined the SEACrowd collaboration for Southeast Asian language data, positioning Typhoon within a broader regional AI research network.",
-                        bg: "rgba(184,212,191,0.15)",
-                      },
-                      {
-                        name: "VISTEC",
-                        desc: "Built ongoing research collaboration with one of Thailand's leading science and technology institutes, bridging industry application and academic research in Thai NLP.",
-                        bg: "rgba(201,169,110,0.12)",
-                      },
-                    ].map((p) => (
-                      <div
-                        key={p.name}
-                        className="rounded-xl px-6 py-5"
-                        style={{ background: p.bg, border: "1px solid rgba(0,0,0,0.03)" }}
-                      >
-                        <h4
-                          className="text-text mb-2"
-                          style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.05rem" }}
-                        >
-                          {p.name}
-                        </h4>
-                        <p className="text-muted text-sm leading-relaxed">{p.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-muted leading-relaxed text-sm mt-5">
-                    Other partners and collaborators: SambaNova, TogetherAI, Mahidol
-                    University, Thammasat University, KMITL, InnovestX, and others.
-                  </p>
-                </div>
-
-                {/* Community Events */}
-                <div className="mb-12">
-                  <h3
-                    className="text-text mb-4"
-                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
-                  >
-                    Community Events
-                  </h3>
-                  <div className="space-y-8">
-                    <div>
-                      <p className="text-muted leading-relaxed mb-3">
-                        {/* COPY-TODO: 1-2 sentences per visual. */}
-                        ACL 2024 — Bangkok. The premier global NLP conference.
-                        We organized a booth to demo Typhoon&apos;s models and
-                        connect with the international research community.
-                      </p>
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
-                          <Image src="/work/typhoon/typhoon-acl1.png" alt="Typhoon booth at ACL 2024" fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
-                        </div>
-                        <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
-                          <Image src="/work/typhoon/typhoon-acl2.jpeg" alt="Typhoon at ACL 2024" fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-muted leading-relaxed mb-3">
-                        Techsauce Global Summit 2024 — Southeast Asia&apos;s
-                        largest tech conference. Represented Typhoon to an
-                        audience of founders, developers, and enterprise
-                        leaders across the region.
-                      </p>
-                      <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
-                        <Image src="/work/typhoon/typhoon-techsauce2024.png" alt="Typhoon at Techsauce 2024" fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-muted leading-relaxed mb-3">
-                        Typhoon Hackathon — hosted with 30 teams building real
-                        applications on Typhoon. A hands-on way to stress-test
-                        the models and grow the developer community at the
-                        same time.
-                      </p>
-                      <div className="grid grid-cols-3 gap-3">
-                        <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
-                          <Image src="/work/typhoon/typhoon-hackathon-1.jpg" alt="Typhoon Hackathon" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
-                        </div>
-                        <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
-                          <Image src="/work/typhoon/typhoon-hackathon-2.jpg" alt="Typhoon Hackathon teams" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
-                        </div>
-                        <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "4 / 3" }}>
-                          <Image src="/work/typhoon/typhoon-hackathon-3.jpg" alt="Typhoon Hackathon event" fill className="object-cover" sizes="(max-width: 768px) 33vw, 300px" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Publications */}
-                <div>
-                  <h3
-                    className="text-text mb-4"
-                    style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.15rem" }}
-                  >
-                    Publications
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {/* Technical report */}
-                    <div
-                      className="rounded-xl px-6 py-6 flex flex-col"
-                      style={{
-                        background: "rgba(240,200,186,0.15)",
-                        border: "1px solid rgba(0,0,0,0.03)",
-                      }}
-                    >
-                      <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-2">
-                        Technical Report &middot; 70+ citations
-                      </p>
-                      <h4
-                        className="text-text mb-3 leading-snug"
-                        style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.1rem" }}
-                      >
-                        Typhoon: Thai Large Language Models
-                      </h4>
-                      <p className="text-muted text-sm leading-relaxed mb-3">
-                        Co-authored technical report on the development of Thailand&apos;s
-                        first open-source Thai LLM, covering data preparation,
-                        pretraining, instruction-tuning, and evaluation. Typhoon
-                        achieved performance on par with GPT-3.5 in Thai while being
-                        2.62x more efficient at tokenizing Thai text.
-                      </p>
-                      <p className="text-muted text-xs leading-relaxed mb-4">
-                        Kunat Pipatanakul, Phatrasek Jirabovonvisut, Potsawee Manakul,
-                        Sittipong Sripaisarnmongkol, Ruangsak Patomwong,{" "}
-                        <strong className="text-text">Pathomporn Chokchainant</strong>,
-                        Kasima Tharnpipitchai
-                      </p>
-                      <a
-                        href="https://arxiv.org/abs/2312.13951"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-bold text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200 mt-auto"
-                      >
-                        arxiv.org/abs/2312.13951 &rarr;
-                      </a>
-                    </div>
-
-                    {/* YouTube feature */}
-                    <a
-                      href="https://www.youtube.com/watch?v=fkYhx9nOkmE&t=2080s"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-xl overflow-hidden flex flex-col group"
-                      style={{
-                        background: "rgba(184,212,191,0.15)",
-                        border: "1px solid rgba(0,0,0,0.03)",
-                      }}
-                    >
-                      <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-                        <Image
-                          src="/work/typhoon/the-rise-of-intelligence-2.png"
-                          alt="The Rise of Intelligence YouTube feature"
-                          fill
-                          className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 500px"
-                        />
-                        <div
-                          className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                          style={{ background: "rgba(0,0,0,0.15)" }}
-                        >
-                          <div
-                            className="rounded-full flex items-center justify-center"
-                            style={{
-                              width: "56px",
-                              height: "56px",
-                              background: "rgba(255,255,255,0.92)",
-                              boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
-                            }}
-                          >
-                            <span style={{ color: accent, fontSize: "22px", marginLeft: "3px" }}>&#9654;</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="px-6 py-5">
-                        <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-2">
-                          YouTube Feature
-                        </p>
-                        <h4
-                          className="text-text mb-2 leading-snug"
-                          style={{ fontFamily: LATO, fontWeight: 600, fontSize: "1.1rem" }}
-                        >
-                          The Rise of Intelligence
-                        </h4>
-                        <p className="text-muted text-sm leading-relaxed">
-                          Featured segment where I presented real-world industry use
-                          cases for Thai LLMs, including the customer support copilot
-                          project.
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </section>
-            </FadeIn>
-
-            {/* Learnings */}
-            <FadeIn>
-              <section id="learnings" style={{ scrollMarginTop: "100px" }}>
-                <SectionLabel>Learnings</SectionLabel>
-                <div className="space-y-5 leading-relaxed text-muted">
-                  {/* COPY-TODO: 2-3 takeaways as short paragraphs, not bullets. Human and reflective. */}
-                  <p className="italic">Coming — we&apos;ll write these in the copy pass.</p>
+                  <StatCard value="2k+" label="Discord community members" bg="rgba(240,200,186,0.15)" />
+                  <StatCard value="30" label="teams at Typhoon Hackathon" bg="rgba(184,212,191,0.15)" />
+                  <StatCard value="4 → 12" label="team scaled" bg="rgba(201,169,110,0.12)" />
                 </div>
               </section>
             </FadeIn>

@@ -5,7 +5,7 @@ import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Finnomena - Patt",
+  title: "7-Eleven Conversational AI - Patt",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */
@@ -64,7 +64,7 @@ const sections: SectionNavItem[] = [
 ];
 
 /* ── page ─────────────────────────────────────────────────────── */
-export default function FinnomenaPage() {
+export default function SevenElevenChatbotPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
       {/* ── Back link ───────────────────────────────────────────── */}
@@ -89,7 +89,7 @@ export default function FinnomenaPage() {
         <div className="absolute pointer-events-none" style={{ top: "80%", right: "-40px", width: "100px", height: "100px", background: pink, opacity: 0.13, borderRadius: "50% 50% 40% 60% / 40% 60% 50% 50%" }} />
 
         <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-12 relative">
-          <SectionNav items={sections} title="Investment Platform" offset={100} />
+          <SectionNav items={sections} title="7-Eleven Chatbot" offset={100} />
 
           <div className="space-y-20 min-w-0">
             {/* TL;DR */}
@@ -101,16 +101,15 @@ export default function FinnomenaPage() {
                   className="text-muted leading-relaxed mb-8"
                   style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
                 >
-                  Designed and launched an AI-powered portfolio planning tool
-                  for{" "}
-                  <strong style={{ color: accent }}>3,000+</strong> financial
-                  advisors at Finnomena, one of Thailand&apos;s leading wealth
-                  management platforms, built in partnership with{" "}
-                  <strong style={{ color: accent }}>Franklin Templeton</strong>.
-                  The tool combined algorithmic recommendations from Franklin
-                  Templeton&apos;s Investment Optimization Engine with manual
-                  control, so advisors could apply their own judgment on top
-                  of AI-suggested portfolios.
+                  Built a conversational AI chatbot inside the 7-Eleven
+                  Thailand app, powering both customer support and chat
+                  commerce for{" "}
+                  <strong style={{ color: accent }}>16M+</strong> monthly
+                  active users across{" "}
+                  <strong style={{ color: accent }}>15,000+</strong> stores
+                  nationwide. Users could browse products, check real-time
+                  stock at nearby stores, get personalized recommendations,
+                  and complete purchases, all without leaving the chat.
                 </p>
 
                 <div className="flex flex-wrap gap-x-10 gap-y-3 text-base text-muted">
@@ -120,26 +119,26 @@ export default function FinnomenaPage() {
                     </span>
                     Product Manager
                     <span className="block text-muted/80 text-sm mt-0.5">
-                      Finnomena &middot; 2022
+                      Sertis &middot; Client: CP All (7-Eleven Thailand) &middot; 2019&ndash;2021
                     </span>
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Tech Stack
                     </span>
-                    Figma &middot; Jira &middot; Miro
+                    Google DialogFlow &middot; Python &middot; RegEx
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Industry
                     </span>
-                    Fintech / Wealth Management
+                    Retail E-Commerce
                   </div>
                   <div>
                     <span className="text-xs font-bold tracking-tight uppercase text-pink-dark block mb-0.5">
                       Skills
                     </span>
-                    Product Management &middot; UX Design &middot; User Research &middot; API Integration
+                    Product Management &middot; Conversational Design &middot; NLP
                   </div>
                 </div>
               </section>
@@ -151,31 +150,27 @@ export default function FinnomenaPage() {
                 <SectionLabel>The Problem</SectionLabel>
                 <div className="space-y-5 leading-relaxed" style={{ color: "#5C4033" }}>
                   <p>
-                    Financial advisors at Finnomena were managing client
-                    portfolios manually, piecing together fund selections,
-                    risk profiles, and allocations across spreadsheets and
-                    scattered tools. There was no single platform to help
-                    them create, optimize, and manage investment portfolios
-                    at scale, and every portfolio decision had{" "}
-                    <strong className="text-text">
-                      real consequences because advisors are managing other
-                      people&apos;s money
-                    </strong>.
+                    7-Eleven Thailand isn&apos;t like 7-Eleven anywhere else.
+                    With over{" "}
+                    <strong className="text-text">15,000 branches</strong>{" "}
+                    blanketing the country, it&apos;s less a convenience
+                    store chain and more a piece of national infrastructure.
+                    The mobile app had 16M+ monthly active users, and the
+                    company wanted to unlock new digital sales channels as
+                    part of a larger digital transformation.
                   </p>
                   <p>
-                    Finnomena had a big partnership opportunity with Franklin
-                    Templeton, one of the largest global asset management
-                    firms, to integrate their Investment Optimization Engine:
-                    an algorithmic recommendation system that suggests
-                    high-performance mutual funds and stocks based on each
-                    customer&apos;s risk profile. The challenge was wrapping
-                    that engine in a product that advisors would actually
-                    trust and use, while meeting Thai financial regulations
-                    (Bank of Thailand, SEC Thailand, PDPA).
+                    The goal was to build a conversational layer inside the
+                    app that could serve across three distribution channels:
+                    answering customer inquiries, driving product sales
+                    through chat, and supporting the app&apos;s real-time
+                    delivery service. All of it had to work across 15,000+
+                    stores with live inventory, local promotions, and a
+                    nationwide user base.
                   </p>
                 </div>
 
-                {/* Callout: the core tension */}
+                {/* Fun callout — 7-Eleven vibes */}
                 <div
                   className="rounded-xl px-6 py-5 mt-8"
                   style={{
@@ -184,12 +179,43 @@ export default function FinnomenaPage() {
                   }}
                 >
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                    Core tension
+                    Fun fact
+                  </p>
+                  <p className="text-muted leading-relaxed mb-5">
+                    7-Eleven in Thailand is genuinely amazing. We have over
+                    15,000 branches. Seriously, look it up!
+                  </p>
+                  {/* 7-Eleven photo placeholders */}
+                  <div className="grid grid-cols-3 gap-3">
+                    {[1, 2, 3].map((i) => (
+                      <div
+                        key={i}
+                        className="relative rounded-xl border border-border/30 flex items-center justify-center text-muted text-xs italic overflow-hidden"
+                        style={{ aspectRatio: "4 / 3", background: "rgba(253,250,247,0.6)" }}
+                      >
+                        photo {i}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pre-LLM era callout */}
+                <div
+                  className="rounded-xl px-6 py-5 mt-5"
+                  style={{
+                    background: "rgba(184,212,191,0.15)",
+                    borderLeft: `3px solid ${sage}`,
+                  }}
+                >
+                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
+                    Context
                   </p>
                   <p className="text-muted leading-relaxed">
-                    The AI recommendation had to feel trustworthy but not
-                    prescriptive. Advisors needed to feel in control while
-                    still benefiting from algorithmic optimization.
+                    This was before the ChatGPT era. Every intent was mapped
+                    by hand, every fallback designed deliberately, every
+                    response tree built from scratch. No LLM safety net,
+                    just NLP, pattern matching, and a lot of conversational
+                    design.
                   </p>
                 </div>
               </section>
@@ -205,11 +231,12 @@ export default function FinnomenaPage() {
                   className="leading-relaxed mb-12 text-lg"
                   style={{ fontFamily: LATO, color: "#5C4033" }}
                 >
-                  A portfolio management tool that combined Franklin
-                  Templeton&apos;s AI-driven recommendations with manual
-                  control, so advisors could run their entire client book
-                  through one product, keep their own judgment in the loop,
-                  and stay compliant with Thai financial regulations.
+                  A chat commerce experience inside the 7-Eleven app, where
+                  users could discover, decide, and check out without ever
+                  leaving the conversation. The same chatbot also handled
+                  customer support (store locator, hours, promos, delivery
+                  order status), but the ambitious part was turning a chat
+                  thread into a full shopping flow.
                 </p>
 
                 {/* 3 features */}
@@ -220,20 +247,20 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      Portfolio creation powered by Franklin Templeton
+                      Real-time stock at your nearest store
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Advisors created new investment plans for each client
-                      by entering risk profile, investment horizon, and
-                      goals. The tool then returned an optimized portfolio
-                      recommendation via Franklin Templeton&apos;s
-                      Investment Optimization Engine.
+                      The chatbot detected the user&apos;s location, mapped
+                      them to their closest 7-Eleven stores, and queried
+                      live inventory across 15,000+ stores to show only
+                      what was actually on the shelf. No dead ends, no
+                      out-of-stock disappointments.
                     </p>
                     <div
                       className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
                       style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
                     >
-                      visual: portfolio creation flow
+                      visual: location + live stock lookup in chat
                     </div>
                   </div>
 
@@ -243,20 +270,20 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      AI + manual editing
+                      Personalized product recommendations
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Advisors weren&apos;t locked into the AI&apos;s
-                      recommendation. They could review the suggested
-                      allocation, adjust individual fund selections,
-                      rebalance weightings, and apply their own expertise
-                      on top of the algorithmic output.
+                      Product carousels surfaced inside the chat thread,
+                      tailored to each user&apos;s purchase history and
+                      profile, with current promotions applied
+                      automatically. Every conversation felt relevant
+                      rather than generic.
                     </p>
                     <div
                       className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
                       style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
                     >
-                      visual: AI suggestion with manual edit overlay
+                      visual: personalized product carousel in chat
                     </div>
                   </div>
 
@@ -266,19 +293,19 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      Full portfolio lifecycle
+                      Complete purchase in chat
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Create, edit, and delete plans. Advisors managed
-                      their entire client book through the tool, with each
-                      portfolio tied to the client&apos;s risk profile and
-                      updated as conditions changed.
+                      The entire shopping flow, from discovery to checkout,
+                      happened inside the conversation. No app switching,
+                      no separate cart screens, just one thread from the
+                      first question to the confirmation message.
                     </p>
                     <div
                       className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
                       style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
                     >
-                      visual: client book / portfolio list view
+                      visual: in-chat checkout flow
                     </div>
                   </div>
                 </div>
@@ -290,10 +317,10 @@ export default function FinnomenaPage() {
               <section id="impact" style={{ scrollMarginTop: "100px" }}>
                 <SectionLabel>The Impact</SectionLabel>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <StatCard value="60%" label="advisor adoption in 2 weeks" bg="rgba(240,200,186,0.2)" />
-                  <StatCard value="3k+" label="financial advisors" bg="rgba(184,212,191,0.2)" />
-                  <StatCard value="30+" label="user interviews" bg="rgba(201,169,110,0.15)" />
-                  <StatCard value="500+" label="surveys collected" bg="rgba(240,200,186,0.15)" />
+                  <StatCard value="16M+" label="monthly active users" bg="rgba(240,200,186,0.2)" />
+                  <StatCard value="15k+" label="stores nationwide" bg="rgba(184,212,191,0.2)" />
+                  <StatCard value="3" label="distribution channels" bg="rgba(201,169,110,0.15)" />
+                  <StatCard value="+15%" label="customer satisfaction" bg="rgba(240,200,186,0.15)" />
                 </div>
               </section>
             </FadeIn>

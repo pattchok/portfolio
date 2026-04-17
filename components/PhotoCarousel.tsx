@@ -20,9 +20,23 @@ interface PhotoCarouselProps {
   alt?: string;
   noCard?: boolean;
   square?: boolean;
+  /** Override image aspect ratio (e.g. "16 / 9", "3 / 2"). Takes priority over `height`/`square`. */
+  aspectRatio?: string;
+  /** Override fixed height in px (default 420). Ignored if `aspectRatio` or `square` is set. */
+  height?: number;
+  /** Use object-contain instead of object-cover to show the full photo without cropping. */
+  contain?: boolean;
 }
 
-export default function PhotoCarousel({ photos, alt = "photo", noCard = false, square = false }: PhotoCarouselProps) {
+export default function PhotoCarousel({
+  photos,
+  alt = "photo",
+  noCard = false,
+  square = false,
+  aspectRatio,
+  height = 420,
+  contain = false,
+}: PhotoCarouselProps) {
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c - 1 + photos.length) % photos.length);
@@ -40,13 +54,22 @@ export default function PhotoCarousel({ photos, alt = "photo", noCard = false, s
 
   return (
     <div style={noCard ? undefined : CARD_STYLE}>
-      <div className="relative rounded-xl overflow-hidden" style={square ? { paddingBottom: "100%" } : { height: "420px" }}>
+      <div
+        className="relative rounded-xl overflow-hidden"
+        style={
+          aspectRatio
+            ? { aspectRatio }
+            : square
+              ? { paddingBottom: "100%" }
+              : { height: `${height}px` }
+        }
+      >
         <Image
           key={current}
           src={photos[current]}
           alt={`${alt} ${current + 1}`}
           fill
-          className="object-cover"
+          className={contain ? "object-contain" : "object-cover"}
         />
 
         <button
