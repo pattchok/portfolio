@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import HeroWorkBg from "@/components/HeroWorkBg";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
@@ -67,8 +68,11 @@ const sections: SectionNavItem[] = [
 export default function FinnomenaPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
+      {/* ── Hero image band ─────────────────────────────────────── */}
+      <HeroWorkBg image="/work/finnomena/finnomena-cover.png" alt="Finnomena" height={780} objectPosition="top" />
+
       {/* ── Back link ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-28">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10">
         <FadeIn>
           <Link
             href="/work"
@@ -156,47 +160,13 @@ export default function FinnomenaPage() {
                 <SectionLabel>The Problem</SectionLabel>
                 <div className="space-y-5 leading-relaxed" style={{ color: "#5C4033" }}>
                   <p>
-                    Financial advisors at Finnomena were managing client
-                    portfolios manually, piecing together fund selections,
-                    risk profiles, and allocations across spreadsheets and
-                    scattered tools. There was no single platform to help
-                    them create, optimize, and manage investment portfolios
-                    at scale, and every portfolio decision had{" "}
-                    <strong className="text-text">
-                      real consequences because advisors are managing other
-                      people&apos;s money
-                    </strong>.
-                  </p>
-                  <p>
-                    Finnomena had a big partnership opportunity with Franklin
-                    Templeton, one of the largest global asset management
-                    firms, to integrate their Investment Optimization Engine:
-                    an algorithmic recommendation system that suggests
-                    high-performance mutual funds and stocks based on each
-                    customer&apos;s risk profile. The challenge was wrapping
-                    that engine in a product that advisors would actually
-                    trust and use, while meeting Thai financial regulations
-                    (Bank of Thailand, SEC Thailand, PDPA).
+                    Financial advisors at Finnomena were building client
+                    portfolios manually, selecting funds and allocations based
+                    on their own research. No personalized recommendation
+                    system to help optimize portfolio performance at scale.
                   </p>
                 </div>
 
-                {/* Callout: the core tension */}
-                <div
-                  className="rounded-xl px-6 py-5 mt-8"
-                  style={{
-                    background: "rgba(253,250,247,0.85)",
-                    boxShadow: "0 12px 40px rgba(140, 96, 80, 0.12), 0 2px 8px rgba(140, 96, 80, 0.06)",
-                  }}
-                >
-                  <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                    Core tension
-                  </p>
-                  <p className="text-muted leading-relaxed">
-                    The AI recommendation had to feel trustworthy but not
-                    prescriptive. Advisors needed to feel in control while
-                    still benefiting from algorithmic optimization.
-                  </p>
-                </div>
               </section>
             </FadeIn>
 
@@ -210,11 +180,10 @@ export default function FinnomenaPage() {
                   className="leading-relaxed mb-12 text-lg"
                   style={{ fontFamily: LATO, color: "#5C4033" }}
                 >
-                  A portfolio management tool that combined Franklin
-                  Templeton&apos;s AI-driven recommendations with manual
-                  control, so advisors could run their entire client book
-                  through one product, keep their own judgment in the loop,
-                  and stay compliant with Thai financial regulations.
+                  Partnered with Franklin Templeton to integrate their
+                  Investment Optimization Engine via API, adding personalized
+                  algorithmic recommendations into Finnomena&apos;s existing
+                  platform.
                 </p>
 
                 {/* 3 features */}
@@ -225,14 +194,13 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      Portfolio creation powered by Franklin Templeton
+                      Full portfolio lifecycle
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Advisors created new investment plans for each client
-                      by entering risk profile, investment horizon, and
-                      goals. The tool then returned an optimized portfolio
-                      recommendation via Franklin Templeton&apos;s
-                      Investment Optimization Engine.
+                      Beyond integration, the tool supported the full lifecycle:
+                      create, edit, and manage plans. Each portfolio tied
+                      to the client&apos;s risk profile and updated as
+                      conditions changed.
                     </p>
                   </div>
 
@@ -242,14 +210,13 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      AI + manual editing
+                      Personalized portfolio recommendations
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Advisors weren&apos;t locked into the AI&apos;s
-                      recommendation. They could review the suggested
-                      allocation, adjust individual fund selections,
-                      rebalance weightings, and apply their own expertise
-                      on top of the algorithmic output.
+                      Advisors entered a client&apos;s risk profile,
+                      investment horizon, and goals. The engine returned an
+                      optimized fund and allocation recommendation tailored
+                      to that client.
                     </p>
                   </div>
 
@@ -259,15 +226,44 @@ export default function FinnomenaPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      Full portfolio lifecycle
+                      Multi-scenario comparison
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
-                      Create, edit, and delete plans. Advisors managed
-                      their entire client book through the tool, with each
-                      portfolio tied to the client&apos;s risk profile and
-                      updated as conditions changed.
+                      Advisors could generate and compare multiple portfolio
+                      options side-by-side (e.g., aggressive vs. balanced)
+                      before recommending one to a client.
                     </p>
                   </div>
+
+                  {/* Feature 4 */}
+                  <div>
+                    <h3
+                      className="text-text mb-2"
+                      style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
+                    >
+                      Pre-built plan templates
+                    </h3>
+                    <p className="text-muted leading-relaxed mb-5 text-lg">
+                      Templates for common goals (retirement, education,
+                      growth) so advisors could start from a tested baseline
+                      and tweak per client instead of building from scratch.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Human-in-the-loop callout */}
+                <div
+                  className="rounded-xl px-6 py-5 mt-12"
+                  style={{
+                    background: "rgba(253,250,247,0.85)",
+                    boxShadow: "0 12px 40px rgba(140, 96, 80, 0.12), 0 2px 8px rgba(140, 96, 80, 0.06)",
+                  }}
+                >
+                  <p className="text-muted leading-relaxed">
+                    Across every feature, financial advisors still made the
+                    final judgment. The algorithm surfaced recommendations,
+                    but every portfolio decision stayed in their hands.
+                  </p>
                 </div>
               </section>
             </FadeIn>
