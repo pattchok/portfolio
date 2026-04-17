@@ -7,7 +7,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', -apple-system, sans-serif; background: #f5f3ef; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; background: #f5f3ef; padding: 24px; }
   .wrapper { width: 960px; max-width: 100%; }
   .chrome { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06); overflow: hidden; }
   .chrome-bar { padding: 11px 16px; border-bottom: 1px solid #e8e0e0; display: flex; align-items: center; gap: 8px; background: #faf8f8; }
@@ -187,6 +187,12 @@ function resetState() {
 }
 function replay() { resetState(); setTimeout(runSequence, 250); }
 window.addEventListener('load', () => setTimeout(runSequence, 400));
+function postHeight() {
+  const h = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'copilot-iframe-height', id: 'summary', height: h }, '*');
+}
+window.addEventListener('load', postHeight);
+new ResizeObserver(postHeight).observe(document.body);
 </script>
 </body>
 </html>

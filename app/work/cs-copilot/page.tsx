@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import AutoHeightIframe from "@/components/AutoHeightIframe";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
@@ -158,11 +159,11 @@ export default function RagCopilotPage() {
                     className="rounded-2xl overflow-hidden border border-border/30"
                     style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
                   >
-                    <iframe
+                    <AutoHeightIframe
                       src="/work/cs-copilot/copilot-mockup-chat.html"
-                      className="w-full"
-                      style={{ height: "720px", border: 0 }}
-                      loading="lazy"
+                      id="chat"
+                      fallbackHeight={855}
+                      title="Copilot chat mockup"
                     />
                   </div>
                 </div>
@@ -176,11 +177,11 @@ export default function RagCopilotPage() {
                     className="rounded-2xl overflow-hidden border border-border/30"
                     style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}
                   >
-                    <iframe
+                    <AutoHeightIframe
                       src="/work/cs-copilot/copilot-mockup-summary.html"
-                      className="w-full"
-                      style={{ height: "962px", border: 0 }}
-                      loading="lazy"
+                      id="summary"
+                      fallbackHeight={962}
+                      title="Copilot ticket summary mockup"
                     />
                   </div>
                 </div>
@@ -188,8 +189,8 @@ export default function RagCopilotPage() {
                 <p className="text-muted text-sm italic leading-snug text-center">
                   Due to enterprise confidentiality, actual product screens
                   can&apos;t be shared. These interactive mockups were built to
-                  demonstrate the experience. Conversations are in Thai with
-                  English translations.
+                  demonstrate the experience. Conversations are translated
+                  into English.
                 </p>
               </div>
             </FadeIn>
@@ -207,37 +208,21 @@ export default function RagCopilotPage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-3 marker:text-brown">
                     <li>
-                      <strong className="text-text">Scattered data and information</strong>:
-                      Resolving a single ticket averaged 42 minutes, excluding
-                      tickets that needed days of follow-up across departments
-                      and knowledge sources (bank policies, user databases, and
-                      more).
-                    </li>
-                    <li>
-                      <strong className="text-text">Unstructured knowledge base</strong>:
-                      Internal documentation wasn&apos;t clean or organized for
-                      retrieval. Policies lived in PDFs, wikis, and shared drives
-                      with inconsistent formats, making it hard for agents to
-                      find the right answer fast.
+                      <strong className="text-text">Slow resolution with scattered knowledge</strong>:
+                      A single ticket averaged 42 minutes. Policies lived in
+                      PDFs, wikis, and shared drives with inconsistent formats.
                     </li>
                     <li>
                       <strong className="text-text">No automatic conversation capture</strong>:
                       Tickets had to be written up by hand after each chat, and
-                      sometimes there just wasn&apos;t time. Information got
-                      lost, inaccurate, or incomplete.
+                      sometimes information got lost, was inaccurate, or
+                      incomplete.
                     </li>
                     <li>
-                      <strong className="text-text">Too many tools, too much switching</strong>:
-                      A single question could mean agents juggling the customer
-                      chat window, Salesforce, data dashboards, and internal
-                      chat channels all at once.
-                    </li>
-                    <li>
-                      <strong className="text-text">Strict regulation and personal data protection</strong>:
+                      <strong className="text-text">Strict regulation and data privacy</strong>:
                       Financial services sit under heavy regulation. Every
-                      design choice had to factor in compliance and PDPA-level
-                      data privacy, not to mention the sensitivity of anything
-                      that touches a customer&apos;s account.
+                      design choice had to factor in compliance and data
+                      privacy protection act.
                     </li>
                   </ul>
                 </div>
@@ -299,12 +284,6 @@ export default function RagCopilotPage() {
                       Sources populate in the bottom-right of the screen so
                       agents see exactly where each answer came from.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: knowledge sources populating in bottom-right (GIF)
-                    </div>
                   </div>
 
                   {/* Feature 2 */}
@@ -313,7 +292,7 @@ export default function RagCopilotPage() {
                       className="text-text mb-2"
                       style={{ fontFamily: LATO, fontWeight: 700, fontSize: "clamp(1.35rem, 2.2vw, 1.6rem)", lineHeight: 1.2 }}
                     >
-                      AI-generated reply suggestions
+                      Reply suggestions
                     </h3>
                     <p className="text-muted leading-relaxed mb-5 text-lg">
                       The copilot drafts three reply options per message, each
@@ -321,12 +300,6 @@ export default function RagCopilotPage() {
                       send. Human in the loop at every step, as required in
                       regulated financial services.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: AI-generated reply options (GIF)
-                    </div>
                   </div>
 
                   {/* Feature 3 */}
@@ -342,12 +315,6 @@ export default function RagCopilotPage() {
                       summary and next-step list back to Salesforce. No more
                       forgotten or incomplete tickets.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: ticket summary written back to Salesforce (GIF)
-                    </div>
                   </div>
                 </div>
               </section>
@@ -438,10 +405,10 @@ export default function RagCopilotPage() {
             <FadeIn>
               <section id="impact" style={{ scrollMarginTop: "100px" }}>
                 <SectionLabel>The Impact</SectionLabel>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <StatCard value="42min → <5min" label="average ticket resolution time" bg="rgba(240,200,186,0.2)" />
                   <StatCard value="150+" label="agents using the copilot" bg="rgba(184,212,191,0.2)" />
-                  <StatCard value="TBD" label="[add metric]" bg="rgba(201,169,110,0.15)" />
+                  <StatCard value="87%" label="customer satisfaction score (CSAT)" bg="rgba(201,169,110,0.15)" />
                 </div>
               </section>
             </FadeIn>

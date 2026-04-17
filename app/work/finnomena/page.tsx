@@ -98,19 +98,24 @@ export default function FinnomenaPage() {
                 <SectionLabel>TL;DR</SectionLabel>
 
                 <p
-                  className="text-muted leading-relaxed mb-8"
+                  className="text-muted leading-relaxed mb-5"
                   style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
                 >
                   Designed and launched an AI-powered portfolio planning tool
                   for{" "}
-                  <strong style={{ color: accent }}>3,000+</strong> financial
+                  <strong style={{ color: accent }}>3,000+</strong>&nbsp;financial
                   advisors at Finnomena, one of Thailand&apos;s leading wealth
                   management platforms, built in partnership with{" "}
                   <strong style={{ color: accent }}>Franklin Templeton</strong>.
-                  The tool combined algorithmic recommendations from Franklin
-                  Templeton&apos;s Investment Optimization Engine with manual
-                  control, so advisors could apply their own judgment on top
-                  of AI-suggested portfolios.
+                </p>
+
+                <p
+                  className="text-muted leading-relaxed mb-8"
+                  style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
+                >
+                  The tool integrated Franklin Templeton&apos;s algorithmic
+                  recommendation engine via API. Financial advisors could
+                  apply their own judgment on top of AI-suggested portfolios.
                 </p>
 
                 <div className="flex flex-wrap gap-x-10 gap-y-3 text-base text-muted">
@@ -229,12 +234,6 @@ export default function FinnomenaPage() {
                       recommendation via Franklin Templeton&apos;s
                       Investment Optimization Engine.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: portfolio creation flow
-                    </div>
                   </div>
 
                   {/* Feature 2 */}
@@ -252,12 +251,6 @@ export default function FinnomenaPage() {
                       rebalance weightings, and apply their own expertise
                       on top of the algorithmic output.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: AI suggestion with manual edit overlay
-                    </div>
                   </div>
 
                   {/* Feature 3 */}
@@ -274,12 +267,6 @@ export default function FinnomenaPage() {
                       portfolio tied to the client&apos;s risk profile and
                       updated as conditions changed.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: client book / portfolio list view
-                    </div>
                   </div>
                 </div>
               </section>
