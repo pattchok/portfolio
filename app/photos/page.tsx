@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import { PLAYFAIR } from "@/lib/constants";
 
 export const metadata = {
-  title: "Photos - Patt",
+  title: "Photos",
 };
 
 const photos: { src: string; caption?: string }[] = [

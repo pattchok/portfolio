@@ -5,7 +5,7 @@ import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "7-Eleven Conversational AI - Patt",
+  title: "7-Eleven Conversational AI",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */

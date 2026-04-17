@@ -5,7 +5,7 @@ import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Finnomena - Patt",
+  title: "Finnomena",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */

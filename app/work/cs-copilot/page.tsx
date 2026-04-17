@@ -6,7 +6,7 @@ import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Customer Support Copilot - Patt",
+  title: "Customer Support Copilot",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */

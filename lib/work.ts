@@ -22,7 +22,7 @@ export const workProjects: WorkProject[] = [
     year: "2022–2025",
     company: "SCB 10X",
     thumbBg: "#EDD5C5",
-    thumbImg: "/work/opentyphoon/typhoon-logo.png",
+    thumbImg: "/work/typhoon/typhoon-cover.png",
     meta: {
       role: "Product Manager",
       stack: "PyTorch · Hugging Face · vLLM",

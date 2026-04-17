@@ -8,7 +8,7 @@ import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { PLAYFAIR, LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Typhoon - Patt",
+  title: "Typhoon",
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */
@@ -263,12 +263,14 @@ export default function OpenTyphoonPage() {
                       collection, pick the model that fits, and can deploy it
                       locally.
                     </p>
-                    {/* VISUAL-TODO: Hugging Face model collection or grid of model icons */}
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: Hugging Face model collection / model grid
+                    <div className="relative rounded-2xl w-full overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
+                      <Image
+                        src="/work/typhoon/typhoon-solution-1.png"
+                        alt="Typhoon model collection on Hugging Face"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                      />
                     </div>
                   </div>
 
@@ -285,12 +287,14 @@ export default function OpenTyphoonPage() {
                       Typhoon model at playground.opentyphoon.ai. No extra
                       setup needed.
                     </p>
-                    {/* VISUAL-TODO: playground screenshot / GIF */}
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: playground screenshot / GIF
+                    <div className="relative rounded-2xl w-full overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
+                      <Image
+                        src="/work/typhoon/typhoon-solution-2.png"
+                        alt="Typhoon playground screenshot"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                      />
                     </div>
                   </div>
 
@@ -306,12 +310,14 @@ export default function OpenTyphoonPage() {
                       Full API access with documentation and demo apps. Same
                       models as the playground, ready for production.
                     </p>
-                    {/* VISUAL-TODO: API docs / code snippet */}
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: API docs / code snippet
+                    <div className="relative rounded-2xl w-full overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
+                      <Image
+                        src="/work/typhoon/typhoon-solution-3.png"
+                        alt="Typhoon API docs and code snippet"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                      />
                     </div>
                   </div>
                 </div>
