@@ -87,8 +87,7 @@ export default function PlayPage() {
         {/* Intro */}
         <FadeIn delay={0.06}>
           <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-14">
-            I sometimes pick up new hobbies for fun and somehow stick with them. I think trying new things is one
-            of the best ways to stay curious and keep life vibrant. It keeps my feet on the ground and brings me back to myself!
+            Sometimes, I pick up new hobbies for fun and somehow stick with them. I believe trying new things is one of the best ways to stay curious, to keep your feet on the ground, and to learn more about yourself :)
           </p>
         </FadeIn>
 
@@ -105,8 +104,15 @@ export default function PlayPage() {
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <p className="text-muted text-base text-center mt-4 mb-8">
-                I&apos;ve been to <strong><em>28 countries</em></strong> so far and have been keeping track of all my favorite spots! Check out some of my <strong>photos</strong> below :)
+              <p className="text-muted text-base text-center mt-8 mb-8">
+                I&apos;ve been to <strong><em>28 countries</em></strong> so far and have been keeping track of all my favorite spots! Check out some of{" "}
+                <a
+                  href="/photos"
+                  className="font-bold text-brown hover:text-brown-light underline underline-offset-4 decoration-1 transition-colors duration-200"
+                >
+                  my photos
+                </a>{" "}
+                below :)
               </p>
               <div className="grid grid-cols-3 gap-2 mb-6">
                 <Image src="/travel/1mtrainier.JPG" alt="mt. rainier" width={600} height={400} className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
@@ -149,7 +155,7 @@ export default function PlayPage() {
               </div>
 
               <p className="text-muted text-xs text-center mt-4">📍 Seward Park, Seattle, WA</p>
-              <p className="text-muted text-base text-center mt-4">
+              <p className="text-muted text-base text-center mt-6">
                 I started <strong>running</strong> more since I moved to Seattle. The PNW has such beautiful trails :) This was my first race ever, and I ran a <strong><em>sub-60 10k</em></strong>! Pretty proud of that!
               </p>
             </FadeIn>
@@ -162,7 +168,7 @@ export default function PlayPage() {
               <div style={CARD_STYLE}>
                 <Image src="/reading.png" alt="reading tracker" width={1200} height={800} className="w-full rounded-xl object-cover" />
               </div>
-              <p className="text-muted text-base text-center mt-4">
+              <p className="text-muted text-base text-center mt-6">
                 I love <strong>reading</strong> before bed and on trips :) My favorites are fantasy, rom-com, and a little bit of sci-fi. I recently started recording what I read and took a <strong><em>selfie with the book</em></strong> on the day I finish it!
               </p>
             </FadeIn>
@@ -173,7 +179,7 @@ export default function PlayPage() {
             <FadeIn>{sectionHeading("Flower Arrangement")}</FadeIn>
             <FadeIn delay={0.1}>
               <FlowerCarousel />
-              <p className="text-muted text-base text-center mt-4">
+              <p className="text-muted text-base text-center mt-6">
                 I always love giving people <strong>handmade gifts</strong>, and <strong><em>flowers</em></strong> are one of them :){" "}Each bouquet carries a little message I want to tell the receiver through the meaning of each flower.
               </p>
             </FadeIn>
