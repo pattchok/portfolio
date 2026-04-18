@@ -4,7 +4,7 @@ type HeroWorkBgProps = {
   /** Path to a full-width hero image (e.g. "/work/opentyphoon/hero.jpg"). */
   image: string;
   alt?: string;
-  /** Height of the band (px). */
+  /** Max height of the band on desktop (px). Mobile scales down responsively. */
   height?: number;
   /** CSS object-position (e.g. "top", "center", "50% 20%"). */
   objectPosition?: string;
@@ -19,7 +19,7 @@ export default function HeroWorkBg({
   return (
     <div
       className="relative w-full overflow-hidden"
-      style={{ height: `${height}px` }}
+      style={{ height: `clamp(220px, 55vw, ${height}px)` }}
     >
       <Image
         src={image}

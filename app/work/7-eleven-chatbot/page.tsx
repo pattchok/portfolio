@@ -181,22 +181,10 @@ export default function SevenElevenChatbotPage() {
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
                     Fun fact
                   </p>
-                  <p className="text-muted leading-relaxed mb-5">
+                  <p className="text-muted leading-relaxed">
                     7-Eleven in Thailand is genuinely amazing. We have over
                     15,000 branches. Seriously, look it up!
                   </p>
-                  {/* 7-Eleven photo placeholders */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {[1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="relative rounded-xl border border-border/30 flex items-center justify-center text-muted text-xs italic overflow-hidden"
-                        style={{ aspectRatio: "4 / 3", background: "rgba(253,250,247,0.6)" }}
-                      >
-                        photo {i}
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Pre-LLM era callout */}
@@ -256,12 +244,6 @@ export default function SevenElevenChatbotPage() {
                       what was actually on the shelf. No dead ends, no
                       out-of-stock disappointments.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: location + live stock lookup in chat
-                    </div>
                   </div>
 
                   {/* Feature 2 */}
@@ -279,12 +261,6 @@ export default function SevenElevenChatbotPage() {
                       automatically. Every conversation felt relevant
                       rather than generic.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: personalized product carousel in chat
-                    </div>
                   </div>
 
                   {/* Feature 3 */}
@@ -301,12 +277,6 @@ export default function SevenElevenChatbotPage() {
                       no separate cart screens, just one thread from the
                       first question to the confirmation message.
                     </p>
-                    <div
-                      className="rounded-2xl w-full border border-border/30 flex items-center justify-center text-muted text-sm italic"
-                      style={{ height: "320px", background: "rgba(253,250,247,0.6)" }}
-                    >
-                      visual: in-chat checkout flow
-                    </div>
                   </div>
                 </div>
               </section>

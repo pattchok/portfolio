@@ -157,17 +157,28 @@ export default function OpenTyphoonPage() {
                     href="https://opentyphoon.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
+                    className="group inline-flex items-center gap-1 text-base font-bold text-text hover:text-brown transition-colors duration-200 w-fit"
                   >
-                    opentyphoon.ai &rarr;
+                    <span className="underline underline-offset-4 decoration-1">
+                      opentyphoon.ai
+                    </span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                      &rarr;
+                    </span>
                   </a>
                   <a
                     href="https://arxiv.org/abs/2312.13951"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
+                    className="group inline-flex items-center gap-1 text-base font-bold text-text hover:text-brown transition-colors duration-200 w-fit"
                   >
-                    arxiv 2312.13951 (70+ citations) &rarr;
+                    <span className="underline underline-offset-4 decoration-1">
+                      arxiv 2312.13951
+                    </span>
+                    <span className="font-normal text-muted text-xs">(70+ citations)</span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                      &rarr;
+                    </span>
                   </a>
                 </div>
 
@@ -346,7 +357,7 @@ export default function OpenTyphoonPage() {
                     Typhoon: Thai Large Language Models
                   </h4>
                   <p className="text-xs font-bold tracking-tight uppercase text-pink-dark mb-3">
-                    Dec 2023 &middot; 70+ citations in 2026
+                    Dec 2023
                   </p>
                   <p className="text-muted text-base leading-relaxed mb-3">
                     Co-authored technical report on the development of Thailand&apos;s
@@ -365,9 +376,15 @@ export default function OpenTyphoonPage() {
                     href="https://arxiv.org/abs/2312.13951"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-bold text-text hover:underline underline-offset-4 transition-colors duration-200"
+                    className="group inline-flex items-center gap-1 text-base font-bold text-text hover:text-brown transition-colors duration-200"
                   >
-                    arxiv.org/abs/2312.13951 &rarr;
+                    <span className="underline underline-offset-4 decoration-1">
+                      arxiv.org/abs/2312.13951
+                    </span>
+                    <span className="font-normal text-muted text-xs">(70+ citations)</span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                      &rarr;
+                    </span>
                   </a>
                 </div>
 

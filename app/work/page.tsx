@@ -54,7 +54,7 @@ export default function WorkPage() {
             className="text-text leading-tight mb-2"
             style={{ fontFamily: PLAYFAIR, fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700 }}
           >
-            My Fun 9-5 Career
+            My Fun Career
           </h2>
           <div
             style={{
