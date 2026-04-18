@@ -55,7 +55,7 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#33261c" }}>
+    <footer className="relative z-10" style={{ backgroundColor: "#33261c" }}>
 
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 pt-8 pb-14">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-x-20 gap-y-10 md:pl-10 md:pr-40">
