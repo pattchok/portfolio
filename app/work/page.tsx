@@ -32,17 +32,29 @@ export default function WorkPage() {
         {/* Intro */}
         <FadeIn delay={0.06}>
           <p className="text-base md:text-lg leading-relaxed text-muted mt-8 mb-5">
-            I&apos;ve spent 6+ years building in AI and data products across financial services, retail, and e-commerce. A lot of my work has been leading AI initiatives inside organizations, helping teams go from &ldquo;we want to use AI&rdquo; to shipping something useful and getting people to adopt it.
+            I have 6 years building <strong>AI products</strong> across fintech, e-commerce, and retail, working mostly with <strong>language technology</strong>: conversational AI, text analysis, LLMs, and data collection and annotation. I&apos;ve launched B2C products reaching <strong>tens of millions of MAUs</strong>, and B2B products that integrate AI into enterprise production workflows.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-muted mb-14">
-            I care about building things that solve real problems for people, shipping early, learning fast, and staying close to the users throughout.
+            Outside of work, I build small side projects (mostly for fun) and once <strong>co-founded a startup </strong>with friends. Though it&apos;s no longer active, it remains one of the best learning experiences I&apos;ve ever had!
           </p>
           <a
             href="#side-projects"
-            className="inline-flex items-center gap-1 text-sm text-muted hover:text-brown hover:underline underline-offset-4 transition-colors duration-200 mb-12"
+            className="group inline-flex items-center gap-1 text-sm text-text hover:text-brown transition-colors duration-200 mb-12"
           >
-            check out my side projects below
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <span className="font-bold underline underline-offset-4 decoration-1">
+              check out my side projects below
+            </span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform duration-200 group-hover:translate-y-1"
+            >
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </a>
