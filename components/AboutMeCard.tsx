@@ -14,20 +14,25 @@ const blobData = [
 
 const paragraphs = [
   <>
-    I came from a business background (accounting specifically) and didn&apos;t know
-    &lsquo;product manager&rsquo; was a real job. I heard about it when applying to data
-    analyst roles in my first job because a recruiter said it would fit my personality
-    better; I enjoy talking to people, understanding problems, and connecting the dots.
-    I ended up spending six years building AI and data products (really enjoyed it
-    actually!). I consider myself very fortunate to have had those opportunities, and
-    being the non-technical person surrounded by engineers and scientists pushed me to
-    learn more every day.
+    I didn&apos;t grow up knowing &ldquo;product manager&rdquo; was a real job. I came
+    from a business background (accounting, specifically), and I only heard the term
+    when I was interviewing for my first job out of school, where a recruiter told me
+    I&apos;d be better suited for product based on the way I talked through problems.
+    It turned out to be one of the best pieces of advice I&apos;ve ever gotten.
   </>,
   <>
-    Something I&apos;ve only recently put into words, because I basically grew up
-    doing it naturally, is that I like taking random, messy things and packaging them
-    together into something usable. That inclination is what led me to product
-    and program management, and it&apos;s become part of who I am today :)
+    I&apos;ve spent the past six years building AI and data products as a PM. The work
+    pushed me to learn something new almost every day, but more importantly, it&apos;s
+    where I found the parts of the work I really enjoy and care about: translating
+    between technical and non-technical audiences, turning ambiguous problems into
+    something we can deliver, and keeping the user at the center of what the team is
+    solving for.
+  </>,
+  <>
+    Something I&apos;ve only recently put into words is that I like taking random,
+    messy things and packaging them into something usable. That inclination is what
+    led me to product and program management, and it&apos;s become part of who I am
+    today :)
   </>,
 ];
 
