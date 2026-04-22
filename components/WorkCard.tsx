@@ -11,7 +11,8 @@ type WorkCardProps = {
 };
 
 export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
-  const { slug, name, shortDesc, year, company, thumbBg, thumbImg, comingSoon, meta } = project;
+  const { slug, name, shortDesc, year, company, thumbBg, thumbImg, homeImg, comingSoon, meta } = project;
+  const coverSrc = homeImg ?? thumbImg;
 
   return (
     <section className="px-6 md:px-10 lg:px-16 py-16 border-t border-border/40 -mt-px">
@@ -23,16 +24,16 @@ export default function WorkCard({ project, reversed, cta }: WorkCardProps) {
             }`}
           >
             <div className={reversed ? "[direction:ltr]" : ""}>
-              {thumbImg ? (
+              {coverSrc ? (
                 <div
                   className="rounded-2xl w-full border border-border/30 overflow-hidden"
                   style={{ height: "280px" }}
                 >
                   <Image
-                    src={thumbImg}
+                    src={coverSrc}
                     alt={name}
-                    width={800}
-                    height={360}
+                    width={920}
+                    height={560}
                     className="object-cover w-full h-full"
                   />
                 </div>

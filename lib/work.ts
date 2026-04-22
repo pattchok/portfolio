@@ -6,6 +6,7 @@ export type WorkProject = {
   company: string;
   thumbBg: string;
   thumbImg?: string;
+  homeImg?: string;
   comingSoon?: boolean;
   meta?: {
     role?: string;
@@ -23,6 +24,7 @@ export const workProjects: WorkProject[] = [
     company: "SCB 10X",
     thumbBg: "#EDD5C5",
     thumbImg: "/work/typhoon/typhoon-cover.png",
+    homeImg: "/home/home-typhoon.png",
     meta: {
       role: "Product Manager",
       stack: "PyTorch · Hugging Face · vLLM",
@@ -37,6 +39,7 @@ export const workProjects: WorkProject[] = [
     company: "SCB 10X",
     thumbBg: "#B8D4BF",
     thumbImg: "/work/cs-copilot/copilot-cover.png",
+    homeImg: "/home/home-copilot.png",
     meta: {
       role: "Product Manager (0→1)",
       stack: "LangChain · Pinecone · LangFuse · Salesforce",
@@ -65,6 +68,7 @@ export const workProjects: WorkProject[] = [
     company: "Sertis",
     thumbBg: "#C9A96E",
     thumbImg: "/work/7-eleven-chatbot/7-eleven-chatbot.png",
+    homeImg: "/home/home-7-eleven.png",
     meta: {
       role: "Junior PM",
       stack: "Google DialogFlow · Python · RegEx",
