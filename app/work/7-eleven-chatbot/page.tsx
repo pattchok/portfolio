@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import HeroWorkBg from "@/components/HeroWorkBg";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
@@ -67,8 +68,11 @@ const sections: SectionNavItem[] = [
 export default function SevenElevenChatbotPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
+      {/* ── Hero image band ─────────────────────────────────────── */}
+      <HeroWorkBg image="/work/hero/hero-7-eleven.png" alt="7-Eleven Conversational AI" />
+
       {/* ── Back link ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-28">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10">
         <FadeIn>
           <Link
             href="/work"

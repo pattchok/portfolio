@@ -73,7 +73,7 @@ export default function OpenTyphoonPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
       {/* ── Hero image band ─────────────────────────────────────── */}
-      <HeroWorkBg image="/work/typhoon/typhoon-cover.png" alt="Typhoon" height={780} objectPosition="top" />
+      <HeroWorkBg image="/work/hero/hero-typhoon.png" alt="Typhoon" />
 
       {/* ── Back link ───────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import AutoHeightIframe from "@/components/AutoHeightIframe";
+import HeroWorkBg from "@/components/HeroWorkBg";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { LATO } from "@/lib/constants";
 
@@ -70,8 +71,11 @@ const sections: SectionNavItem[] = [
 export default function RagCopilotPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
+      {/* ── Hero image band ─────────────────────────────────────── */}
+      <HeroWorkBg image="/work/hero/hero-copilot.png" alt="Customer Support Copilot" />
+
       {/* ── Back link ───────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-28">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10">
         <FadeIn>
           <Link
             href="/work"

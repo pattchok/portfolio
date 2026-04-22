@@ -69,7 +69,7 @@ export default function FinnomenaPage() {
   return (
     <main style={{ backgroundColor: "#F3F5F0", overflowX: "clip" }} className="min-h-screen">
       {/* ── Hero image band ─────────────────────────────────────── */}
-      <HeroWorkBg image="/work/finnomena/finnomena-cover.png" alt="Finnomena" height={780} objectPosition="top" />
+      <HeroWorkBg image="/work/hero/hero-finnomena.png" alt="Finnomena" />
 
       {/* ── Back link ───────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-10">

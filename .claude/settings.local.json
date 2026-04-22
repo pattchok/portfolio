@@ -59,7 +59,8 @@
       "Bash(cp /Users/kukkukp/dev/portfolio/public/work/finnomena/finnomena-logo.png /Users/kukkukp/dev/portfolio/public/_originals/work/finnomena/)",
       "Bash(cp /Users/kukkukp/dev/portfolio/public/work/7-eleven-chatbot/7-eleven-chatbot.png /Users/kukkukp/dev/portfolio/public/_originals/work/7-eleven-chatbot/)",
       "Bash(awk '{print $5, $NF}')",
-      "Bash(set -e)"
+      "Bash(set -e)",
+      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/cover-photos/hero-work/**)"
     ]
   }
 }
