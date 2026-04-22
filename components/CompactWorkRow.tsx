@@ -37,7 +37,7 @@ export default function CompactWorkRow({
           {/* Thumbnail */}
           <div
             className="rounded-xl overflow-hidden border border-border/30 w-full"
-            style={{ height: "130px" }}
+            style={{ aspectRatio: "4 / 3" }}
           >
             {thumbIframe ? (
               <iframe
@@ -51,7 +51,7 @@ export default function CompactWorkRow({
                 src={thumbImg}
                 alt={name}
                 width={400}
-                height={260}
+                height={300}
                 className="object-cover w-full h-full"
               />
             ) : (

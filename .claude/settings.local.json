@@ -51,7 +51,15 @@
       "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/work/typhoon/**)",
       "WebFetch(domain:opentyphoon.ai)",
       "WebFetch(domain:amylalai.com)",
-      "Bash(sips -g pixelWidth -g pixelHeight typhoon-acl1.png typhoon-acl2.jpeg)"
+      "Bash(sips -g pixelWidth -g pixelHeight typhoon-acl1.png typhoon-acl2.jpeg)",
+      "Bash(sips *)",
+      "Bash(mkdir -p /Users/kukkukp/dev/portfolio/public/_originals/work/typhoon /Users/kukkukp/dev/portfolio/public/_originals/work/cs-copilot /Users/kukkukp/dev/portfolio/public/_originals/work/finnomena /Users/kukkukp/dev/portfolio/public/_originals/work/7-eleven-chatbot /Users/kukkukp/dev/portfolio/public/_originals/projects)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/work/typhoon/typhoon-cover.png /Users/kukkukp/dev/portfolio/public/_originals/work/typhoon/)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/work/cs-copilot/copilot-cover.png /Users/kukkukp/dev/portfolio/public/_originals/work/cs-copilot/)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/work/finnomena/finnomena-logo.png /Users/kukkukp/dev/portfolio/public/_originals/work/finnomena/)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/work/7-eleven-chatbot/7-eleven-chatbot.png /Users/kukkukp/dev/portfolio/public/_originals/work/7-eleven-chatbot/)",
+      "Bash(awk '{print $5, $NF}')",
+      "Bash(set -e)"
     ]
   }
 }

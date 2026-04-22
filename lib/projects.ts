@@ -22,7 +22,7 @@ export const sideProjects: SideProject[] = [
     subtitle: "brewing now, coming soon :)",
     year: "2026",
     thumbBg: "#B8D4BF",
-    thumbImg: "/projects/shadowclaw-cover.svg",
+    thumbImg: "/projects/shadowclaw-cover.png",
     links: [
       { label: "github", href: "https://github.com/nckclrk/shadowclaw/tree/main" },
     ],
@@ -33,7 +33,7 @@ export const sideProjects: SideProject[] = [
     shortDesc: "A digital photo booth that turns quick snaps into shareable photo strips. Pick a backdrop, pose, and share the link.",
     year: "2026",
     thumbBg: "#F0C8BA",
-    thumbImg: "/projects/snapstrip-cover.svg",
+    thumbImg: "/projects/snapstrip-cover.png",
     links: [
       { label: "live", href: "https://snapstrip-two.vercel.app/" },
     ],
@@ -56,7 +56,7 @@ export const sideProjects: SideProject[] = [
     shortDesc: "A marketplace for buying and selling AI prompts, designed to prevent buyers from reverse-engineering the secret sauce, built within the first 6 months after ChatGPT launched in Nov 2022.",
     year: "2023",
     thumbBg: "#EDD5C5",
-    thumbImg: "/projects/prompthub-cover.jpg",
+    thumbImg: "/projects/prompthub-cover.png",
     links: [
       { label: "product hunt", href: "https://www.producthunt.com/products/prompthub" },
     ],
