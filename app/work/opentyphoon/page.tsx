@@ -190,15 +190,17 @@ export default function OpenTyphoonPage() {
               <div className="-mt-10">
                 <PhotoCarousel
                   photos={[
+                    "/work/typhoon/typhoon-techsauce2024.png",
                     "/work/typhoon/typhoon-acl1.png",
                     "/work/typhoon/typhoon-acl2.jpeg",
+                    "/work/typhoon/typhoon-hackathon-1.jpg",
                   ]}
-                  alt="Typhoon at ACL 2024"
+                  alt="Typhoon at a few events"
                   aspectRatio="4 / 3"
                   noCard
                 />
                 <p className="text-muted text-sm italic leading-snug mt-4 text-center">
-                  fun fact: we were at <strong>ACL 2024</strong> in Bangkok!
+                  Typhoon was at a few major conferences and events: <strong>ACL 2024</strong> in Bangkok, <strong>Techsauce Global Summit</strong>, <strong>Super AI Singapore</strong>, and hosting <strong>hackathons</strong>!
                 </p>
               </div>
             </FadeIn>
