@@ -9,6 +9,12 @@ import { LATO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Customer Support Copilot",
+  openGraph: {
+    title: "Customer Support Copilot",
+  },
+  twitter: {
+    title: "Customer Support Copilot",
+  },
 };
 
 /* ── tiny helpers ─────────────────────────────────────────────── */
