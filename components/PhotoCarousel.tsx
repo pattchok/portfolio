@@ -69,6 +69,7 @@ export default function PhotoCarousel({
           src={photos[current]}
           alt={`${alt} ${current + 1}`}
           fill
+          sizes="(max-width: 768px) 100vw, 900px"
           className={contain ? "object-contain" : "object-cover"}
         />
 

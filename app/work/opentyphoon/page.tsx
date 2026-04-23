@@ -190,8 +190,8 @@ export default function OpenTyphoonPage() {
               <div className="-mt-10">
                 <PhotoCarousel
                   photos={[
-                    "/work/typhoon/typhoon-techsauce2024.png",
-                    "/work/typhoon/typhoon-acl1.png",
+                    "/work/typhoon/typhoon-techsauce2024.jpg",
+                    "/work/typhoon/typhoon-acl1.jpg",
                     "/work/typhoon/typhoon-acl2.jpeg",
                     "/work/typhoon/typhoon-hackathon-1.jpg",
                   ]}
@@ -471,7 +471,7 @@ export default function OpenTyphoonPage() {
                 <div className="space-y-10">
                   <div>
                     <div className="relative rounded-xl overflow-hidden border border-border/30" style={{ aspectRatio: "16 / 9" }}>
-                      <Image src="/work/typhoon/typhoon-techsauce2024.png" alt="Typhoon at Techsauce 2024" fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
+                      <Image src="/work/typhoon/typhoon-techsauce2024.jpg" alt="Typhoon at Techsauce 2024" fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
                     </div>
                     <p className="text-muted text-sm italic leading-snug mt-3 text-center">
                       <strong>Techsauce Global Summit 2024</strong>, Southeast Asia&apos;s largest tech conference
@@ -505,7 +505,7 @@ export default function OpenTyphoonPage() {
                       style={{ aspectRatio: "16 / 9" }}
                     >
                       <Image
-                        src="/work/typhoon/the-rise-of-intelligence-2.png"
+                        src="/work/typhoon/the-rise-of-intelligence-2.jpg"
                         alt="The Rise of Intelligence YouTube feature"
                         fill
                         className="object-cover group-hover:scale-[1.02] transition-transform duration-500"

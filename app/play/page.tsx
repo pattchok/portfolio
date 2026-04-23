@@ -115,9 +115,9 @@ export default function PlayPage() {
                 below :)
               </p>
               <div className="grid grid-cols-3 gap-2 mb-6">
-                <Image src="/travel/1mtrainier.JPG" alt="mt. rainier" width={600} height={400} className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
-                <Image src="/travel/20kyoto.JPG" alt="machiya district, kyoto" width={600} height={400} className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
-                <Image src="/travel/3kyoto.JPG" alt="kyoto" width={600} height={400} className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
+                <Image src="/travel/1mtrainier.JPG" alt="mt. rainier" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
+                <Image src="/travel/20kyoto.JPG" alt="machiya district, kyoto" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
+                <Image src="/travel/3kyoto.JPG" alt="kyoto" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="w-full h-48 object-cover rounded-xl" style={{ boxShadow: "0 6px 12px rgba(0,0,0,0.1)" }} />
               </div>
               <div className="text-center">
                 <WavyCTA href="/photos" large>see more photos</WavyCTA>
@@ -144,13 +144,13 @@ export default function PlayPage() {
 
               <div className="flex items-end justify-center max-w-2xl mx-auto" style={{ paddingTop: "16px", paddingBottom: "8px" }}>
                 <div style={{ width: "38%", flexShrink: 0, transform: "rotate(-7deg) translateY(12px)", zIndex: 1, marginRight: "-28px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 8px 28px rgba(0,0,0,0.13)" }}>
-                  <Image src="/running1.png" alt="running photo 1" width={400} height={500} className="w-full h-auto" />
+                  <Image src="/running1.jpg" alt="running photo 1" width={400} height={500} sizes="(max-width: 768px) 38vw, 300px" className="w-full h-auto" />
                 </div>
                 <div style={{ width: "30%", flexShrink: 0, transform: "rotate(0.5deg)", zIndex: 3, borderRadius: "14px", overflow: "hidden", boxShadow: "0 12px 36px rgba(0,0,0,0.18)" }}>
-                  <Image src="/running2.png" alt="running photo 2" width={600} height={750} className="w-full h-auto" />
+                  <Image src="/running2.png" alt="running photo 2" width={600} height={750} sizes="(max-width: 768px) 30vw, 240px" className="w-full h-auto" />
                 </div>
                 <div style={{ width: "33%", flexShrink: 0, transform: "rotate(3.5deg) translateY(10px)", zIndex: 2, marginLeft: "-28px", borderRadius: "14px", overflow: "hidden", boxShadow: "0 8px 28px rgba(0,0,0,0.13)" }}>
-                  <Image src="/running3.png" alt="running photo 3" width={500} height={625} className="w-full h-auto" />
+                  <Image src="/running3.jpg" alt="running photo 3" width={500} height={625} sizes="(max-width: 768px) 33vw, 264px" className="w-full h-auto" />
                 </div>
               </div>
 
@@ -166,7 +166,7 @@ export default function PlayPage() {
             <FadeIn>{sectionHeading("Reading")}</FadeIn>
             <FadeIn delay={0.1}>
               <div style={CARD_STYLE}>
-                <Image src="/reading.png" alt="reading tracker" width={1200} height={800} className="w-full rounded-xl object-cover" />
+                <Image src="/reading.png" alt="reading tracker" width={1200} height={800} sizes="(max-width: 768px) 100vw, 800px" className="w-full rounded-xl object-cover" />
               </div>
               <p className="text-muted text-base text-center mt-6">
                 I love <strong>reading</strong> before bed and on trips :) My favorites are fantasy, rom-com, and a little bit of sci-fi. I recently started recording what I read and took a <strong><em>selfie with the book</em></strong> on the day I finish it!

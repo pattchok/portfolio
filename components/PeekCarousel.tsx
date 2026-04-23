@@ -51,6 +51,7 @@ export default function PeekCarousel({ photos, alt = "photo" }: PeekCarouselProp
               src={photos[prevIdx]}
               alt={`${alt} ${prevIdx + 1}`}
               fill
+              sizes="(max-width: 768px) 22vw, 220px"
               className="object-cover"
             />
             <div
@@ -77,6 +78,7 @@ export default function PeekCarousel({ photos, alt = "photo" }: PeekCarouselProp
               src={photos[current]}
               alt={`${alt} ${current + 1}`}
               fill
+              sizes="(max-width: 768px) 56vw, 560px"
               className="object-cover"
             />
           </div>
@@ -87,6 +89,7 @@ export default function PeekCarousel({ photos, alt = "photo" }: PeekCarouselProp
               src={photos[nextIdx]}
               alt={`${alt} ${nextIdx + 1}`}
               fill
+              sizes="(max-width: 768px) 22vw, 220px"
               className="object-cover"
             />
             <div

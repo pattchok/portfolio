@@ -60,7 +60,11 @@
       "Bash(cp /Users/kukkukp/dev/portfolio/public/work/7-eleven-chatbot/7-eleven-chatbot.png /Users/kukkukp/dev/portfolio/public/_originals/work/7-eleven-chatbot/)",
       "Bash(awk '{print $5, $NF}')",
       "Bash(set -e)",
-      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/cover-photos/hero-work/**)"
+      "Read(//Users/kukkukp/Desktop/kukkukp/website-portfolio/cover-photos/hero-work/**)",
+      "Bash(mkdir -p /tmp/image-backup)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/work/typhoon/typhoon-acl1.png /Users/kukkukp/dev/portfolio/public/work/typhoon/typhoon-techsauce2024.png /Users/kukkukp/dev/portfolio/public/work/typhoon/the-rise-of-intelligence-2.png /Users/kukkukp/dev/portfolio/public/work/typhoon/typhoon-kmitl.jpg /tmp/image-backup/)",
+      "Bash(cp /Users/kukkukp/dev/portfolio/public/about/thainlp-3.png /Users/kukkukp/dev/portfolio/public/about/thainlp-2.png /Users/kukkukp/dev/portfolio/public/about/thainlp-1.png /Users/kukkukp/dev/portfolio/public/about/aicollective-3.png /Users/kukkukp/dev/portfolio/public/running1.png /Users/kukkukp/dev/portfolio/public/running3.png /tmp/image-backup/)",
+      "Read(//private/tmp/image-backup/**)"
     ]
   }
 }

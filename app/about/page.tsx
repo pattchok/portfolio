@@ -54,14 +54,14 @@ export default function AboutPage() {
                     the latest in AI. We hosted regular sessions with talks, demos, and hands-on workshops.
                   </p>
                   <div className="grid grid-cols-3 gap-2">
-                    <Image src="/about/aicollective-1.jpg" alt="AI Collective event" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/aicollective-1.jpg" alt="AI Collective event" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                     <div
                       className="rounded-xl overflow-hidden border border-border/30"
                       style={{ height: "140px", backgroundColor: "#f5f5f4" }}
                     >
-                      <Image src="/about/aicollective-2.png" alt="Patt at AI Collective" width={600} height={400} className="w-full h-full object-contain object-center" />
+                      <Image src="/about/aicollective-2.png" alt="Patt at AI Collective" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="w-full h-full object-contain object-center" />
                     </div>
-                    <Image src="/about/aicollective-3.png" alt="AI Collective community" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/aicollective-3.jpg" alt="AI Collective community" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                   </div>
                 </div>
 
@@ -79,9 +79,9 @@ export default function AboutPage() {
                     and community-building efforts to grow the Thai NLP ecosystem.
                   </p>
                   <div className="grid grid-cols-3 gap-2">
-                    <Image src="/about/thainlp-1.png" alt="Thai NLP community" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
-                    <Image src="/about/thainlp-2.png" alt="Techsauce 2024" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
-                    <Image src="/about/thainlp-3.png" alt="ACL 2024" width={600} height={400} className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/thainlp-1.jpg" alt="Thai NLP community" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/thainlp-2.jpg" alt="Techsauce 2024" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
+                    <Image src="/about/thainlp-3.jpg" alt="ACL 2024" width={600} height={400} sizes="(max-width: 768px) 33vw, 300px" className="rounded-xl object-cover w-full border border-border/30" style={{ height: "140px" }} />
                   </div>
                 </div>
               </div>

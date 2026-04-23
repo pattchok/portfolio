@@ -244,9 +244,8 @@ export default function RagCopilotPage() {
                   </p>
                   <p className="text-muted leading-relaxed">
                     This was late 2023, about a year after ChatGPT launched.
-                    RAG was a brand-new concept. No best practices, no
-                    playbooks for building it in production, and definitely
-                    not in Thai.
+                    RAG was a brand-new concept with no best practices and
+                    playbooks for building it in production.
                   </p>
                 </div>
               </section>
@@ -266,8 +265,8 @@ export default function RagCopilotPage() {
                   time, drafts suggested replies for agents to review, and
                   auto-generates ticket summaries, so agents spend less time
                   hunting for answers and more time talking to customers. We
-                  built it as a copilot, not a chatbot, because financial
-                  services regulation requires a human in the loop at every
+                  built it as a <strong style={{ color: "#5C4033" }}>copilot, not a chatbot</strong>, because financial
+                  services regulation requires a <strong style={{ color: "#5C4033" }}>human in the loop</strong> at every
                   step.
                 </p>
 
