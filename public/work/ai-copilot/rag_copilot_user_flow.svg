@@ -1,0 +1,86 @@
+<svg width="100%" viewBox="0 0 1200 180" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<!-- Step 1: Customer -->
+<g>
+  <rect x="0" y="40" width="140" height="56" rx="8" stroke-width="0.5" style="fill:rgb(241,239,232);stroke:rgb(95,94,90)"/>
+  <text x="70" y="62" text-anchor="middle" dominant-baseline="central" style="fill:rgb(68,68,65);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">Customer</text>
+  <text x="70" y="80" text-anchor="middle" dominant-baseline="central" style="fill:rgb(95,94,90);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">contacts CS</text>
+</g>
+
+<!-- Arrow 1 -->
+<line x1="140" y1="68" x2="170" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 2: CS opens copilot -->
+<g>
+  <rect x="170" y="40" width="140" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225,245,238);stroke:rgb(15,110,86)"/>
+  <text x="240" y="62" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">CS opens copilot</text>
+  <text x="240" y="80" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">Chat begins</text>
+</g>
+
+<!-- Arrow 2 -->
+<line x1="310" y1="68" x2="340" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 3: RAG generates -->
+<g>
+  <rect x="340" y="30" width="160" height="76" rx="8" stroke-width="0.5" style="fill:rgb(238,237,254);stroke:rgb(83,74,183)"/>
+  <text x="420" y="55" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">RAG generates</text>
+  <text x="420" y="72" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">3 suggested answers</text>
+  <text x="420" y="92" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83,74,183);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">From Salesforce KB</text>
+</g>
+
+<!-- Arrow 3 -->
+<line x1="500" y1="68" x2="530" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 4: CS reviews -->
+<g>
+  <rect x="530" y="30" width="140" height="76" rx="8" stroke-width="0.5" style="fill:rgb(225,245,238);stroke:rgb(15,110,86)"/>
+  <text x="600" y="55" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">CS selects, verifies</text>
+  <text x="600" y="72" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">and edits</text>
+  <text x="600" y="92" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">Human-in-the-loop</text>
+</g>
+
+<!-- Arrow 4 -->
+<line x1="670" y1="68" x2="700" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 5: Response sent -->
+<g>
+  <rect x="700" y="40" width="140" height="56" rx="8" stroke-width="0.5" style="fill:rgb(241,239,232);stroke:rgb(95,94,90)"/>
+  <text x="770" y="62" text-anchor="middle" dominant-baseline="central" style="fill:rgb(68,68,65);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">Response sent</text>
+  <text x="770" y="80" text-anchor="middle" dominant-baseline="central" style="fill:rgb(95,94,90);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">to customer</text>
+</g>
+
+<!-- Arrow 5 -->
+<line x1="840" y1="68" x2="870" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 6: Auto summary -->
+<g>
+  <rect x="870" y="30" width="150" height="76" rx="8" stroke-width="0.5" style="fill:rgb(238,237,254);stroke:rgb(83,74,183)"/>
+  <text x="945" y="52" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">Auto-generated</text>
+  <text x="945" y="69" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">chat summary</text>
+  <text x="945" y="92" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83,74,183);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px;font-weight:400">+ to-do if case open</text>
+</g>
+
+<!-- Arrow 6 -->
+<line x1="1020" y1="68" x2="1050" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115,114,108);stroke-width:1.5px"/>
+
+<!-- Step 7: Salesforce -->
+<g>
+  <rect x="1050" y="40" width="140" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250,236,231);stroke:rgb(153,60,29)"/>
+  <text x="1120" y="62" text-anchor="middle" dominant-baseline="central" style="fill:rgb(113,43,19);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">Stored in</text>
+  <text x="1120" y="80" text-anchor="middle" dominant-baseline="central" style="fill:rgb(113,43,19);font-family:'DM Sans',-apple-system,sans-serif;font-size:12px;font-weight:500">Salesforce</text>
+</g>
+
+<!-- Color legend -->
+<g>
+  <rect x="340" y="140" width="10" height="10" rx="2" style="fill:rgb(225,245,238);stroke:rgb(15,110,86);stroke-width:0.5"/>
+  <text x="356" y="149" dominant-baseline="central" style="fill:rgb(95,94,90);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px">CS Agent action</text>
+
+  <rect x="490" y="140" width="10" height="10" rx="2" style="fill:rgb(238,237,254);stroke:rgb(83,74,183);stroke-width:0.5"/>
+  <text x="506" y="149" dominant-baseline="central" style="fill:rgb(95,94,90);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px">AI-powered</text>
+
+  <rect x="610" y="140" width="10" height="10" rx="2" style="fill:rgb(250,236,231);stroke:rgb(153,60,29);stroke-width:0.5"/>
+  <text x="626" y="149" dominant-baseline="central" style="fill:rgb(95,94,90);font-family:'DM Sans',-apple-system,sans-serif;font-size:10px">Output</text>
+</g>
+
+</svg>
