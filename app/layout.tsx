@@ -40,8 +40,8 @@ const lomaThin = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Patt — Product Manager",
-    template: "%s — Patt",
+    default: "patt",
+    template: "patt - %s",
   },
   description:
     "Hi, I'm Patt. I make AI products into experiences anyone can use.",

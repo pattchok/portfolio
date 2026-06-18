@@ -6,7 +6,7 @@ import { GalleryHeading, PhotoGrid } from "@/components/photo-grid";
 import { photos } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Life",
+  title: "life",
 };
 
 const PREVIEW_COUNT = 6;

@@ -6,7 +6,7 @@ import { WavyUnderline } from "@/components/wavy-underline";
 import { projectSections } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "projects",
 };
 
 export default function ProjectsPage() {
@@ -58,6 +58,15 @@ export default function ProjectsPage() {
                         sizes="(min-width: 640px) 240px, 100vw"
                         className="object-cover transition-transform duration-300 group-hover/cover:scale-105"
                       />
+                    ) : project.comingSoon ? (
+                      <div
+                        className="flex h-full w-full items-center justify-center"
+                        style={{ backgroundColor: "#e7e8d3" }}
+                      >
+                        <span className="font-serif text-lg italic text-foreground/55">
+                          coming soon :)
+                        </span>
+                      </div>
                     ) : (
                       <div
                         className={`h-full w-full bg-gradient-to-br ${project.gradient ?? "from-stone-200 to-stone-100"}`}

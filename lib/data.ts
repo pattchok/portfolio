@@ -93,6 +93,8 @@ export type Project = {
   // If set, the card links to an internal /projects/<slug> detail page.
   slug?: string;
   detail?: ProjectDetail;
+  // If set, render a clean "coming soon" cover instead of an image/link.
+  comingSoon?: boolean;
 };
 
 export function getProjectBySlug(slug: string): Project | undefined {
@@ -142,6 +144,13 @@ export const projectSections: ProjectSection[] = [
     label: "Projects",
     blurb: "things i built outside my full-time jobs",
     projects: [
+      {
+        title: "Vela",
+        description:
+          "A trip planning companion that helps you create a clear day-by-day itinerary and keep everything in one shareable plan.",
+        meta: "2026",
+        comingSoon: true,
+      },
       {
         title: "SnapStrip",
         description:

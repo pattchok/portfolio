@@ -6,7 +6,7 @@ import { socialIcons } from "@/components/social-icons";
 import { socials } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "about",
 };
 
 export default function AboutPage() {
