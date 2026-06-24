@@ -15,10 +15,10 @@ type Board = {
 
 // Drop your 9:16 collages in /public and point each highlight at one.
 const BOARDS: Board[] = [
-  { id: "uw", label: "uw", cover: "uw", src: "/photo-uw.png" },
-  { id: "llm", label: "llm", cover: "llm", src: "/photo-typhoon.png" },
-  { id: "se", label: "se", cover: "se", src: "/photo-se.png" },
-  { id: "cu", label: "cu", cover: "cu", src: "/photo-cu.png" },
+  { id: "uw", label: "uw", cover: "uw", src: "/about/photo-uw.png" },
+  { id: "llm", label: "llm", cover: "llm", src: "/about/photo-typhoon.png" },
+  { id: "se", label: "se", cover: "se", src: "/about/photo-se.png" },
+  { id: "cu", label: "cu", cover: "cu", src: "/about/photo-cu.png" },
 ];
 
 export function MemoryBoards() {
