@@ -382,8 +382,8 @@ export default async function ProjectDetailPage({
             </div>
           </aside>
 
-          {/* Right — running content */}
-          <div className="flex max-w-3xl flex-col gap-16">
+          {/* Right — running content (block centered in its column, text still left) */}
+          <div className="mx-auto flex w-full max-w-3xl flex-col gap-16">
             {/* TL;DR */}
             <section id="tldr" className="scroll-mt-28">
               <SectionHeading>TL;DR</SectionHeading>
